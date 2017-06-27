@@ -1,0 +1,19 @@
+
+.midtext{
+    color: green;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+
+#halfLeft{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+}
+
+
+.md-head{
+    font-family: 'Lato', sans-serif;
+}
