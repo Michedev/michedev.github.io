@@ -4,102 +4,61 @@
 <head>
     <link rel="stylesheet" type="text/css" href="cssmenu/HomePageStyle.css">
     <link rel="stylesheet" type="text/css" href="cssmenu/animate.css">
-    <link rel="stylesheet" type="text/css" href="cssmenu/TextSecondScene.css">
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Crafty+Girls" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="cssmenu/TextThirdScene.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-
+    <link rel="stylesheet" href="./node_modules/material-design-lite/material.min.css">
+    <script src="./node_modules/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>MikeDev Site</title>
 </head>
 
-<body ng-app="sceneModule" >
-
-    <div id="topcontainer" style="background-color: #ffffff">
-        <div id="scenecontainer" data-0p="transform: translateY(0%);" data-50p="transform: translateY(-50%);" data-75p="" data-100p="transform: translateY(-100%);">
-            <div class="scene first observable" ng-controller="firstSceneCtrl">
-                <img id="myimg" ng-click="update()" src="backgrounds/myimg.jpg">
-                <div class="toptext" id="toptext1">
-                    <p>
-                        Welcome in MikeDev's WebSite
-                    </p>
-                </div>
-                <div class="toptext" id="toptext2">
-                    Enjoy the simplicity.
-                </div>
+<body ng-app="app">
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Title</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
             </div>
-            <div class="scene second observable" ng-controller="competences">
-                <md-content class="trasparent" layout-xs="row" layout="column">
-                    <div layout-fill layout-wrap layout="row">
-                        <md-card flex="100">
-                            <md-card-title>
-                                <md-card-title-text class="semiopaque" ng-style="{'font-size': 30 + 'px', 'text-align': 'center'}">
-                                    Competences
-                                </md-card-title-text>
-                            </md-card-title>
-
-                        </md-card>
-                        <md-card class="semiopaque" ng-repeat="competence in competences" flex="{{flex[competence]}}" ng-style="{'background-color': color[competence], 'margin-left': {{margin_left[competence]}} + '%', 'margin-right': {{margin_right[competence]}} + '%'}">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <h3 ng-style="{'font-size': {{max(flex[competence], 25)}} + 'px', 'color': 'white', 'text-align': 'center'}">{{competence}}</h3>
-                                </md-card-title-text>
-                            </md-card-title>
-                        </md-card>
-                    </div>
-                </md-content>
-            </div>
-            <div class="scene third observable" ng-controller="contacts">
-                <md-content class="trasparent" layout-xs="row" layout="column">
-                    <div layout-fill layout-wrap layout="row">
-                        <md-card flex="100">
-                            <md-card-title>
-                                <md-card-title-text class="semiopaque" ng-style="{'font-size': 40 + 'px', 'text-align': 'center'}">
-                                    Contacts
-                                </md-card-title-text>
-                            </md-card-title>
-
-                        </md-card>
-                        <md-card class="semiopaque" ng-repeat="contact in contacts" flex="30" ng-style="{'background-color': color[contact]}">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <h3   style="text-align: center"><a style="color: white" ng-href="{{link[contact]}}">{{contact}}</a></h3>
-                                </md-card-title-text>
-                            </md-card-title>
-                        </md-card>
-                    </div>
-                </md-content>
-            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
         </div>
-    </div>
-
-    <div id="extra">
-        <div class="myscrollbar" data-0p="height: 1%;" data-50p="height: 50%;" data-100p="height: 100%;">
-        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content" id="main-content">
+                <ui-route></ui-route>
+            </div>
+        </main>
     </div>
 
 
-    <!-- End your code here -->
-    <script type="text/javascript" src="script/skrollr.js"></script>
-    <script type="text/javascript">
-        var x = skrollr.init();
-    </script>
+
+
+
+
+
     <script type="text/javascript" src="script/jquery-2.2.0.js"></script>
     <script type="text/javascript" src="script/jquery.inview.js"></script>
     <script type="text/javascript" src="script/ObserverInViewPort.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-
-    <!-- Angular Material Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-    <script>var scene_module = angular.module('sceneModule',['ngMaterial'])</script>
-    <script src="script/competences.js"></script>
-    <script src="script/contacts.js"></script>
-    <script src="script/firstSceneCtrl.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
 
 
 
