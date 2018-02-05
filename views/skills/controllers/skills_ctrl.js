@@ -1,24 +1,7 @@
 var app = angular.module('app')
-app.controller('SkillsCtrl', function ($scope) {
+app.controller('SkillsCtrl', function ($scope, SkillsList) {
     let self = this;
-    self.skills_list = [
-        {
-            name: "Python",
-            background_color: "#1a425e",
-            value: 0.9,
-            gradient: ["red", "orange"],
-            path_icon: "views/skills/static/img/python.png",
-            id_circle: "python-circle"
-        },
-        {
-            name: "fff",
-            background_color: "#1a425e",
-            value: 0.9,
-            gradient: ["red", "orange"],
-            path_icon: "views/skills/static/img/python.png",
-            id_circle: "python43-circle"
-        }
-    ]
+    self.skills_list = SkillsList
     $scope.$on('$viewContentLoaded', function() {
         function create_circle(skill) {
             $("#" + skill.id_circle).circleProgress({
