@@ -7,7 +7,8 @@ app.controller('SkillsCtrl', function ($scope, SkillsList) {
             $("#" + skill.id_circle).circleProgress({
                 value: skill.value,
                 size: 150,
-                fill: { gradient: skill.gradient }
+                fill: { gradient: skill.gradient },
+                startAngle: skill.start_angle
             })
     
         }
