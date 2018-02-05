@@ -16,10 +16,10 @@ app.service('SkillsList', function(){
         },
         {
             name: "Scala",
-            background_color: "white",
+            background_color: "#272822",
             value: 0.6,
-            text_color: 'black',
-            gradient: ["blue", "green"],
+            text_color: 'white',
+            gradient: ["#dc312e", "#dc312e"],
             path_icon: "views/skills/static/img/scala.png",
             id_circle: "scala-circle",
             start_angle: 1.3,
