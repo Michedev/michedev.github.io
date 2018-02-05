@@ -74,5 +74,30 @@ app.service('SkillsList', function(){
             description: "hidden text",
             hide_descr: true,
         },
+        {
+            name: "Html",
+            background_color: "white",
+            value: 0.5,
+            text_color: 'black',
+            gradient: ["green", "purple"],
+            path_icon: "views/skills/static/img/html.png",
+            id_circle: "htmlrr-circle",
+            start_angle: 0.8,
+            description: "hidden text",
+            hide_descr: true,
+        },
+        {
+            name: "Html",
+            background_color: "white",
+            value: 0.5,
+            text_color: 'black',
+            gradient: ["green", "purple"],
+            path_icon: "views/skills/static/img/html.png",
+            id_circle: "htm42l-circle",
+            start_angle: 0.8,
+            description: "hidden text",
+            hide_descr: true,
+        },
+
     ]
 })

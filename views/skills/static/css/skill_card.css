@@ -1,9 +1,8 @@
 .skill-card{
     align-self: flex-start;
-    flex-shrink: 4;
     overflow: hidden;
-    margin-left: 1.5%;
-    margin-top: 1.5%;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 
