@@ -16,6 +16,14 @@ app.config(function($stateProvider){
             templateUrl: 'views/contacts/static/html/contacts.html',
             controller: 'ContactsCtrl'
         }
+    )
+    .state(
+        {
+            name: 'skills',
+            url: '/skills',
+            templateUrl: 'views/skills/static/html/skills.html',
+            controller: 'SkillsCtrl as skillsCtrl'
+        }
     );
 })
 

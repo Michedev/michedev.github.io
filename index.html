@@ -3,9 +3,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="unicode" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/skills/static/css/skill_card.css">
     <script src="node_modules/material-design-lite/material.min.js"></script>
 
 
@@ -14,44 +18,36 @@
 </head>
 
 <body ng-app="app">
-    <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Title</span>
-                <div class="mdl-layout-spacer"></div>
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                </nav>
-            </div>
-        </header>
+    <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Title</span>
+            <span class="mdl-layout-title">Hello world!</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="/home">Link</a>
-                <a class="mdl-navigation__link" href="contacts">Link</a>
+                <a class="mdl-navigation__link" ui-sref="home" ui-sref-active="active">Home</a>
+                <a class="mdl-navigation__link" ui-sref="skills" ui-sref-active="active">Skills</a>
+                <a class="mdl-navigation__link" ui-sref="projects" ui-sref-active="active">Projects</a>
+                <a class="mdl-navigation__link" ui-sref="contacts" ui-sref-active="active">Contacts</a>
             </nav>
         </div>
-        <main class="mdl-layout__content container-fluid" ng-app="app">
-            <div class="page-content">
+        <main class="mdl-layout__content">
+            <div class="page-content main-content">
                 <ui-view></ui-view>
             </div>
         </main>
+    </div>
 
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-        <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-circle-progress/dist/circle-progress.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
 
-        <script type="text/javascript" src="app/app.js"></script>
-        <script type="text/javascript" src="app/routes.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/routes.js"></script>
 
-        <script src="views/contacts/controllers/contacts_ctrl.js"></script>
+    <script src="views/contacts/controllers/contacts_ctrl.js"></script>
+    <script src="views/skills/controllers/skills_ctrl.js"></script>
+
 </body>
 
 </html>

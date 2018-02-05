@@ -1,0 +1,44 @@
+.skill-card{
+    width: 12%;
+    height: auto;
+    overflow: hidden;
+    margin: 1%;
+}
+
+
+
+.title-text{
+    font-size: 35px;
+    color: white;
+    margin-left: 3%;
+    margin-top: 2%;
+    font-family: 'Roboto Light', sans-serif;
+}
+
+.mdl-card--border{
+    color: white;
+}
+
+.skill-icon{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.title-card{
+    margin-left: 4%;
+    padding-top: 15px;
+    padding-bottom: 4%;
+}
+
+.circle-container{
+    padding-left: 11%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: inherit;
+}
+
+.circle{
+    align-content: center;
+}

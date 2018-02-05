@@ -1,0 +1,12 @@
+<div ng-controller="SkillsCtrl as skillsCtrl" class="container-fluid">
+
+    <div class="mdl-card mdl-shadow--2dp skill-card" ng-repeat="skill in skillsCtrl.skills_list" style='background-color: {{skill["background_color"]}}'>
+        <div class="row title-card " id="python-title">
+            <img class="skill-icon" src="{{skill['path_icon']}}"></img>
+            <div class="title-text" style="color: white">{{skill["name"]}}</div>
+        </div>
+        <div class="mdl-shadow--2dp circle-container">
+            <div id="{{skill['id_circle']}}"></div>
+        </div>
+    </div>
+</div>
