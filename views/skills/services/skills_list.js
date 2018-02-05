@@ -10,7 +10,9 @@ app.service('SkillsList', function(){
             gradient: ["red", "orange"],
             path_icon: "views/skills/static/img/python.png",
             id_circle: "python-circle",
-            start_angle: 0.4
+            start_angle: 0.4,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            hide_descr: true,
         },
         {
             name: "Scala",
@@ -20,7 +22,9 @@ app.service('SkillsList', function(){
             gradient: ["blue", "green"],
             path_icon: "views/skills/static/img/scala.png",
             id_circle: "scala-circle",
-            start_angle: 1.3
+            start_angle: 1.3,
+            description: "hidden text",
+            hide_descr: true,
         },
         {
             name: "Java",
@@ -30,17 +34,45 @@ app.service('SkillsList', function(){
             gradient: ["red", "blue"],
             path_icon: "views/skills/static/img/java.svg",
             id_circle: "java-circle",
-            start_angle: 0.8
+            start_angle: 0.8,
+            description: "hidden text",
+            hide_descr: true,
         },
         {
             name: "Html",
             background_color: "white",
             value: 0.5,
             text_color: 'black',
-            gradient: ["red", "blue"],
+            gradient: ["green", "purple"],
             path_icon: "views/skills/static/img/html.png",
             id_circle: "html-circle",
-            start_angle: 0.8
+            start_angle: 0.8,
+            description: "hidden text",
+            hide_descr: true,
+        },
+        {
+            name: "Html",
+            background_color: "white",
+            value: 0.5,
+            text_color: 'black',
+            gradient: ["green", "purple"],
+            path_icon: "views/skills/static/img/html.png",
+            id_circle: "html2-circle",
+            start_angle: 0.8,
+            description: "hidden text",
+            hide_descr: true,
+        },
+        {
+            name: "Html",
+            background_color: "white",
+            value: 0.5,
+            text_color: 'black',
+            gradient: ["green", "purple"],
+            path_icon: "views/skills/static/img/html.png",
+            id_circle: "htm3l-circle",
+            start_angle: 0.8,
+            description: "hidden text",
+            hide_descr: true,
         },
     ]
 })

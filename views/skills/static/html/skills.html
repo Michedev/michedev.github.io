@@ -1,12 +1,21 @@
-<div ng-controller="SkillsCtrl as skillsCtrl" class="skill-page">
+<div ng-controller="SkillsCtrl as skillsCtrl" class="skill-page container-fluid">
 
     <div class="mdl-card mdl-shadow--2dp skill-card" ng-repeat="skill in skillsCtrl.skills_list" style='background-color: {{skill["background_color"]}}'>
-        <div class="row title-card " id="python-title">
+        <div class="row title-card">
             <img class="skill-icon" src="{{skill['path_icon']}}"></img>
             <div class="title-text" style="color: {{skill['text_color']}}">{{skill["name"]}}</div>
         </div>
-        <div class="mdl-shadow--2dp circle-container">
+        <div class="circle-container">
             <div id="{{skill['id_circle']}}"></div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: {{skill.text_color}}"
+               ng-click="skill['hide_descr'] = !skill['hide_descr']">
+                More info
+            </a>
+        </div>
+        <div ng-hide="skill.hide_descr" class="text-description" style="color: {{skill.text_color}}" >
+            {{skill['description']}}
         </div>
     </div>
 </div>

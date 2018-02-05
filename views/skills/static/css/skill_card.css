@@ -1,8 +1,9 @@
 .skill-card{
-    width: 12%;
-    height: auto;
+    align-self: flex-start;
+    flex-shrink: 4;
     overflow: hidden;
-    margin: 1%;
+    margin-left: 1.5%;
+    margin-top: 1.5%;
 }
 
 
@@ -24,21 +25,21 @@
     height: 50px;
 }
 
-
-
+.text-description{
+    padding: 3%;
+}
 .title-card{
-    margin-left: 4%;
+    margin-left: 8%;
     padding-top: 15px;
     padding-bottom: 4%;
 }
 
 .circle-container{
-    padding-left: 11%;
+    padding-left: 5%;
     padding-top: 10px;
     padding-bottom: 10px;
     height: inherit;
 }
 
 .circle{
-    align-content: center;
 }
