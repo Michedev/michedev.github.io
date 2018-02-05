@@ -3,8 +3,8 @@ var app = angular.module('app', ['ui.router']);
 // Declare app level module which depends on views, and components
 
 app.config(['$urlRouterProvider', function($urlRouterProvider) {
-
-    $urlRouterProvider.otherwise('/contacts');
+    console.log("Porcodiocane")
+    $urlRouterProvider.otherwise('/home');
 
 }]);
 
