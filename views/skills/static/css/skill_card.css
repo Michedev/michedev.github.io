@@ -1,4 +1,5 @@
 .skill-card{
+    max-width: 15%;
     align-self: flex-start;
     overflow: hidden;
     margin-left: 10px;
@@ -34,7 +35,7 @@
 }
 
 .circle-container{
-    padding-left: 5%;
+    padding-left: 15%;
     padding-top: 10px;
     padding-bottom: 10px;
     height: inherit;
