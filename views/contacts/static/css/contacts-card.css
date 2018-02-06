@@ -1,0 +1,34 @@
+.contacts-page{
+    display: flex;
+    flex-flow: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1.4;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.facebook-card{
+    width: 500px;
+    min-height: 300px;
+}
+
+.facebook-card-title{
+    color: white;
+    background-image: url("../img/facebook.png");
+    background-position: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}    
+
+.linkedin-card{
+    width: 500px;
+    min-height: 300px;
+}
+
+.linkedin-card-title{
+    background-image: url('../img/linkedin.png');
+    background-position: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}

@@ -1,9 +1,9 @@
 <div ng-controller="SkillsCtrl as skillsCtrl" class="skill-page container-fluid">
     <ul class='mdl-list'>
         <li class="mdl-list__item row" ng-repeat="skill in skillsCtrl.skills_list">
-            <img src="{{skill.path_icon}}" class="skill-icon">
+            <img src="{{skill.path_icon}}" class="skill-icon .mdl-list__item-icon">
             <div class="my-skill">
-                <div class="title-text">{{skill.name}}</div>
+                <div class="title-text .mdl-list__item-primary-content">{{skill.name}}</div>
                 <div class="progress my-progress">
                     <div class="progress-bar my-progress-bar progress-bar-striped progress-bar-animated my-bar" role="progressbar" aria-valuenow="{{skill.value*100}}"
                         aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="{{skill.id_bar}}">{{skill.value*100}}%</div>
