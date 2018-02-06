@@ -1,8 +1,24 @@
 .skill-page{
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
     height: 100%; 
+    min-width: max-content;
 }
     
+.my-skill{
+    margin-left: 2%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.my-progress{
+  width: 70%;
+  height: 20px;
+}
+
+.my-progress-bar{
+  background-color: #26ADE4;
+}

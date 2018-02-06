@@ -1,21 +1,14 @@
 <div ng-controller="SkillsCtrl as skillsCtrl" class="skill-page container-fluid">
-
-    <div class="mdl-card mdl-shadow--2dp skill-card" ng-repeat="skill in skillsCtrl.skills_list" style='background-color: {{skill["background_color"]}}'>
-        <div class="row title-card">
-            <img class="skill-icon" src="{{skill['path_icon']}}"></img>
-            <div class="title-text" style="color: {{skill['text_color']}}">{{skill["name"]}}</div>
-        </div>
-        <div class="circle-container">
-            <div id="{{skill['id_circle']}}"></div>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: {{skill.text_color}}"
-               ng-click="skill['hide_descr'] = !skill['hide_descr']">
-                More info
-            </a>
-        </div>
-        <div ng-hide="skill.hide_descr" class="text-description" style="color: {{skill.text_color}}" >
-            {{skill['description']}}
-        </div>
-    </div>
+    <ul class='mdl-list'>
+        <li class="mdl-list__item row" ng-repeat="skill in skillsCtrl.skills_list">
+            <img src="{{skill.path_icon}}" class="skill-icon">
+            <div class="my-skill">
+                <p style="font-size: 20px">{{skill.name}}</p>
+                <div class="progress my-progress">
+                    <div class="progress-bar my-progress-bar progress-bar-striped progress-bar-animated my-bar" role="progressbar" aria-valuenow="{{skill.value*100}}"
+                        aria-valuemin="0" aria-valuemax="100" style="width: {{skill.value*100}}%">{{skill.value*100}}%</div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
