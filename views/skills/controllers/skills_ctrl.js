@@ -5,6 +5,8 @@ app.controller('SkillsCtrl', function ($scope, SkillsList) {
     $scope.$on('$viewContentLoaded', function () {
         function dynamic_grow(skill) {
             console.log(skill)
+            let color = skill.value < 0.33 ? "#F37878" : skill.value < 0.66 ? "#FCF668" :"#6DFC68"
+            $("#" + skill.id_bar).css("background-color", color)
             for (let i = 0; i <= (skill.value * 100); i++) {
                 setTimeout(() => {
                     console.log(i)

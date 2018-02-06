@@ -16,9 +16,17 @@
 
 .my-progress{
   width: 70%;
-  height: 20px;
+  height: 32px;
+  margin-top: 20px;
+}
+
+
+.title-text{
+  font-size: 25px;
+  color: black;
+  font-family: 'Roboto Light', sans-serif;
 }
 
 .my-progress-bar{
-  background-color: #26ADE4;
+  color: black;
 }
