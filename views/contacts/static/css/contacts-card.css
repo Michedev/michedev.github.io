@@ -1,34 +1,95 @@
 .contacts-page{
     display: flex;
-    flex-flow: row;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-grow: 1.4;
-    align-items: stretch;
-    justify-content: space-around;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 
+.contact-card{
+    flex-basis: 30%;
+    min-height: 35vh;
+    margin: 10px;
+}
+
+.contact-card-title{
+
+}
+
+
 .facebook-card{
-    width: 500px;
-    min-height: 300px;
+    flex-basis: 19%;
+    flex-grow: .5;
 }
 
 .facebook-card-title{
-    color: white;
     background-image: url("../img/facebook.png");
     background-position: center;
-    overflow: hidden;
+    background-size: 100%;
+    background-color: #3a589e;
     background-repeat: no-repeat;
 }    
 
 .linkedin-card{
-    width: 500px;
-    min-height: 300px;
+    flex-basis: 24%;
+
+    flex-grow: 1.4;
 }
 
 .linkedin-card-title{
     background-image: url('../img/linkedin.png');
     background-position: center;
-    overflow: hidden;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-color: #0274b3;
+}
+
+.gmail-card{
+    flex-basis: 30%;
+    flex-grow: 2;
+}
+
+.gmail-card-title{
+    background-image: url('../img/gmail.png');
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+.twitter-card{
+    margin-top: 5%;
+    flex-basis: 40%;
+    height: 37vh;
+}
+
+.twitter-card-title{
+    background-image: url('../img/twitter.png');
+    background-color: #39a0ce;
+    background-position: center;
+    background-size: 45%;
+    background-repeat: no-repeat;
+}
+
+.skype-card{
+    height: 20vh;
+    flex-basis: 45%;
+    flex-grow: 1;
+}
+
+.skype-card-title{
+    background-image: url('../img/skype.png');
+    background-position: center;
+    background-size: 100%;
+    background-color: #3a589e;
+    background-repeat: no-repeat;
+}
+
+.github-card{
+    flex-basis: 35%;
+}
+
+.github-card-title{
+    background-color: #010101;
+    background-image: url('../img/github.png');
+    background-position: center;
+    background-size: 40%;
     background-repeat: no-repeat;
 }
