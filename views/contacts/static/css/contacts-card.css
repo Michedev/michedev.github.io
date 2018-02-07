@@ -6,8 +6,9 @@
 
 .contact-card{
     flex-basis: 30%;
-    min-height: 35vh;
-    margin: 10px;
+    min-height: 40vh;
+    margin: 5px;
+    align-self: stretch;
 }
 
 .contact-card-title{
@@ -16,7 +17,7 @@
 
 
 .facebook-card{
-    flex-basis: 19%;
+    flex-basis: 36%;
     flex-grow: .5;
 }
 
@@ -29,8 +30,8 @@
 }    
 
 .linkedin-card{
-    flex-basis: 24%;
-
+    flex-basis: 54%;
+    align-self: flex-start;
     flex-grow: 1.4;
 }
 
@@ -55,9 +56,8 @@
 }
 
 .twitter-card{
-    margin-top: 5%;
-    flex-basis: 40%;
-    height: 37vh;
+    align-self: flex-end;
+    flex-basis: 45%;
 }
 
 .twitter-card-title{
