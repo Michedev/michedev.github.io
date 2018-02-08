@@ -24,8 +24,13 @@ app.config(function($stateProvider){
             templateUrl: 'views/skills/static/html/skills.html',
             controller: 'SkillsCtrl as skillsCtrl'
         }
+    )
+    .state(
+        {
+            name: 'books',
+            url: '/books',
+            templateUrl: 'views/books/static/html/books.html',
+            controller: 'BooksCtrl as booksCtrl'
+        }
     );
 })
-
-
-console.log("porcamadonna")

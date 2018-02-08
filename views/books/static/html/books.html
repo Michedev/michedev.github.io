@@ -1,0 +1,23 @@
+<div ng-controller="BooksCtrl as booksCtrl" style="width:100%;height:100%;">
+    <h2 class="sectionbooks-title">Some books i've readen...</h2>
+    <div class="books-container">
+        <div class="book-row" id="book-readen-{{book.id}}" ng-repeat="book in booksCtrl.books_readen">
+            <div class="book-img-container">
+                <img src="{{book.link_img}}" class="book-img">
+            </div>
+            <div class="book-description">
+                <div class="first-line-book-description">{{book.name}}</div>
+                <div class="second-line-book-description">{{book.author}}</div>
+                <div class="book-separator">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color: black">
+                        View on Google Books
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <h2>Still reading...</h2>
+
+    <h2>My whish list &hearts;</h2>
+</div>
