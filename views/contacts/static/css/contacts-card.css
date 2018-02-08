@@ -2,12 +2,15 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 .contact-card{
-    flex-basis: 30%;
+    flex-basis: 48%;
     min-height: 40vh;
-    margin: 5px;
+    margin: 1%;
+    margin-bottom: 2vh;
     align-self: stretch;
 }
 
@@ -17,8 +20,6 @@
 
 
 .facebook-card{
-    flex-basis: 36%;
-    flex-grow: .5;
 }
 
 .facebook-card-title{
@@ -30,9 +31,7 @@
 }    
 
 .linkedin-card{
-    flex-basis: 54%;
     align-self: flex-start;
-    flex-grow: 1.4;
 }
 
 .linkedin-card-title{
@@ -44,8 +43,6 @@
 }
 
 .gmail-card{
-    flex-basis: 30%;
-    flex-grow: 2;
 }
 
 .gmail-card-title{
@@ -57,7 +54,6 @@
 
 .twitter-card{
     align-self: flex-end;
-    flex-basis: 45%;
 }
 
 .twitter-card-title{
@@ -69,21 +65,17 @@
 }
 
 .skype-card{
-    height: 20vh;
-    flex-basis: 45%;
-    flex-grow: 1;
 }
 
 .skype-card-title{
     background-image: url('../img/skype.png');
     background-position: center;
     background-size: 100%;
-    background-color: #3a589e;
+    background-color: #3078d0;
     background-repeat: no-repeat;
 }
 
 .github-card{
-    flex-basis: 35%;
 }
 
 .github-card-title{
