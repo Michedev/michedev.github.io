@@ -1,34 +1,32 @@
+.book-page{
+    overflow-x: auto;
+}
+
 .books-section-title{
     margin-left: 1%;
     color: #646a69
 }
 .books-container{
+    min-width: max-content;
     display: flex;
     flex-flow: row;
-    width: 100%;
-    height: 100%;
     flex-wrap: wrap;
 }
-.book-row{
-    flex-basis: 40%;
+.book-card{
+    flex-basis: 500px;
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
     margin-left: 5%;
-    height: 20%;
-    align-content: flex-start;
+    height: fit-content;
+    align-content: stretch;
     margin-top: 20px;
     padding-bottom: 1%;
-    border: #f1e9ed solid 2px;
-    border-radius: 4px;
-
+    flex-shrink: 0;
 }
 
 .book-img-container{
-    align-self: flex-start;
-    flex-basis: 5%;
-    flex-grow: 0;
-    height: 20vh;
+    height: 200px;
 }
 
 .book-img{
@@ -36,33 +34,38 @@
 }
 
 .book-description{
-    align-self: unset;
+    overflow-x: auto;
     display: flex;
+    flex-basis: 400px;
     flex-flow: column;
-    align-items: flex-start;
-
-    padding-top: 1vh;
-    margin-top: 2vh;
-    margin-left: 1vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding-top: 4px;
+    align-content: space-around;
+    padding-left: 15px;
+    padding-right: 20px;
     border-radius: 4px;
+    background-color: #A8DBA8;
 }
 
 .first-line-book-description{
-    margin-top: 10%;
-    font-family: 'Handlee', cursive;
-    font-size: 2rem;
+    margin-top: 20px;
+    font-family: 'Roboto', cursive;
+    font-size: 18px;
     margin-bottom: 2px;
 }
 
 .second-line-book-description{
-    font-family: 'Handlee', cursive;
+    font-family: 'Roboto', cursive;
     color: #757575;
 }
 
 .book-separator{
-    margin-top: 2vh;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
     min-width: 100%;
     border-top: #757575 solid 1px;
+}
+
+.book-actions{
+
 }
