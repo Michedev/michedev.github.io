@@ -1,0 +1,29 @@
+.home-container{
+    display: flex;
+    flex-basis: 400px;
+    flex-flow: row;
+    flex-grow: 0;
+}
+
+.home-img-container{
+    align-self: flex-start;
+    position: relative;
+    width: inherit;
+    height: auto;
+    margin: 20px;
+}
+
+.home-text{
+    z-index: 1;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: black;
+    font-family: Roboto;
+    font-size: 30px;
+    visibility: hidden;
+}
+
+#home-text-0{
+    color: white;
+}

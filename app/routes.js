@@ -1,12 +1,12 @@
 var app = angular.module('app');
 
 app.config(function($stateProvider){
-    console.log("mannaggia a gesu")
     $stateProvider.state(
         {
             name: 'home',
             url: '/home',
-            template: '<h1>Default page</h1>'
+            templateUrl: 'views/home/static/html/home.html',
+            controller: 'HomeCtrl as homeCtrl'
         }
     )
     .state(
