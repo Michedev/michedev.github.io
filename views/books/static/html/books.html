@@ -1,5 +1,8 @@
 <div ng-controller="BooksCtrl as booksCtrl" class="book-page">
-    <h2 class="sectionbooks-title">Some books i've readen...</h2>
+        <span class="book-section-title">
+                <img class="mdl-chip__contact" src="icons/finished.svg"></img>
+                <span class="mdl-chip__text book-title-text">Some books i've read</span>
+            </span>
     <div class="books-container container-fluid">
         <div class="book-card col-sm-12 col-xs-12 col-md-12" id="book-readen-{{book.id}}" ng-repeat="book in booksCtrl.readen">
             <div class="book-img-container">
@@ -19,7 +22,10 @@
         </div>
     </div>
     <div class="still-reading-section">
-        <h2>Still reading...</h2>
+        <span class="book-section-title">
+            <img class="mdl-chip__contact" src="icons/still-reading.svg"></img>
+            <span class="mdl-chip__text book-title-text">Still reading</span>
+        </span>
         <div class="books-container container-fluid">
             <div class="book-card col-sm-12 col-xs-12 col-md-12" id="book-to-finish-{{book.id}}" ng-repeat="book in booksCtrl.to_finish">
                 <div class="book-img-container">

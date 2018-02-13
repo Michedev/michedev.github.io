@@ -84,3 +84,14 @@
 .still-reading-section{
     margin-top: 20px;
 }
+
+.book-section-title{
+    margin-left: 20px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #fcfcfc;
+}
+
+.book-title-text{
+    font-size: 30px;
+}
