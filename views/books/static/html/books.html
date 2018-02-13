@@ -1,24 +1,45 @@
 <div ng-controller="BooksCtrl as booksCtrl" class="book-page">
     <h2 class="sectionbooks-title">Some books i've readen...</h2>
     <div class="books-container container-fluid">
-        <div class="book-card col-sm-12 col-xs-12 col-md-12" id="book-readen-{{book.id}}" ng-repeat="book in booksCtrl.books_readen">
+        <div class="book-card col-sm-12 col-xs-12 col-md-12" id="book-readen-{{book.id}}" ng-repeat="book in booksCtrl.readen">
             <div class="book-img-container">
                 <img src="{{book.link_img}}" class="book-img">
             </div>
-            <div class="book-description">
+            <div class="book-description" id="book-readen-description-{{book.id}}" ng-mouseenter="booksCtrl.hightlight_card('book-readen-description-' + book.id)"
+                ng-mouseleave="booksCtrl.de_hightlight_card('book-readen-description-' + book.id)">
                 <div class="first-line-book-description">{{book.name}}</div>
                 <div class="second-line-book-description">{{book.author}}</div>
                 <div class="book-separator"></div>
                 <div class="book-actions">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color: black">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color: black" href="{{book.buy_link}}">
                         View on Google Books
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
-    <h2>Still reading...</h2>
+    <div class="still-reading-section">
+        <h2>Still reading...</h2>
+        <div class="books-container container-fluid">
+            <div class="book-card col-sm-12 col-xs-12 col-md-12" id="book-to-finish-{{book.id}}" ng-repeat="book in booksCtrl.to_finish">
+                <div class="book-img-container">
+                    <img src="{{book.link_img}}" class="book-img">
+                </div>
+                <div class="book-description" id="book-to-finish-description-{{book.id}}" ng-mouseenter="booksCtrl.hightlight_card('book-to-finish-description-' + book.id)"
+                    ng-mouseleave="booksCtrl.de_hightlight_card('book-to-finish-description-' + book.id)">
+                    <div class="first-line-book-description" id="first-line-book-to-finish-description-{{book.id}}">{{book.name}}</div>
+                    <div class="second-line-book-description">{{book.author}}</div>
+                    <div class="book-separator"></div>
+                    <div class="book-actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color: black" href="{{book.buy_link}}">
+                            View on Google Books
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <h2>My whish list &hearts;</h2>
 </div>

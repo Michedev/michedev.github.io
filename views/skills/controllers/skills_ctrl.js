@@ -5,9 +5,9 @@ app.controller('SkillsCtrl', function ($scope, SkillsList) {
     $scope.$on('$viewContentLoaded', function () {
         function dynamic_grow(skill) {
             console.log(skill)
-            let bad = "#F37878"
-            let medium = "#EDE574"
-            let good = "#A8DBA8"
+            let bad = "#e4656e"
+            let medium = "#ffd166"
+            let good = "#0a8754"
             let color = skill.value < 0.33 ? bad : skill.value < 0.66 ? medium : good
             $("#" + skill.id_bar).css("background-color", color)
             for (let i = 0; i <= (skill.value * 100); i++) {
