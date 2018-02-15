@@ -49,5 +49,12 @@ app.service('BooksToFinish', function(){
             link_img: 'views/books/static/img/il_cigno_nero.jpg',
             buy_link: 'https://books.google.it/books?id=1ZLR7UWiNBkC&printsec=frontcover&dq=il+cigno+nero&hl=it&sa=X&ved=0ahUKEwiKwc6_-aDZAhXHzRQKHQrDCKcQ6AEIKDAA#v=onepage&q=il%20cigno%20nero&f=false',
         },
+        {
+            id: 3,
+            name: "Felicita': un'ipotesi. Verita' moderne e saggezza antica",
+            author: 'Jonathan Haidt',
+            link_img: 'views/books/static/img/felicita_ipotesi.jpg',
+            buy_link: 'https://books.google.it/books?id=smjnPAAACAAJ&dq=felicita+un%27ipotesi&hl=en&sa=X&ved=0ahUKEwiCmLjGwqXZAhVHy6QKHTfeCBQQ6AEIKTAA',
+        },
     ]
 })
