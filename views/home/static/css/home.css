@@ -81,3 +81,7 @@
     left: 85px;
     bottom: 40px;
 }
+
+.home-container > a{
+    outline: none;
+}
