@@ -14,7 +14,7 @@ app.controller('HomeCtrl', function($scope){
     self.imgs = [
         {
             id: 0,
-            path: 'views/home/static/img/skill.jpg',
+            path: 'views/home/static/img/skill.png',
             text: "Skills"
         },
         {
