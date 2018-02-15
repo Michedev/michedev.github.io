@@ -1,16 +1,22 @@
 <div ng-controller="HomeCtrl as homeCtrl">
     <div class="home-container">
-        <div class="home-img-container" id="home-img-container-{{img.id}}"
-         ng-mouseenter="homeCtrl.grey_others(img.id)"
-         ng-mouseleave="homeCtrl.ungrey_others(img.id)"
-         ng-repeat="img in homeCtrl.imgs">
-            <img class="home-img"
-            id="home-img-{{img.id}}"
-            src="{{img.path}}">
+        <div class="home-title-container">
+            <div class="home-title">
+                Welcome in Mikedev's website!
+            </div>
+            <div class="home-subtitle">
+                Simple is beatiful
+            </div>
+        </div>
+        <div class="home-img-container col-sm-12 col-xs-12 col-md-12" id="home-img-container-{{img.id}}" ng-mouseenter="homeCtrl.grey_others(img.id)"
+            ng-mouseleave="homeCtrl.ungrey_others(img.id)" ng-repeat="img in homeCtrl.imgs">
+
+            <img class="home-img" id="home-img-{{img.id}}" src="{{img.path}}">
             <div class="home-text" id="home-text-{{img.id}}">
                 {{img.text}}
             </div>
         </div>
+        <div class="my-img-container">
+        </div>
     </div>
-
 </div>

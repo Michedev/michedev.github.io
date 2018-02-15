@@ -14,20 +14,21 @@
     <link rel="stylesheet" href="views/books/static/css/books.css">
     <link rel="stylesheet" href="views/home/static/css/home.css">
     <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Short+Stack|Walter+Turncoat" rel="stylesheet">
     <title>MikeDev Site</title>
 </head>
 
 <body ng-app="app">
     <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-        <div class="mdl-layout__drawer menu">
+        <div class="mdl-layout__drawer my-menu">
             <span class="mdl-layout-title">Hello world!</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" ui-sref="home" ui-sref-active="active">Home</a>
-                <a class="mdl-navigation__link" ui-sref="skills" ui-sref-active="active">Skills</a>
-                <a class="mdl-navigation__link" ui-sref="projects" ui-sref-active="active">Projects</a>
-                <a class="mdl-navigation__link" ui-sref="books" ui-sref-active="active">Books</a>
-                <a class="mdl-navigation__link" ui-sref="contacts" ui-sref-active="active">Contacts</a>
+                <a class="mdl-navigation__link " ui-sref="home" ui-sref-active="active">Home</a>
+                <a class="mdl-navigation__link navigation-link" ui-sref="skills" ui-sref-active="active">Skills</a>
+                <a class="mdl-navigation__link navigation-link" ui-sref="projects" ui-sref-active="active">Projects</a>
+                <a class="mdl-navigation__link navigation-link" ui-sref="books" ui-sref-active="active">Books</a>
+                <a class="mdl-navigation__link navigation-link" ui-sref="contacts" ui-sref-active="active">Contacts</a>
             </nav>
         </div>
         <main class="mdl-layout__content">

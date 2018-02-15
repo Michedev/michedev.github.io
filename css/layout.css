@@ -1,6 +1,4 @@
 .main-content{
-    padding-left: 10px;
-    padding-top: 10px;
 }
 
 html,body{
@@ -8,7 +6,13 @@ html,body{
     height: 100%;
 }
 
-.menu{
-    background-color: #1F1F20;
+
+
+.my-menu{
+    background-color: black;
     color: #DCE0E6;
+}
+
+.navigation-link{
+    color: #fcfcfc;
 }
