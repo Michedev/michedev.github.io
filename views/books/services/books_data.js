@@ -23,6 +23,13 @@ app.service('BooksReaden', function(){
             link_img: 'views/books/static/img/tdd_by_examples.jpg',
             buy_link: 'https://books.google.it/books?id=CUlsAQAAQBAJ&printsec=frontcover&dq=test+driven+development+by+example&hl=it&sa=X&ved=0ahUKEwjs3vW2-qDZAhUK6RQKHYSyARwQ6AEIKzAA#v=onepage&q=test%20driven%20development%20by%20example&f=false'
         },
+        {
+            id: 3,
+            name: 'Discorso sul metodo',
+            author: 'Cartesio',
+            link_img: 'views/books/static/img/discorso_sul_metodo.jpg',
+            buy_link: 'https://books.google.it/books?id=GyQ8BgAAQBAJ&printsec=frontcover&dq=discorso+sul+metodo&hl=en&sa=X&ved=0ahUKEwjs0r_z5KjZAhXDyqQKHU7gBF4Q6AEINDAB#v=onepage&q=discorso%20sul%20metodo&f=false'
+        },
     ]
 })
 
