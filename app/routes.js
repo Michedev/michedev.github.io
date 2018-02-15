@@ -32,5 +32,13 @@ app.config(function($stateProvider){
             templateUrl: 'views/books/static/html/books.html',
             controller: 'BooksCtrl as booksCtrl'
         }
+    )
+    .state(
+        {
+            name: 'projects',
+            url: '/projects',
+            template: '<h2> Still empty... </h2>',
+            controller: 'BooksCtrl as booksCtrl'
+        }
     );
 })
