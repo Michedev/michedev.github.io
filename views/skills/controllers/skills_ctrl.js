@@ -12,7 +12,6 @@ app.controller('SkillsCtrl', function ($scope, SkillsList) {
             $("#" + skill.id_bar).css("background-color", color)
             for (let i = 0; i <= (skill.value * 100); i++) {
                 setTimeout(() => {
-                    console.log(i)
                     $("#" + skill.id_bar).css("width", i+"%");
                 }, i);
             }

@@ -1,12 +1,13 @@
 .skill-page{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     height: 100%; 
     min-width: max-content;
+    overflow-y: scroll;
 }
     
 .my-skill{
+    flex-basis: content;
     margin-left: 2%;
     height: 100%;
     display: flex;
