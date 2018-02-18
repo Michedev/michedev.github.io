@@ -1,51 +1,43 @@
 .contacts-page{
+    margin-top: 30px;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    flex-shrink: 0;
-    margin-top: 30px;
-    align-content: center;
-    align-items: center;
+    margin-left: 15vw;
+    overflow-x: scroll;
+}
 
+
+.card-container{
+    flex-basis: 40%;
+    align-self: center;
 }
 
 div > .contact-card{
-    align-self: flex-start;
-    flex-shrink: 0;
-    flex-basis: 400px;
-    min-width: 400px;
-    min-height: auto;
-    margin: 10px;
+    width: 300px;
+    height: 350px;
+    margin: 5px;
     margin-bottom: 20px;
 }
+
 
 .contact-card-title{
-    min-width: 400px;
-    max-width: 400px;
-    height: 500px;
 }
 
 
-#facebook-card{
-    align-self: flex-start;
-    flex-shrink: 0;
-    flex-basis: 400px;
-    min-width: 400px;
-    min-height: auto;
-    margin: 10px;
-    margin-bottom: 20px;
+.facebook-card{
 }
 
 .facebook-card-title{
     background-image: url("../img/facebook.png");
     background-position: center;
+    background-size: 60%;
     background-color: #3a589e;
     background-repeat: no-repeat;
 }    
 
 .linkedin-card{
-    align-self: flex-start;
 }
 
 .linkedin-card-title{
@@ -67,7 +59,6 @@ div > .contact-card{
 }
 
 .twitter-card{
-    align-self: flex-end;
 }
 
 .twitter-card-title{
