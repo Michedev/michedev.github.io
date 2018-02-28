@@ -3,19 +3,18 @@
     flex-flow: row;
     flex-grow: 0;
     flex-wrap: wrap;
-    width: max-content;
+    width: 100%;
     justify-content: center;
 }
 
 .home-img-container{
-    position: relative;
-    flex-basis: 600px;
+    flex-basis: 900px;
     padding-bottom: 20px;
     padding-top: 20px;
 }
 
 #home-img-container-2{
-    flex-basis: 400px;
+    flex-basis: 900px;
     flex-grow: 0.1;
 }
 
