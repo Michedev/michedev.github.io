@@ -1,17 +1,20 @@
 .contacts-page{
-    margin-top: 30px;
+    width: 100%;
+    min-height: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 15vw;
-    overflow-x: scroll;
+    background-image: url('../img/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
 .card-container{
     flex-basis: 40%;
     align-self: center;
+    border-radius: 10px;
 }
 
 div > .contact-card{

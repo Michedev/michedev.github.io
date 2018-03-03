@@ -1,6 +1,10 @@
 .book-page{
     overflow-x: auto;
     overflow-wrap: break-word;
+    background-image: url('../img/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .books-section-title{
@@ -13,7 +17,7 @@
     flex-flow: row;
     flex-wrap: wrap;
     align-content: space-between;
-    justify-content: space-between
+    justify-content: space-between;
 }
 .book-card{
     flex-basis: 550px;
@@ -21,7 +25,6 @@
     flex-flow: row;
     flex-wrap: nowrap;
     margin-left: 10%;
-    height: 200px;
     margin-top: 20px;
     padding-bottom: 1%;
     flex-shrink: 0;
@@ -29,6 +32,7 @@
 
 .book-img-container{
     height: 200px;
+    z-index: 2;
 }
 
 .book-img{
@@ -36,6 +40,7 @@
 }
 
 .book-description{
+    z-index: 0;
     display: flex;
     flex-basis: 400px;
     flex-shrink: 0;
@@ -86,7 +91,8 @@
     margin-left: 20px;
     width: 100px;
     border-radius: 20px;
-    background-color: #fcfcfc;
+    background-color: transparent;
+    color: white;
 }
 
 .book-title-text{

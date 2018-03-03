@@ -5,6 +5,10 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+    background-image: url('../img/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .home-img-container{
@@ -42,7 +46,7 @@
 }
 
 .home-title-container{
-    font-family: 'Handlee', cursive;
+    font-family: 'Audiowide', cursive;
     color: black;
     width: 100%;
     display: flex;
