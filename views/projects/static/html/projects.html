@@ -1,0 +1,19 @@
+<div ng-controller="ProjectsCtrl as projectsCtrl" class="project-page">
+    <div>
+        <div class="item-project" ng-repeat="project in project_list">
+            <div class="project-text">
+                <div class="project-text-title">
+                    {{project.name}} - {{project.date}}
+                </div>
+                <div class="project-text-description">
+                    {{project.description}}
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="{{project.link}}" target="_blank">
+                    <img src="{{project.link_icon}}" class="project-link-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
