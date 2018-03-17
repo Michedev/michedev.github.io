@@ -36,6 +36,7 @@
 .project-text-description {
     font-size: 15px;
     font-weight: 300;
+    white-space: pre-line;
 }
 
 .project-links {
