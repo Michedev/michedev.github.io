@@ -23,21 +23,17 @@ app.controller('HomeCtrl', function($scope){
             text: 'Books'
         },
         {
-            id: 3,
+            id: 2,
             path: 'views/home/static/img/projects.jpg',
             text: 'Projects'
         },
-        {
-            id: 2,
-            path: 'views/home/static/img/contacts.png',
-            text: 'Contacts'
-        },
+
     ]
     self.grey_others = (id_img) => {
         for(let i in self.imgs){
             let img = self.imgs[i]
             if(img.id != id_img){
-                $('#home-img-container-'+img.id).css("filter", "grayscale(100%)");
+                $('#home-img-container-'+img.id).css("filter", "grayscale(100%) blur(3px)");
             } else {
                 $('#home-text-'+img.id).css("visibility", "visible");
                 resize_img('home-img-'+img.id, 30, 30)
