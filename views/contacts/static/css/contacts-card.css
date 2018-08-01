@@ -1,14 +1,12 @@
-.contacts-page{
+.contacts-container{
     width: 100%;
-    min-height: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-image: url('../img/background.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    padding-left: 5px;
+    position: absolute;
+    bottom: 0;
+
 }
 
 
@@ -19,32 +17,23 @@
 }
 
 div > .contact-card{
-    width: 300px;
-    height: 350px;
+    width: 40px;
+    height: 40px;
     margin: 5px;
     margin-bottom: 20px;
-}
-
-
-.contact-card-title{
+    border-radius: 30px;
 }
 
 
 .facebook-card{
-}
-
-.facebook-card-title{
     background-image: url("../img/facebook.png");
     background-position: center;
-    background-size: 60%;
+    background-size: 100%;
     background-color: #3a589e;
     background-repeat: no-repeat;
 }    
 
 .linkedin-card{
-}
-
-.linkedin-card-title{
     background-image: url('../img/linkedin.png');
     background-position: center;
     background-size: 70%;
@@ -52,45 +41,36 @@ div > .contact-card{
     background-color: #0274b3;
 }
 
-.gmail-card{
-}
 
-.gmail-card-title{
+.gmail-card{
     background-image: url('../img/gmail.png');
     background-position: center;
-    background-size: 40%;
+    background-color: rgb(240, 240, 250);
+    background-size: 80%;
     background-repeat: no-repeat;
 }
 
-.twitter-card{
-}
 
-.twitter-card-title{
+.twitter-card{
     background-image: url('../img/twitter.png');
     background-color: #39a0ce;
     background-position: center;
-    background-size: 45%;
+    background-size: 80%;
     background-repeat: no-repeat;
 }
 
 .skype-card{
-}
-
-.skype-card-title{
     background-image: url('../img/skype.png');
     background-position: center;
-    background-size: 100%;
+    background-size: 70%;
     background-color: #3078d0;
     background-repeat: no-repeat;
 }
 
 .github-card{
-}
-
-.github-card-title{
     background-color: #010101;
     background-image: url('../img/github.png');
     background-position: center;
-    background-size: 40%;
+    background-size: 70%;
     background-repeat: no-repeat;
 }

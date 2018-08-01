@@ -8,9 +8,8 @@ html,body{
 
 
 
-.my-menu{
-    background-color: black;
-    color: #DCE0E6;
+#my-menu{
+    background-color: #F5F5F5;
 }
 
 .navigation-link{
