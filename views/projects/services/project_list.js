@@ -15,5 +15,12 @@ app.service('ProjectList', function(){
             link: "https://play.google.com/store/apps/details?id=org.sis_statistica&hl=it",
             link_icon: "views/projects/static/img/playstore.png"
         },
+        {
+            name: "BusinessGame 2018 at Padova",
+            description: "Data mining competition where the task was the prediction of wine price",
+            date: "06/04/2018",
+            link: "https://gitlab.com/MikeDev/business_game_2018_report",
+            link_icon: "views/projects/static/img/gitlab.png"
+        }
     ]
 })
