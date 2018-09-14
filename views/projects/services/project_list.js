@@ -21,6 +21,15 @@ app.service('ProjectList', function(){
             date: "06/04/2018",
             link: "https://gitlab.com/MikeDev/business_game_2018_report",
             link_icon: "views/projects/static/img/gitlab.png"
+        },
+        {
+            name: "BriscolaGO Gitlab project",
+            description: "I started with implementing Briscola in go in order to learn the language, \
+                         but after i implemented an AI based on Monte Carlo Tree Search algorithm with\
+                         determinization to handle the imperfect-information game",
+            date: "14/09/2018",
+            link: "https://gitlab.com/MikeDev/BriscolaGo",
+            link_icon: "views/projects/static/img/gitlab.png"
         }
     ]
 })
