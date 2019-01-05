@@ -6,15 +6,15 @@
     <meta charset="UTF-8">
     <!-- Palette: http://www.colourlovers.com/palette/151113/blue_jay_feather -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/css/layout.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/node_modules/material-design-lite/material.min.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/views/skills/static/css/skill_card.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/views/skills/static/css/skill_page.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/views/contacts/static/css/contacts-card.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/views/books/static/css/books.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/views/home/static/css/home.css">
-    <link rel="stylesheet" href="https://rawgit.com/Michedev/michedev.github.io/master/views/projects/static/css/projects.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/skills/static/css/skill_card.css">
+    <link rel="stylesheet" href="views/skills/static/css/skill_page.css">
+    <link rel="stylesheet" href="views/contacts/static/css/contacts-card.css">
+    <link rel="stylesheet" href="views/books/static/css/books.css">
+    <link rel="stylesheet" href="views/home/static/css/home.css">
+    <link rel="stylesheet" href="views/projects/static/css/projects.css">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <title>MikeDev Site</title>
@@ -24,12 +24,12 @@
     <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer" id="my-menu">
         <div class="mdl-layout__drawer" id="my-menu">
-            <span class="mdl-layout-title">Hello world!</span>
+            <span class="mdl-layout-title" id="navigation">Hello world!</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" ui-sref="home" ui-sref-active="active">Home</a>
-                <a class="mdl-navigation__link" ui-sref="skills" ui-sref-active="active">Skills</a>
-                <a class="mdl-navigation__link" ui-sref="projects" ui-sref-active="active">Projects</a>
-                <a class="mdl-navigation__link" ui-sref="books" ui-sref-active="active">Books</a>
+                <a class="mdl-navigation__link" id="navigation" ui-sref="home" ui-sref-active="active">Home</a>
+                <a class="mdl-navigation__link" id="navigation" ui-sref="skills" ui-sref-active="active">Skills</a>
+                <a class="mdl-navigation__link" id="navigation" ui-sref="projects" ui-sref-active="active">Projects</a>
+                <a class="mdl-navigation__link" id="navigation" ui-sref="books" ui-sref-active="active">Books</a>
                 <div class="contacts-container">
                     <a href="https://www.facebook.com/michele.devita2" class="contact-card facebook-card"></a>
                     <a class="linkedin-card contact-card" href="https://www.linkedin.com/in/michele-de-vita-582336bb/"></a>
@@ -47,28 +47,28 @@
         </main>
     </div>
 
-    <script type="text/javascript" src="https://rawgit.com/Michedev/michedev.github.io/master/node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/Michedev/michedev.github.io/master/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/Michedev/michedev.github.io/master/node_modules/jquery-circle-progress/dist/circle-progress.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/Michedev/michedev.github.io/master/node_modules/angular/angular.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/Michedev/michedev.github.io/master/node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-circle-progress/dist/circle-progress.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
-    <script type="text/javascript" src="https://rawgit.com/Michedev/michedev.github.io/master/app/app.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/Michedev/michedev.github.io/master/app/routes.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/routes.js"></script>
 
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/home/controller/home_ctrl.js"></script>
+    <script src="views/home/controller/home_ctrl.js"></script>
 
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/contacts/controllers/contacts_ctrl.js"></script>
+    <script src="views/contacts/controllers/contacts_ctrl.js"></script>
 
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/skills/controllers/skills_ctrl.js"></script>
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/skills/services/skills_list.js"></script>
+    <script src="views/skills/controllers/skills_ctrl.js"></script>
+    <script src="views/skills/services/skills_list.js"></script>
 
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/books/controllers/books_ctrl.js"></script>
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/books/services/books_data.js"></script>
+    <script src="views/books/controllers/books_ctrl.js"></script>
+    <script src="views/books/services/books_data.js"></script>
 
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/projects/services/project_list.js"></script>
-    <script src="https://rawgit.com/Michedev/michedev.github.io/master/views/projects/controllers/projects_ctrl.js"></script>
+    <script src="views/projects/services/project_list.js"></script>
+    <script src="views/projects/controllers/projects_ctrl.js"></script>
 
 
 </body>
