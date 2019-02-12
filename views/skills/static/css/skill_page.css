@@ -5,12 +5,13 @@
   min-width: 100%;
   background-image: url('../img/background.jpg');
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 .my-skill {
+  margin-top: 20px;
   flex-basis: content;
   margin-left: 2%;
   height: 100%;
@@ -19,13 +20,40 @@
   flex-grow: 2;
 }
 
+.text-card{
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 40px;
+  align-self: center;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-flow: column;
+  align-self: flex-start;
+}
+
+.card-title{
+  color: rgb(77, 75, 75);
+  align-self: center;
+}
+
+.text-card-description{
+  align-self: flex-start;
+  color: rgb(46, 46, 46);
+  text-align: justify;
+}
+
 .my-progress {
   width: 70%;
   height: 32px;
   margin-top: 20px;
 }
 
-.title-text {
+.skill-name-title {
   font-size: 25px;
   color: white;
   font-family: 'Roboto Light', sans-serif;
