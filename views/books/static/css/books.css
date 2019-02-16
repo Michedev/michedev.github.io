@@ -9,9 +9,11 @@
 }
 
 .books-section-title{
-    margin-left: 1%;
-    color: #646a69
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-left: 5px;
+    border-radius: 20px;
 }
+
 .books-container{
     min-width: 100%;
     display: flex;
@@ -21,11 +23,9 @@
     justify-content: space-between;
 }
 .book-card{
-    flex-basis: 550px;
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
-    margin-left: 10%;
     margin-top: 20px;
     padding-bottom: 1%;
     flex-shrink: 0;
@@ -43,13 +43,12 @@
 .book-description{
     z-index: 0;
     display: flex;
-    flex-basis: 400px;
-    flex-shrink: 0;
+    max-width: 400px;
     flex-flow: column;
     padding-top: 4px;
     padding-left: 15px;
     padding-right: 20px;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0px 20px 20px 0px;
     background-color: rgba(255, 255, 255, 0.5);
 }
 

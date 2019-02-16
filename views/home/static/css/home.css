@@ -2,8 +2,8 @@
     display: flex;
     flex-flow: column;
     background-image: url('../img/background.jpg');
-    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
 }

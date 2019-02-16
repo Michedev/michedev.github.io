@@ -1,11 +1,13 @@
-<div ng-controller="BooksCtrl as booksCtrl" class="book-page">
-        <span class="book-section-title">
-                <img class="mdl-chip__contact" src="icons/finished.svg"></img>
-                <span class="mdl-chip__text book-title-text">Some books i've read</span>
-            </span>
+<div ng-controller="BooksCtrl as booksCtrl" class="book-page container-fluid">
+    <div class="books-section-title col-sm-4 col-xs-3 col-md-3 col-lg-3">
+        <span>
+            <img class="mdl-chip__contact" src="icons/finished.svg"></img>
+            <span class="mdl-chip__text book-title-text">Some books i've read</span>
+        </span>
+    </div>
     <div class="books-container container-fluid">
-        <div class="book-card col-sm-12 col-xs-12 col-md-12" id="book-readen-{{book.id}}" ng-repeat="book in booksCtrl.readen">
-            <div class="book-img-container">
+        <div class="book-card col-sm-10 col-xs-10 col-md-6 col-lg-5" id="book-readen-{{book.id}}" ng-repeat="book in booksCtrl.readen">
+            <div class="book-img-container d-none d-sm-block">
                 <img src="{{book.link_img}}" class="book-img">
             </div>
             <div class="book-description" id="book-readen-description-{{book.id}}" ng-mouseenter="booksCtrl.hightlight_card('book-readen-description-' + book.id)"
@@ -14,7 +16,8 @@
                 <div class="second-line-book-description">{{book.author}}</div>
                 <div class="book-separator"></div>
                 <div class="book-actions">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" style="color: black" href="{{book.buy_link}}">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" style="color: black"
+                        href="{{book.buy_link}}">
                         View on Google Books
                     </a>
                 </div>
@@ -22,13 +25,15 @@
         </div>
     </div>
     <div class="still-reading-section">
-        <span class="book-section-title">
-            <img class="mdl-chip__contact" src="icons/still-reading.svg"></img>
-            <span class="mdl-chip__text book-title-text">Still reading</span>
-        </span>
+        <div class="books-section-title col-sm-4 col-xs-3 col-md-3 col-lg-3">
+            <span>
+                <img class="mdl-chip__contact" src="icons/still-reading.svg"></img>
+                <span class="mdl-chip__text book-title-text">Still reading</span>
+            </span>
+        </div>
         <div class="books-container container-fluid">
-            <div class="book-card col-sm-12 col-xs-12 col-md-12" id="book-to-finish-{{book.id}}" ng-repeat="book in booksCtrl.to_finish">
-                <div class="book-img-container">
+            <div class="book-card col-sm-10 col-xs-10 col-md-6 col-lg-6" id="book-to-finish-{{book.id}}" ng-repeat="book in booksCtrl.to_finish">
+                <div class="book-img-container d-none d-sm-block">
                     <img src="{{book.link_img}}" class="book-img">
                 </div>
                 <div class="book-description" id="book-to-finish-description-{{book.id}}" ng-mouseenter="booksCtrl.hightlight_card('book-to-finish-description-' + book.id)"
@@ -37,7 +42,8 @@
                     <div class="second-line-book-description">{{book.author}}</div>
                     <div class="book-separator"></div>
                     <div class="book-actions">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" style="color: black" href="{{book.buy_link}}">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank"
+                            style="color: black" href="{{book.buy_link}}">
                             View on Google Books
                         </a>
                     </div>
@@ -47,5 +53,5 @@
         </div>
     </div>
 
-    <h2>My whish list &hearts;</h2>
+    <!-- <h2>My whish list &hearts;</h2> -->
 </div>
