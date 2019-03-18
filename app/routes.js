@@ -35,6 +35,14 @@ app.config(function($stateProvider){
     )
     .state(
         {
+            name: 'neural_art',
+            url: '/neural_art',
+            templateUrl: 'views/neural_art/static/html/neural_art.html',
+            controller: 'NeuralArtCtrl as neuralArtCtrl'
+        }
+    )
+    .state(
+        {
             name: 'projects',
             url: '/projects',
             templateUrl: 'views/projects/static/html/projects.html',
