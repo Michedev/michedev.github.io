@@ -1,0 +1,344 @@
+@MAINCOLOR: #0D6759;
+@SECONDARYCOLOR: #67C67D;
+@TOPCVSIZE: 10%;
+@FONTSIZE: 12pt;
+
+body{
+    // display: flex;
+    // background-color: gray;
+    // flex-flow: column;
+    // align-items: center;
+    font-family: Cantarell, sans-serif;
+    margin: 0px;
+}
+
+.cv{
+    // A4 Format
+    width:  21cm;
+    height: 29.7cm;
+    // margin-top: 4%;
+    // margin-bottom: 4%;
+    background-color: white;
+    display: flex;
+    flex-flow: row;
+}
+
+
+.mypic{
+    background-image: url(img/myphoto.jpg);
+    background-size: contain;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 50%;
+    height: auto;
+    margin-top: 5%;
+    enable-background: accumulate;
+    align-self: center;
+}
+
+.shortbio{
+    margin-top: 2px;
+    font-size: @FONTSIZE;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: justify;
+}
+
+.bottom-left-cv{
+    display: flex;
+    flex-flow: column;
+    justify-content: stretch;
+    flex-basis: 27%;
+    // border-right: 3px;
+    // border-right-style: dotted;
+    // border-right-color: darken(@MAINCOLOR, 10);
+    background-color: lighten(@MAINCOLOR, 10%);
+    color: white;
+}
+
+.mybio{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 5%;
+}
+
+.myname{
+    font-size: 19pt;
+    font-weight: 560;
+}
+
+.specialization{
+    font-size: 13pt;
+    font-weight: 530;
+}
+
+
+.contacts{
+    display: flex;
+    flex-flow: column;
+    background-color: @MAINCOLOR;
+    padding-left: 5px;
+    // border-bottom: 2px dashed @MAINCOLOR;
+
+}
+
+.contacts-title{
+    font-size: @FONTSIZE + 2pt;
+    color: white;
+    text-align: right;
+    padding-right: 5%;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.contact{
+    font-size: @FONTSIZE;
+    display: flex;
+    flex-flow: column;
+    color: white;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.contact-title{
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    font-weight: 560;
+}
+
+.contact-title > img{
+    width: 19px;
+}
+
+.link-bottom-left{
+    color: white;
+    font-size: 13pt;
+    text-decoration-line: none;
+}
+
+.icon-tel{
+    background-image: url(img/telephone.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+}
+
+.email{
+    font-size: 8pt + 2pt;
+    display: flex;
+    flex-flow: column;
+    color: white;
+}
+
+
+.icon-mail{
+    background-image: url(img/mail.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+
+}
+
+.icon-linkedin{
+    background-image: url(img/linkedin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+}
+
+.icon-github{
+    background-image: url(img/github.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+}
+
+.skills{
+    flex-grow: 2.0;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+    padding-right: 2%;
+
+}
+
+.skill{
+    display: flex;
+    flex-flow: column;
+}
+
+.skill-title{
+    font-size: @FONTSIZE;
+    text-align: left;
+    padding-left: 3%;
+    padding-bottom: 6px;
+
+}
+
+.skill-points{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+
+.skill-points > img{
+    object-fit: cover;
+}
+
+.skill-filled{
+    background-image: url(img/skill_filled_v2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 1px;
+    flex-basis: 17%;
+}
+
+.skill-unfilled{
+    background-image: url(img/skill_unfilled_v2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 17%;
+}
+
+.languages{
+    background-color: @MAINCOLOR;
+}
+
+.bottom-right-cv{
+    display: flex;
+    flex-flow: column;
+    flex-basis: 80%;
+    background-color: rgb(250, 250, 250);
+
+}
+
+.section{
+    display: flex;
+    flex-flow: column;
+    padding-right: 5px;
+    flex-grow: 1.2;
+    padding-left: 5px;
+}
+
+.title{
+    text-align: left;
+    font-style: italic;
+    font-weight: 500;
+    font-size: @FONTSIZE + 5pt;
+    padding-right: 5px;
+    padding-top: 1.4%;
+    padding-bottom: 1.1%;
+    
+}
+
+.line{
+    border: 1px solid black; /* dashed, groove, inset */
+    flex-grow: 10000;
+}
+
+.line-white{
+    border: 1px solid white; /* dashed, groove, inset */
+    flex-grow: 10000;
+}
+
+.element{
+    display: flex;
+    flex-flow: column;
+    padding-left: 7px;
+}
+
+.header{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.dateloc{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+.date{
+    font-size: @FONTSIZE;
+    font-style: italic;
+}
+
+.location{
+    font-size: 10pt;
+}
+
+.content{
+    text-align: justify;
+    font-size: 11pt;
+}
+
+.card-1{
+    background-color: rgb(243, 243, 243);
+}
+
+.card-2{
+    background-color: rgb(206, 206, 206);
+}
+
+.descr-title{
+    font-weight: 700;
+    font-size: 14pt;
+}
+
+.title{
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+}
+
+.title span{
+    margin-left: 2px;
+    margin-right: 10px;
+}
+
+.element{
+    padding: 5px;
+}
+
+.filler1{
+    flex-grow: 1000;
+    min-height: 1px;
+}
+
+.filler2{
+    flex-grow: 400;
+    min-height: 1px;
+}
+
+.interest{
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.padova-title{
+    font-size: 12.5pt;
+}
+
+
+.padova-dateloc{
+    font-size: 10.5pt;
+
+}
+
+.longtext{
+    font-size: @FONTSIZE;
+    text-align: justify;
+}
+
+ul{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

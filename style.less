@@ -1,0 +1,262 @@
+@MAINCOLOR: #1D365D;
+@SECONDARYCOLOR: #67C67D;
+@TOPCVSIZE: 10%;
+
+body{
+    // display: flex;
+    // background-color: gray;
+    // flex-flow: column;
+    // align-items: center;
+    font-family: Cantarell, sans-serif;
+    margin: 0px;
+}
+
+.cv{
+    // A4 Format
+    width:  21cm;
+    height: 29.7cm;
+    // margin-top: 4%;
+    // margin-bottom: 4%;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+}
+
+.top-cv{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    flex-basis: @TOPCVSIZE;
+    justify-content: space-between;
+    background-color: lighten(@SECONDARYCOLOR, 30%);
+}
+
+.mypic{
+    background-image: url(img/photo_2018-12-25_21-45-55_stylized_pencil_drawing_3.jpg);
+    background-size: cover;
+    border-radius: 150px;
+    background-repeat: no-repeat;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex-basis: 20%;
+}
+
+.mybio{
+    display: flex;
+    flex-flow: column;
+    margin-right: 2%;
+    align-items: flex-end;
+    flex-basis: calc(100% - 20%);
+
+}
+
+.myname{
+    font-size: 22pt + 2pt;
+    font-weight: 560;
+}
+
+.specialization{
+    font-size: 17pt + 2pt;
+    font-weight: 530;
+}
+
+.shortbio{
+    margin-top: 20px;
+    font-size: 12pt + 2pt;
+    text-align: right;
+}
+
+.bottom-cv{
+    display: flex;
+    flex-flow: row;
+    flex-basis: 90%;
+}
+
+.bottom-left-cv{
+    display: flex;
+    flex-flow: column;
+    flex-basis: 30%;
+    padding-left: 1%;
+    border-right: 3px;
+    justify-content: space-between;
+    border-right-style: dotted;
+    border-right-color: darken(@MAINCOLOR, 10);
+    background-color: lighten(@MAINCOLOR, 70%);
+}
+
+.contacts{
+    display: flex;
+    flex-flow: column;
+    flex-basis: 10%;
+    // border-bottom: 2px dashed @MAINCOLOR;
+
+}
+
+.contacts-title{
+    font-size: 15pt + 2pt;
+    color: @MAINCOLOR;
+    text-align: right;
+    padding-right: 5%;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.contact{
+    font-size: 8pt + 2pt;
+    display: flex;
+    flex-flow: row;
+    color: lighten(@MAINCOLOR, 10);
+    justify-content: space-between;
+    padding-right: 3%;
+    padding-left: 4%;
+    padding-bottom: 4%;
+}
+
+.icon-tel{
+    background-image: url(img/telephone.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+}
+
+.email{
+    font-size: 8pt + 2pt;
+    display: flex;
+    flex-flow: row;
+    color: lighten(@MAINCOLOR, 10);
+}
+
+
+.icon-mail{
+    background-image: url(img/mail.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+
+}
+
+.icon-linkedin{
+    background-image: url(img/linkedin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+}
+
+.icon-github{
+    background-image: url(img/github.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 20%;
+}
+
+.skills{
+    flex-basis: 10%;
+    display: flex;
+    flex-flow: column;
+    padding-right: 2%;
+
+}
+
+.skill{
+    display: flex;
+    flex-flow: column;
+}
+
+.skill-title{
+    font-size: 9.5pt + 2pt;
+    text-align: left;
+    padding-left: 3%;
+    padding-bottom: 6px;
+
+}
+
+.skill-points{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+
+.skill-points > img{
+    object-fit: cover;
+}
+
+.skill-filled{
+    background-image: url(img/skill_filled.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 1px;
+    flex-basis: 17%;
+}
+
+.skill-unfilled{
+    background-image: url(img/skill_unfilled.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-basis: 17%;
+}
+
+.bottom-right-cv{
+    display: flex;
+    flex-flow: column;
+    flex-basis: 80%;
+    background-color: rgb(250, 250, 250);
+
+}
+
+.section{
+    display: flex;
+    flex-flow: column;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.title{
+    text-align: right;
+    font-style: italic;
+    color: darken(@MAINCOLOR, 10%);
+    font-weight: 500;
+    font-size: 15pt + 2pt;
+    padding-right: 5px;
+    border-bottom: 3px solid rgba(212, 212, 212, 0.678);
+    border-top: 3px solid rgba(212, 212, 212, 0.678);
+
+}
+
+.element{
+    display: flex;
+    flex-flow: column;
+}
+
+.dateloc{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+.date{
+    font-size: 9pt + 2pt;
+}
+
+.location{
+    font-size: 10pt + 2pt;
+}
+
+.content{
+    text-align: justify;
+    font-size: 9pt + 2pt;
+}
+
+.card-1{
+    background-color: rgb(243, 243, 243);
+}
+
+.card-2{
+    background-color: rgb(206, 206, 206);
+}
+
+.descr-title{
+    font-weight: 700;
+}
