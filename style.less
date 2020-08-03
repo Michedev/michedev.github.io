@@ -1,6 +1,7 @@
-@MAINCOLOR: #1D365D;
+@MAINCOLOR: #0D6759;
 @SECONDARYCOLOR: #67C67D;
 @TOPCVSIZE: 10%;
+@FONTSIZE: 12pt;
 
 body{
     // display: flex;
@@ -13,90 +14,81 @@ body{
 
 .cv{
     // A4 Format
-    width:  21cm;
-    height: 29.7cm;
+    width:  60%;
     // margin-top: 4%;
     // margin-bottom: 4%;
     background-color: white;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
 }
 
-.top-cv{
-    padding-top: 1%;
-    padding-bottom: 1%;
-    display: flex;
-    flex-flow: row;
-    width: 100%;
-    flex-basis: @TOPCVSIZE;
-    justify-content: space-between;
-    background-color: lighten(@SECONDARYCOLOR, 30%);
-}
 
 .mypic{
-    background-image: url(img/photo_2018-12-25_21-45-55_stylized_pencil_drawing_3.jpg);
-    background-size: cover;
-    border-radius: 150px;
+    background-image: url(img/myphoto.jpg);
+    background-size: contain;
+    border-radius: 100px;
     background-repeat: no-repeat;
     margin-left: 5%;
     margin-right: 5%;
-    flex-basis: 20%;
-}
-
-.mybio{
-    display: flex;
-    flex-flow: column;
-    margin-right: 2%;
-    align-items: flex-end;
-    flex-basis: calc(100% - 20%);
-
-}
-
-.myname{
-    font-size: 22pt + 2pt;
-    font-weight: 560;
-}
-
-.specialization{
-    font-size: 17pt + 2pt;
-    font-weight: 530;
+    width: 50%;
+    height: auto;
+    margin-top: 5%;
+    enable-background: accumulate;
+    align-self: center;
 }
 
 .shortbio{
-    margin-top: 20px;
-    font-size: 12pt + 2pt;
-    text-align: right;
-}
-
-.bottom-cv{
-    display: flex;
-    flex-flow: row;
-    flex-basis: 90%;
+    margin-top: 2px;
+    font-size: @FONTSIZE;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: justify;
 }
 
 .bottom-left-cv{
     display: flex;
     flex-flow: column;
-    flex-basis: 30%;
-    padding-left: 1%;
-    border-right: 3px;
-    justify-content: space-between;
-    border-right-style: dotted;
-    border-right-color: darken(@MAINCOLOR, 10);
-    background-color: lighten(@MAINCOLOR, 70%);
+    justify-content: stretch;
+    flex-basis: 27%;
+    // border-right: 3px;
+    // border-right-style: dotted;
+    // border-right-color: darken(@MAINCOLOR, 10);
+    background-color: lighten(@MAINCOLOR, 10%);
+    color: white;
 }
+
+.mybio{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 5%;
+}
+
+.myname{
+    font-size: 19pt;
+    font-weight: 560;
+}
+
+.specialization{
+    font-size: 13pt;
+    font-weight: 530;
+}
+
 
 .contacts{
     display: flex;
     flex-flow: column;
-    flex-basis: 10%;
+    background-color: @MAINCOLOR;
+    padding-left: 5px;
     // border-bottom: 2px dashed @MAINCOLOR;
 
 }
 
 .contacts-title{
-    font-size: 15pt + 2pt;
-    color: @MAINCOLOR;
+    font-size: @FONTSIZE + 2pt;
+    color: white;
     text-align: right;
     padding-right: 5%;
     font-style: italic;
@@ -104,14 +96,29 @@ body{
 }
 
 .contact{
-    font-size: 8pt + 2pt;
+    font-size: @FONTSIZE;
     display: flex;
-    flex-flow: row;
-    color: lighten(@MAINCOLOR, 10);
+    flex-flow: column;
+    color: white;
     justify-content: space-between;
-    padding-right: 3%;
-    padding-left: 4%;
-    padding-bottom: 4%;
+    padding-bottom: 5px;
+}
+
+.contact-title{
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    font-weight: 560;
+}
+
+.contact-title > img{
+    width: 19px;
+}
+
+.link-bottom-left{
+    color: white;
+    font-size: 13pt;
+    text-decoration-line: none;
 }
 
 .icon-tel{
@@ -124,8 +131,8 @@ body{
 .email{
     font-size: 8pt + 2pt;
     display: flex;
-    flex-flow: row;
-    color: lighten(@MAINCOLOR, 10);
+    flex-flow: column;
+    color: white;
 }
 
 
@@ -152,7 +159,8 @@ body{
 }
 
 .skills{
-    flex-basis: 10%;
+    flex-grow: 2.0;
+    justify-content: center;
     display: flex;
     flex-flow: column;
     padding-right: 2%;
@@ -165,7 +173,7 @@ body{
 }
 
 .skill-title{
-    font-size: 9.5pt + 2pt;
+    font-size: @FONTSIZE;
     text-align: left;
     padding-left: 3%;
     padding-bottom: 6px;
@@ -183,7 +191,7 @@ body{
 }
 
 .skill-filled{
-    background-image: url(img/skill_filled.png);
+    background-image: url(img/skill_filled_v2.png);
     background-size: contain;
     background-repeat: no-repeat;
     min-height: 1px;
@@ -191,10 +199,14 @@ body{
 }
 
 .skill-unfilled{
-    background-image: url(img/skill_unfilled.png);
+    background-image: url(img/skill_unfilled_v2.png);
     background-size: contain;
     background-repeat: no-repeat;
     flex-basis: 17%;
+}
+
+.languages{
+    background-color: @MAINCOLOR;
 }
 
 .bottom-right-cv{
@@ -208,25 +220,42 @@ body{
 .section{
     display: flex;
     flex-flow: column;
-    padding-left: 5px;
     padding-right: 5px;
+    flex-grow: 1.2;
+    padding-left: 5px;
 }
 
 .title{
-    text-align: right;
+    text-align: left;
     font-style: italic;
-    color: darken(@MAINCOLOR, 10%);
     font-weight: 500;
-    font-size: 15pt + 2pt;
+    font-size: @FONTSIZE + 5pt;
     padding-right: 5px;
-    border-bottom: 3px solid rgba(212, 212, 212, 0.678);
-    border-top: 3px solid rgba(212, 212, 212, 0.678);
+    padding-top: 1.4%;
+    padding-bottom: 1.1%;
+    
+}
 
+.line{
+    border: 1px solid black; /* dashed, groove, inset */
+    flex-grow: 10000;
+}
+
+.line-white{
+    border: 1px solid white; /* dashed, groove, inset */
+    flex-grow: 10000;
 }
 
 .element{
     display: flex;
     flex-flow: column;
+    padding-left: 7px;
+}
+
+.header{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .dateloc{
@@ -237,16 +266,17 @@ body{
 }
 
 .date{
-    font-size: 9pt + 2pt;
+    font-size: @FONTSIZE;
+    font-style: italic;
 }
 
 .location{
-    font-size: 10pt + 2pt;
+    font-size: 10pt;
 }
 
 .content{
     text-align: justify;
-    font-size: 9pt + 2pt;
+    font-size: 11pt;
 }
 
 .card-1{
@@ -259,4 +289,55 @@ body{
 
 .descr-title{
     font-weight: 700;
+    font-size: 14pt;
+}
+
+.title{
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+}
+
+.title span{
+    margin-left: 2px;
+    margin-right: 10px;
+}
+
+.element{
+    padding: 5px;
+}
+
+.filler1{
+    flex-grow: 1000;
+    min-height: 1px;
+}
+
+.filler2{
+    flex-grow: 400;
+    min-height: 1px;
+}
+
+.interest{
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.padova-title{
+    font-size: 12.5pt;
+}
+
+
+.padova-dateloc{
+    font-size: 10.5pt;
+
+}
+
+.longtext{
+    font-size: @FONTSIZE;
+    text-align: justify;
+}
+
+ul{
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
