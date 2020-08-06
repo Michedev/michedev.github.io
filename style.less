@@ -1,7 +1,10 @@
+@import "bootstrap.min.css";
+
 @MAINCOLOR: #0D6759;
 @SECONDARYCOLOR: #67C67D;
 @TOPCVSIZE: 10%;
 @FONTSIZE: 12pt;
+
 
 body{
     // display: flex;
@@ -20,8 +23,20 @@ body{
     // margin-bottom: 4%;
     background-color: white;
     display: flex;
-    flex-flow: row;
 }
+
+@media(max-width: 1170px){
+    .cv-tablet{
+        width:  90%;
+    }
+}
+@media(min-width: 1171px){
+    .cv-desktop{
+        width:  60%;
+    }
+}
+
+
 
 
 
@@ -48,11 +63,10 @@ body{
     text-align: justify;
 }
 
-.bottom-left-cv{
+#left-cv{
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     justify-content: stretch;
-    flex-basis: 27%;
     // border-right: 3px;
     // border-right-style: dotted;
     // border-right-color: darken(@MAINCOLOR, 10);

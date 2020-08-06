@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Mikedev CV</title>
-    <link rel="stylesheet/less" type="text/css" href="style.less" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
 </head>
 
 <body data-spy="scroll" data-target="#mynavbar" data-offset="-10">
@@ -25,10 +25,10 @@
                         <div class="vh-100"></div>
                     </div>
                 </div>
-                <div class="d-flex flex-column align-content-center justify-content-center my-2">
+                <div class="d-flex flex-column align-content-center justify-content-center my-2 container-fluid">
                     <h3 id="item2">My CV</h3>
-                    <div class="cv rounded shadow">
-                        <div class="bottom-left-cv">
+                    <div class="cv rounded shadow flex-md-column flex-xl-row cv-tablet cv-desktop">
+                        <div id="left-cv" class="col-xl-3 col-md-12 p-0">
                             <div class="mybio section mb-2">
                                 <div class="filler2"></div>
                                 <div class="myname">Michele De Vita</div>
@@ -265,7 +265,7 @@
 
                             </div>
                         </div>
-                        <div class="bottom-right-cv">
+                        <div class="bottom-right-cv col-xl-9 col-md-12">
                             <div class="shortbio">
                                 Machine learning enthusiast with Computer science background and good Statistical
                                 knowledge. Very
