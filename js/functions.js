@@ -1,6 +1,8 @@
 function send_message() {
+    let title = $('#messagetitle').val()
     let content = $('#messagecontent').val()
-    
+    let link = "mailto:mik3dev@gmail.com?subject="+title+"&body=" + content
+    window.location.assign(link);
 }
 
 
@@ -18,15 +20,23 @@ let games_links_list = $('#list-tab-games')
 let books_content_list = $('#nav-tabContent-books')
 let books_links_list = $('#list-tab-books')
 
+function adaptive_title_size(text){
+    if(text.length > 20){
+        return "<small>"+text+"</small>"
+    } else {
+        return text
+    }
+}
 
 function add_games(games){
     var first = true
     for(let game of games){
-        let title = game.title
+        var title = game.title
         let link = title.toLowerCase().replace(/\s+/g, '').replace(':', '')
         let linklist = link + '-list'
         var classes = 'list-group-item list-group-item-action'
         data_classes = 'tab-pane fade row'
+        title = adaptive_title_size(title)
         if(first){
             classes += ' active'
             data_classes += ' show active'
@@ -34,7 +44,7 @@ function add_games(games){
         }
         let htmllinktag = '<a class="'+classes+'" id="'+linklist+'" data-toggle="list" href="#'+link+'" role="tab" aria-controls="'+link+'">' + title + '</a>'
         games_links_list.append(htmllinktag)
-        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4"><img src="'+game.imgpath+'" width="100%"></div><div class="p-1 col-8"><small style="color: black">'+game.description+'</small></div></div>'
+        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4"><img src="'+game.imgpath+'" width="100%"></div><div class="p-1 col-8"><span style="color: black">'+game.description+'</span></div></div>'
         games_content_list.append(htmldatatag)
     }
 }
@@ -42,11 +52,12 @@ function add_games(games){
 function add_books(books){
     var first = true
     for(let book of books){
-        let title = book.title
+        var title = book.title
         let link = title.toLowerCase().replace(/\s+/g, '').replace(':', '').replace(',')
         let linklist = link + '-list'
         var classes = 'list-group-item list-group-item-action'
         data_classes = 'tab-pane fade row'
+        title = adaptive_title_size(title)
         if(first){
             classes += ' active'
             data_classes += ' show active'
@@ -54,7 +65,7 @@ function add_books(books){
         }
         let htmllinktag = '<a class="'+classes+'" id="'+linklist+'" data-toggle="list" href="#'+link+'" role="tab" aria-controls="'+link+'">' + title + '</a>'
         books_links_list.append(htmllinktag)
-        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4"><img src="'+book.imgpath+'" width="100%"></div><div class="p-1 col-8"><p>'+book.authors+'</p><small style="color: black">'+book.description+'</small></div></div>'
+        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4"><img src="'+book.imgpath+'" width="100%"></div><div class="p-1 col-8"><p>'+book.authors+'</p><span style="color: black">'+book.description+'</span></div></div>'
         books_content_list.append(htmldatatag)
     }
 }
