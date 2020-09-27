@@ -42,9 +42,10 @@ function add_games(games){
             data_classes += ' show active'
             first = false
         }
+        let completetitlemobile = '<p class="d-block d-sm-none">Title: '+title+"</p>"
         let htmllinktag = '<a class="'+classes+'" id="'+linklist+'" data-toggle="list" href="#'+link+'" role="tab" aria-controls="'+link+'">' + title + '</a>'
         games_links_list.append(htmllinktag)
-        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 d-none d-sm-block col-4"><img src="'+game.imgpath+'" width="100%"></div><div class="p-1 col-12"><span style="color: black" class="text-justify">'+game.description+'</span></div></div>'
+        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 d-none d-sm-block col-4"><img src="'+game.imgpath+'" width="100%"></div><div class="p-1 col-12">'+completetitlemobile+'<span style="color: black" class="text-justify">'+game.description+'</span></div></div>'
         games_content_list.append(htmldatatag)
     }
 }
@@ -63,9 +64,10 @@ function add_books(books){
             data_classes += ' show active'
             first = false
         }
+        let completetitlemobile = '<p class="d-block d-sm-none">Title: '+title+"</p>"
         let htmllinktag = '<a class="'+classes+'" id="'+linklist+'" data-toggle="list" href="#'+link+'" role="tab" aria-controls="'+link+'">' + title + '</a>'
         books_links_list.append(htmllinktag)
-        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4 d-none d-sm-block"><img src="'+book.imgpath+'" width="100%"></div><div class="p-1 col-12"><p>'+book.authors+'</p><span style="color: black" class="text-justify">'+book.description+'</span></div></div>'
+        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4 d-none d-sm-block"><img src="'+book.imgpath+'" width="100%"></div><div class="p-1 col-12">'+completetitlemobile+'<p>'+book.authors+'</p><span style="color: black" class="text-justify">'+book.description+'</span></div></div>'
         books_content_list.append(htmldatatag)
     }
 }
