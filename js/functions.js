@@ -34,7 +34,7 @@ function add_games(games){
         var title = game.title
         let link = title.toLowerCase().replace(/\s+/g, '').replace(':', '')
         let linklist = link + '-list'
-        var classes = 'list-group-item list-group-item-action'
+        var classes = 'list-group-item list-group-item-action text-truncate'
         data_classes = 'tab-pane fade row'
         title = adaptive_title_size(title)
         if(first){
@@ -44,7 +44,7 @@ function add_games(games){
         }
         let htmllinktag = '<a class="'+classes+'" id="'+linklist+'" data-toggle="list" href="#'+link+'" role="tab" aria-controls="'+link+'">' + title + '</a>'
         games_links_list.append(htmllinktag)
-        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4"><img src="'+game.imgpath+'" width="100%"></div><div class="p-1 col-8"><span style="color: black">'+game.description+'</span></div></div>'
+        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 d-none d-sm-block col-4"><img src="'+game.imgpath+'" width="100%"></div><div class="p-1 col-12"><span style="color: black" class="text-justify">'+game.description+'</span></div></div>'
         games_content_list.append(htmldatatag)
     }
 }
@@ -55,7 +55,7 @@ function add_books(books){
         var title = book.title
         let link = title.toLowerCase().replace(/\s+/g, '').replace(':', '').replace(',')
         let linklist = link + '-list'
-        var classes = 'list-group-item list-group-item-action'
+        var classes = 'list-group-item list-group-item-action text-truncate'
         data_classes = 'tab-pane fade row'
         title = adaptive_title_size(title)
         if(first){
@@ -65,7 +65,7 @@ function add_books(books){
         }
         let htmllinktag = '<a class="'+classes+'" id="'+linklist+'" data-toggle="list" href="#'+link+'" role="tab" aria-controls="'+link+'">' + title + '</a>'
         books_links_list.append(htmllinktag)
-        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4"><img src="'+book.imgpath+'" width="100%"></div><div class="p-1 col-8"><p>'+book.authors+'</p><span style="color: black">'+book.description+'</span></div></div>'
+        htmldatatag = ' <div class="'+data_classes+'" id="'+link+'" role="tabpanel" aria-labelledby="'+linklist+'"><div class="p-2 col-4 d-none d-sm-block"><img src="'+book.imgpath+'" width="100%"></div><div class="p-1 col-12"><p>'+book.authors+'</p><span style="color: black" class="text-justify">'+book.description+'</span></div></div>'
         books_content_list.append(htmldatatag)
     }
 }

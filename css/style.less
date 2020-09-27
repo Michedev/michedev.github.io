@@ -3,7 +3,21 @@
 @MAINCOLOR: #0D6759;
 @SECONDARYCOLOR: #67C67D;
 @TOPCVSIZE: 10%;
-@FONTSIZE: 12pt;
+@FONTSIZE: 10pt;
+
+@media screen and (max-width: 576px){
+    @FONTSIZE: 10pt;
+    body{
+        font-size: @FONTSIZE;
+    }
+}
+@media screen and (min-width: 577px){
+    @FONTSIZE: 12pt;
+    body{
+        font-size: @FONTSIZE;
+    }
+}
+
 
 body{
     // display: flex;
@@ -129,6 +143,7 @@ body{
 .contact-title > img{
     width: 19px;
 }
+
 
 .link-bottom-left{
     color: white;
