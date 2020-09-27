@@ -8,7 +8,7 @@
     <link rel="stylesheet/less" type="text/css" href="css/style.less" />
 </head>
 
-<body class="" data-spy="scroll" data-target="#mynavbar" data-offset="-10">
+<body class="" data-spy="scroll" data-offset="10" data-target="#mynavbar">
     <div>
         <div class="row m-2 m-sm-0">
             <div class="col-4 col-xl-1 d-none d-sm-inline">
@@ -16,13 +16,15 @@
                     class="py-3 px-1 h-100 bg-light position-fixed flex-column nav-pills d-flex align-content-start">
                     <a class="nav-link" href="#item1">Home</a>
                     <a class="nav-link" href="#item2">CV</a>
-                    <a class="nav-link" href="#item3">Contact Me</a>
+                    <a class="nav-link" href="#item3">My interests</a>
+                    <a class="nav-link" href="#item4">Send a message</a>
+
                 </nav>
             </div>
-            <div class="col-xl-10 col-12 col-sm-8 " id="list-items">
-                <div class="row mt-4 mb-4">
+            <div class="col-xl-10 col-12 col-sm-8 " id="list-items" >
+                <div class="row mt-4 mb-4" id="item1">
                     <div class="col-auto">
-                        <h2 id="item1">MikeDev Website</h2>
+                        <h2>MikeDev Website</h2>
                         <h5>Simple is beautiful</h5>
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-xl-6 my-5">
@@ -50,10 +52,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="pb-10"></div>
                 <div class="pb-5">
-                    <h3 id="item2">My CV</h3>
+                    <h3>My CV</h3>
                 </div>
-                <div class="d-flex flex-row align-content-center justify-content-center my-2 container-fluid">
+                <div id="item2" class="d-flex flex-row align-content-center justify-content-center my-2 container-fluid">
                     <div
                         class="cv rounded shadow flex-md-column flex-sm-column flex-column flex-xl-row cv-tablet cv-desktop">
                         <div id="left-cv" class="col-xl-3 col-md-12 col-sm-12 col-xs-12 p-0">
@@ -571,7 +574,7 @@
                 <div class="py-5"></div>
                 <h2>My interests</h2>
                 <div class="py-3"></div>
-                <div class="row align-items-stretch justify-content-center">
+                <div id="item3" class="row align-items-stretch justify-content-center">
                     <div class="rounded shadow bg-white col-10 col-md-5 p-3 my-3 m-sm-0">
                         <h5 class="card-title">
                             Favourite Videogames
@@ -612,7 +615,7 @@
                 <div>
                     <div class="row justify-content-center my-3">
                         <div class="col-lg-6 rounded shadow col-md-10 col-sm-10 col-10">
-                            <h5 class="card-title mt-2" id="item3">Send a message</h5>
+                            <h5 class="card-title mt-2" id="item4">Send a message</h5>
                             <div class="card-text my-4">
                                 <textarea class="form-control mb-2 w-50" id="messagetitle" rows="1" style="resize: none;" placeholder="Mail title" value="Meeting proposal"></textarea>
                                 <textarea class="form-control" id="messagecontent" rows="3" style="resize: none;" placeholder="Mail content"></textarea>
