@@ -1,9 +1,12 @@
-@import "bootstrap.min.css";
+@import "./bootstrap.min.css";
 
 @MAINCOLOR: #0D6759;
 @SECONDARYCOLOR: #67C67D;
 @TOPCVSIZE: 10%;
 @FONTSIZE: 10pt;
+@SKILL_DOT_SIZE: 10%;
+
+
 
 @media screen and (max-width: 576px){
     @FONTSIZE: 10pt;
@@ -54,9 +57,8 @@ body{
 
 
 .mypic{
-    background-image: url(../img/myphoto.jpg);
+    // background-image: url(../img/myphoto2.png);
     background-size: contain;
-    border-radius: 30px;
     background-repeat: no-repeat;
     margin-left: 5%;
     margin-right: 5%;
@@ -133,21 +135,49 @@ body{
     padding-bottom: 5px;
 }
 
+@font-size-contact-title: 13pt;
+
 .contact-title{
     display: flex;
     flex-flow: row-reverse;
     justify-content: space-between;
-    font-weight: 560;
+}
+
+.contact-title-font{
+    font-weight: 500;
+    font-size: @font-size-contact-title;
+    font-style: italic;
+}
+
+.contact-body{
+    font-size: @font-size-contact-title - 4pt;
 }
 
 .contact-title > img{
     width: 19px;
 }
 
+@img-left-cv-size: 14px;
+
+#contacts-section img{
+    width: @img-left-cv-size;
+    height: @img-left-cv-size;
+}
+
+#skills-section img{
+    width: @img-left-cv-size;
+    height: @img-left-cv-size;
+}
+
+
+#language-section img{
+    width: @img-left-cv-size;
+    height: @img-left-cv-size;
+}
+
 
 .link-bottom-left{
     color: white;
-    font-size: 13pt;
     text-decoration-line: none;
 }
 
@@ -165,27 +195,27 @@ body{
     color: white;
 }
 
+@ICON_SIZE: 18%;
 
 .icon-mail{
     background-image: url(../img/mail.png);
     background-size: contain;
     background-repeat: no-repeat;
-    flex-basis: 20%;
-
+    flex-basis: @ICON_SIZE;
 }
 
 .icon-linkedin{
     background-image: url(../img/linkedin.png);
     background-size: contain;
     background-repeat: no-repeat;
-    flex-basis: 20%;
+    flex-basis: @ICON_SIZE;
 }
 
 .icon-github{
     background-image: url(../img/github.png);
     background-size: contain;
     background-repeat: no-repeat;
-    flex-basis: 20%;
+    flex-basis: @ICON_SIZE;
 }
 
 .skills{
@@ -203,10 +233,10 @@ body{
 }
 
 .skill-title{
-    font-size: @FONTSIZE;
     text-align: left;
     padding-left: 3%;
     padding-bottom: 6px;
+    .contact-title-font;
 
 }
 
@@ -225,14 +255,14 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
     min-height: 1px;
-    flex-basis: 17%;
+    flex-basis: @SKILL_DOT_SIZE;
 }
 
 .skill-unfilled{
     background-image: url(../img/skill_unfilled_v2.png);
     background-size: contain;
     background-repeat: no-repeat;
-    flex-basis: 17%;
+    flex-basis: @SKILL_DOT_SIZE;
 }
 
 .languages{
@@ -257,8 +287,7 @@ body{
 
 .title{
     text-align: left;
-    font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
     font-size: @FONTSIZE + 5pt;
     padding-right: 5px;
     padding-top: 1.4%;
