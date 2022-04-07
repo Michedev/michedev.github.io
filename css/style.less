@@ -2,7 +2,9 @@
 @MAINCOLOR: #232531;
 @SECONDARYCOLOR: #67C67D;
 @TOPCVSIZE: 10%;
-@FONTSIZE: 9pt;
+@FONTSIZE: 9.5pt;
+@SUBTITLEFONTSIZE: 15pt;
+@TITLEFONTSIZE: 20pt;
 @SKILL_DOT_SIZE: 8%;
 @img-left-cv-size: 16px;
 
@@ -36,7 +38,7 @@ body{
 
 .cv{
     // A4 Format
-    width:  60%;
+    max-width: 100%;
     // margin-top: 4%;
     // margin-bottom: 4%;
     background-color: white;
@@ -80,7 +82,8 @@ body{
 #left-cv{
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
+    justify-content: left;
+    align-content: left;
     // border-right: 3px;
     // border-right-style: dotted;
     // border-right-color: darken(@MAINCOLOR, 10);
@@ -95,12 +98,12 @@ body{
 }
 
 .myname{
-    font-size: 19pt;
+    font-size: @SUBTITLEFONTSIZE;
     font-weight: 560;
 }
 
 .specialization{
-    font-size: 13pt;
+    font-size: @FONTSIZE;
     font-weight: 530;
 }
 
@@ -226,7 +229,7 @@ body{
     text-align: left;
     padding-left: 3%;
     padding-bottom: 0px;
-    .contact-title-font;
+    font-size: @FONTSIZE;
 }
 
 .skill-points{
@@ -246,6 +249,7 @@ body{
     background-repeat: no-repeat;
     min-height: 1px;
     flex-basis: @SKILL_DOT_SIZE;
+    margin-top: 5px;
 }
 
 .skill-unfilled{
@@ -253,6 +257,8 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
     flex-basis: @SKILL_DOT_SIZE;
+    margin-top: 5px;
+
 }
 
 .languages{
@@ -262,17 +268,18 @@ body{
 .bottom-right-cv{
     display: flex;
     flex-flow: column;
-    flex-basis: 80%;
+    flex-basis: 90%;
     background-color: rgb(250, 250, 250);
 
 }
-
+@MARGINVERTICAL: 10px;
 .section{
     display: flex;
     flex-flow: column;
-    padding-right: 5px;
-    flex-grow: 1.2;
-    padding-left: 5px;
+    padding-right: 2px;
+    // flex-grow: 1.2;
+    padding-left: 4px;
+    margin-bottom: @MARGINVERTICAL;
 }
 
 .title{
@@ -280,6 +287,7 @@ body{
     padding-right: 5px;
     padding-top: 0.2%;
     padding-bottom: 0.2%;
+    font-size: @TITLEFONTSIZE;
     
 }
 
@@ -381,7 +389,7 @@ body{
 
 .longtext{
     font-size: @FONTSIZE;
-    text-align: justify;
+    text-align: left;
 }
 
 ul{
