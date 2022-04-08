@@ -2,7 +2,7 @@
 @MAINCOLOR: #232531;
 @SECONDARYCOLOR: #67C67D;
 @TOPCVSIZE: 10%;
-@FONTSIZE: 10.5pt;
+@FONTSIZE: 9.5pt;
 @SUBTITLEFONTSIZE: 16pt;
 @TITLEFONTSIZE: 22pt;
 @SKILL_DOT_SIZE: 8%;
@@ -34,27 +34,21 @@ body{
     font-family: Cantarell, sans-serif;
     margin: 0px;
     position: relative;
+    width: 100%;
 }
 
 .cv{
     // A4 Format
-    max-width: 100%;
+    max-width: 210mm;
+    max-height: 297mm;
     // margin-top: 4%;
     // margin-bottom: 4%;
     background-color: white;
     display: flex;
+    min-width: 210mm;
+    min-height: 297mm;
 }
 
-@media(max-width: 1170px){
-    .cv-tablet{
-        width:  90%;
-    }
-}
-@media(min-width: 1171px){
-    .cv-desktop{
-        width:  60%;
-    }
-}
 
 
 
