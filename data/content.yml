@@ -1,6 +1,6 @@
 ########################## hero area ##########################
 hero:
-  title: "I'm Burton Guster"
+  title: "Michele De Vita"
 
   # animated text loop
   occupations:
@@ -30,20 +30,26 @@ experience:
   enable: true
   title: 'EXPERIENCE'
   experience_list:
-    - name: Web Developer
-      company: Freelance
-      duration: '2020-Current'
-      content: I make websites.
+    - name: Thesis Erasmus
+      company: DTU, Denmark
+      duration: 'Sept 2020 - Mar 2021'
+      content: Six month Erasmus for my Master Thesis in DTU (Denmark Technical University) supervised by Ole Winther
 
-    - name: Private Detective
-      company: Psych
+    - name: Co-Founded startup at Cohenagen, Denmark
+      company: Prediba
       duration: '2019-2020'
-      content: Okay. This is hard to explain but I’m going to give it a shot. You and I are opening our own private detective agency.
+      content: Founded Prediba, a start-up that deliver predictive maintenance to manifacturing companies interested in imporove its efﬁciency via AI and digitalization
 
-    - name: Pharmaceutical Salesman
-      company: South Coast Pharmaceuticals
-      duration: '2012-2018'
-      content: We are not bounty hunters, Shawn. I am a pharmaceutical salesman. And Lassiter made it very clear! He said in no uncertain terms. These are certain terms, Shawn! Certain terms!
+    - name: Mentoring at Poste Italiane, Alfamotion
+      company: Freelance
+      duration: '2019'
+      content: Held Machine Learning courses starting from pre-requirements, to Machine Learning and Deep Learning topics
+
+    - name: Developed Official App SIS2017
+      company: Freelance
+      duration: 'Sep 2016 - Jun 2017'
+      content: SIS is an annual italian statistic conference held in 2017 at Florence. The app guides the user to the talks, events and the building. Since performances weren't critical, the application was developed like a website to code-once and deploy everywhere
+
 
 ############################### Skill #################################
 skill:
@@ -51,17 +57,21 @@ skill:
   title: 'SOME SKILLS'
   showpercent: false
   skill_list:
-    - name: 'React'
-      percentage: '85%'
+    - name: 'Programming'
+      percentage: '90%'
 
-    - name: 'Detecting'
-      percentage: '93%'
+    - name: 'Web'
+      percentage: '60%'
 
-    - name: 'Selling'
-      percentage: '25%'
+    - name: 'Machine Learning'
+      percentage: '80%'
 
-    - name: 'Yelling'
-      percentage: '100%'
+    - name: 'Deep Learning'
+      percentage: '90%'
+      
+    - name: 'Algorithms and Data structures'
+      percentage: '75%'
+
 
 ######################### funfacts #############################3
 funfacts:
