@@ -56,7 +56,7 @@ logo_dark = "images/logo-dark.svg"
 copyright = "Copyright Burton Guster &copy;"
 # Meta data
 description = "Personal Portfolio"
-author = "Burton Guster"
+author = "Michele De Vita"
 favicon = "images/favicon.png"
 google_analytics = "G-ABCDEFG123"
 
@@ -70,19 +70,15 @@ preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
 
 [[params.social]]
 icon = "fab fa-github"
-link = "https://github.com/tylerjlawson"
+link = "https://github.com/Michedev/"
 
 [[params.social]]
 icon = "fab fa-linkedin"
-link = "https://www.linkedin.com/"
+link = "https://www.linkedin.com/in/michele-de-vita-582336bb/"
 
 [[params.social]]
 icon = "fas fa-envelope"
-link = "mailto:guster@burton.com"
-
-[[params.social]]
-icon = "fab fa-medium"
-link = "https://medium.com/@gusburton"
+link = "mailto:mik3dev@gmail.com"
 
 contentDir = "content/english"
 weight = 1
