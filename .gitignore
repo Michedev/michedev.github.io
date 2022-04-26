@@ -129,3 +129,5 @@ dist
 .pnp.*
 
 
+.hugo_build.lock
+.vscode/settings.json
