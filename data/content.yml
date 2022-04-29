@@ -71,6 +71,12 @@ skill:
       
     - name: 'Algorithms and Data structures'
       percentage: '75%'
+    
+    - name: 'Statistic'
+      percentage: '68%'
+    
+    - name: 'Math'
+      percentage: '70%'
 
 
 ######################### funfacts #############################3
