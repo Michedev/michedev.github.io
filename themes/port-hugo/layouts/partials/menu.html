@@ -2,6 +2,7 @@
   <nav>
     <!-- desktop-menu -->
     <div class="menu-container">
+      {{ if .Site.Params.enable_logo }}
       <div class="desktop-menu-logo">
         <a href="{{ .Site.BaseURL | relLangURL }}"
           ><img
@@ -11,6 +12,7 @@
             id="desktop-logo"
         /></a>
       </div>
+      {{ end }}
       <ul class="desktop-menu list-inline mb-0" id="desktop-menu">
         {{ range .Site.Menus.main }}
         <li class="menu-item hvr-underline-from-left {{ .Weight }}">

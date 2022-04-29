@@ -9,7 +9,7 @@ hero:
     - 'Developer'
 
   # hero background image
-  bg_image: 'images/background.jpg'
+  bg_image: ''
   # optional mobile breakpoint background
   mobile_bg_image: ''
 
