@@ -115,9 +115,9 @@
       </div>
       <ul id="og-grid" class="og-grid">
         {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
-        $big_image := $image.Fill "780x500 jpg" }} {{ $sm_image := $image.Fill
-        "395x250 jpg" }} {{ $parsed_name := replace .name "." "" }}
-        <li>
+        $big_image := $image.Fill "780x533 jpg" }} {{ $sm_image := $image.Fill
+        "395x270 jpg" }} {{ $parsed_name := replace .name "." "" }}
+        <li class="portfolio-preview">
           <p id="description-{{ $parsed_name | urlize }}" class="hidden">
             {{ .description | markdownify }}
           </p>

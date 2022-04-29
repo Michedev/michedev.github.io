@@ -94,16 +94,16 @@ portfolio:
   enable: true
   title: 'MY WORK'
   portfolio_list:
-    - name: Parameterization learning for curve fitting of arbitrary point sequences with convolutional neural networks
+    - name: 'Parameterization learning for curve fitting of arbitrary point sequences with convolutional neural networks'
       image: 'images/portfolio/paper_bspline.jpg'
       description: We propose a data-driven method to assign parameter values to randomly measured points for the design of polynomial and spline approximation schemes. Toovercome the need of input data sets with fixed dimension, we suitably exploitdeep Convolutional Neural Networks (CNNs). Our model takes in input point sequences of a variable number of data, and returns a suitable parameterization forcurve fitting without additional post-processing. We trained the network by con-sidering polynomial least-square approximations and demonstrate that the accuracy of the model properly scales with respect to an increasing number of adaptiveknots, when B-spline approximations are considered in different test cases. Theexperiments highlight that our CNN model outperforms existing parameterizationschemes, while simultaneously enriching its generalization capabilities on pointsequences of arbitrary length.
 
-    - name: Generalization and Robustness Implications in Object-Centric Learning
-      image: 'images/portfolio/slot_attention_clevr_slots.png'
+    - name: 'Generalization and Robustness Implications in Object-Centric Learning'
+      image: 'images/portfolio/ocl.png'
       url: https://arxiv.org/abs/2107.00637
       description: The idea behind object-centric representation learning is that natural scenes can better be modeled as compositions of objects and their relations as opposed to distributed representations. This inductive bias can be injected into neural networks to potentially improve systematic generalization and learning efficiency of downstream tasks in scenes with multiple objects. In this paper, we train state-of-the-art unsupervised models on five common multi-object datasets and evaluate segmentation accuracy and downstream object property prediction. In addition, we study systematic generalization and robustness by investigating the settings where either single objects are out-of-distribution -- e.g., having unseen colors, textures, and shapes -- or global properties of the scene are altered -- e.g., by occlusions, cropping, or increasing the number of objects. From our experimental study, we find object-centric representations to be generally useful for downstream tasks and robust to shifts in the data distribution, especially if shifts affect single objects. 
 
-    - name: #366 in Hash Code by Google
+    - name:  '366 in Hash Code by Google'
       image: 'images/portfolio/hashcode.jpg'
       url: https://drive.google.com/open?id=0BxMm70nWlFWCS3U2Ml96XzBNVDQ
-      description: The task was to optimize the scheduling of the upload of youtube videos in cache server given all the requests
+      description: 'The task was to minimize the latency of video consumption by uploading the videos into cache servers, located in many countries. The input consists in the list of video requestes and the list of available cache servers with limited size.'
