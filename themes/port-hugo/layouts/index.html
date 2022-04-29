@@ -8,33 +8,31 @@
   <div class="container">
     {{ if .Site.Data.content.about.enable }} {{ with .Site.Data.content.about }}
     <div class="row about-me-holder">
-      <div
-        class="
+      <div class="
           col-lg-6 col-md-6 col-sm-6
           about-me-text
           d-flex
           align-self-center
-        "
-      >
+        ">
         <div class="text-holder">
           <h1>{{ .title | safeHTML }}</h1>
           <p>{{ .content | markdownify | emojify }}</p>
-          {{ if .button.enable }} {{ with .button }}
-          <a
-            href="{{ .link | relURL }}"
-            target="_blank"
-            rel="noreferrer"
-            class="button download-cv"
-          >
-            {{ .label }} <i class="fa fa-download"></i
-          ></a>
-          {{ end }} {{ end }}
+          <!-- {{ if .button.enable }} {{ with .button }}
+          <a href="{{ .link | relURL }}" target="_blank" rel="noreferrer" class="button download-cv">
+            {{ .label }} <i class="fa fa-download"></i></a> -->
+          <!-- {{ end }} {{ end }} -->
         </div>
       </div>
-      {{ with .image }}
-      <div class="col-lg-6 col-sm-6 col-9 about-me-images">
-        <img src="{{ . | relURL }}" alt="about-me" />
+      <div class="text-holder col-6">
+        {{ if .button.enable }} {{ with .button }}
+        <a href="{{ .link | relURL }}" target="_blank" rel="noreferrer" class="button download-cv">
+          {{ .label }} <i class="fa fa-download"></i></a>
+        {{ end }} {{ end }}
       </div>
+    {{ with .image }}
+      <!-- <div class="col-lg-6 col-sm-6 col-9 about-me-images">
+        <img src="{{ . | relURL }}" alt="about-me" />
+      </div> -->
       {{ end }}
     </div>
     {{ end }} {{ end }}
@@ -47,18 +45,18 @@
         <ul class="experience-chart">
           {{ range .experience_list }}
           {{ if not (eq .enable false) }}
-            <li>
-              <div class="single-experience">
-                <h3>{{ .name | markdownify }}</h3>
-                {{ with .company }}
-                <span>{{ . | markdownify }} |</span>
-                {{ end }} {{ with .duration }}
-                <span>{{ . | markdownify }}</span>
-                {{ end }} {{ with .content }}
-                <p>{{ . | markdownify }}</p>
-                {{ end }}
-              </div>
-            </li>
+          <li>
+            <div class="single-experience">
+              <h3>{{ .name | markdownify }}</h3>
+              {{ with .company }}
+              <span>{{ . | markdownify }} |</span>
+              {{ end }} {{ with .duration }}
+              <span>{{ . | markdownify }}</span>
+              {{ end }} {{ with .content }}
+              <p>{{ . | markdownify }}</p>
+              {{ end }}
+            </div>
+          </li>
           {{ end }}
           {{ end }}
         </ul>
@@ -121,16 +119,9 @@
           <p id="description-{{ $parsed_name | urlize }}" class="hidden">
             {{ .description | markdownify }}
           </p>
-          <a
-            href="{{ .url }}"
-            data-largesrc="{{ $big_image.RelPermalink }}"
-            data-title="{{ .name }}"
-            data-buttontext="SEE SITE"
-          >
-            <img
-              src="{{ $sm_image.RelPermalink }}"
-              alt="{{ $parsed_name }} image"
-            />
+          <a href="{{ .url }}" data-largesrc="{{ $big_image.RelPermalink }}" data-title="{{ .name }}"
+            data-buttontext="SEE SITE">
+            <img src="{{ $sm_image.RelPermalink }}" alt="{{ $parsed_name }} image" />
           </a>
         </li>
         {{ end }}

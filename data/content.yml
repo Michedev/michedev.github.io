@@ -11,18 +11,18 @@ hero:
   # hero background image
   bg_image: 'images/background.jpg'
   # optional mobile breakpoint background
-  mobile_bg_image: 'images/gus_small.jpg'
+  mobile_bg_image: ''
 
 ########################### About ##################################
 about:
   enable: true
-  image: 'images/profile.jpg'
-  title: 'THIS IS ME'
+  image: ''
+  title: ''
   content: Hi, thank you for taking a look around my site. If you have any questions feel free to reach out on [LinkedIn, Github, or by email](#contact)!
   button:
     enable: true
     label: 'DOWNLOAD MY RESUME'
-    link: #
+    link: https://github.com/Michedev/michedev.github.io/raw/hugo/Mikedev_cv.pdf
     icon: 'fa-download'
 
 ###########################3 Experience ##############################
@@ -76,7 +76,7 @@ skill:
       percentage: '68%'
     
     - name: 'Math'
-      percentage: '70%'
+      percentage: '61%'
 
 
 ######################### funfacts #############################3
