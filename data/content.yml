@@ -106,4 +106,4 @@ portfolio:
     - name:  '366 in Hash Code by Google'
       image: 'images/portfolio/hashcode.jpg'
       url: https://drive.google.com/open?id=0BxMm70nWlFWCS3U2Ml96XzBNVDQ
-      description: 'The task was to minimize the latency of video consumption by uploading the videos into cache servers, located in many countries. The input consists in the list of video requestes and the list of available cache servers with limited size.'
+      description: 'The task was to minimize the latency of video consumption by uploading the videos into cache servers, located in many countries. The input consists in the list of video requestes and the list of available cache servers with limited size. The time to solve this problem was 4 hours and there was a ranking proportional to the time needed to serve all the video requestes. We begun with an implementation of a dummy solution, just to have a working pipeline, and then we refined the logic part of our solution by choosing the videos to upload on cache server with different metrics.'
