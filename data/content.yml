@@ -81,23 +81,23 @@ skill:
 
 ######################### funfacts #############################3
 funfacts:
-  enable: false
+  enable: true
   funfacts_list:
-    - name: 'CUPS PER DAY'
-      image: 'images/icons/coffee.png'
+    - name: 'Programs crashed'
+      image: 'images/icons/happy_blue.png'
+      count: '48485942'
+
+    - name: "Gradient updates"
+      image: 'images/icons/brain.png'
+      count: '78328423843'
+
+    - name: 'Closed-form KL-Divergences computed'
+      image: 'images/icons/normal.png'
       count: '2'
-
-    - name: 'SITES BUILT'
-      image: 'images/icons/web-development.png'
-      count: '25'
-
-    - name: 'USELESS ROW OF ICONS'
-      image: 'images/icons/happy.png'
-      count: '1'
 
 ############################# portfolio ################################
 portfolio:
-  enable: true
+  enable: false
   title: 'MY WORK'
   portfolio_list:
     - name: 'Parameterization learning for curve fitting of arbitrary point sequences with convolutional neural networks'
