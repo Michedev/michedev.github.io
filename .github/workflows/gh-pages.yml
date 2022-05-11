@@ -20,10 +20,23 @@ jobs:
         with:
           hugo-version: '0.98.0'
           # extended: true
+      
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
 
-      - name: Build
-        run: hugo --minify
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
+      - run: npm ci
+      - run: hugo --minify
+      
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/hugo'
