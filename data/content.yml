@@ -91,7 +91,7 @@ funfacts:
       image: 'images/icons/brain.png'
       count: '78328423843'
 
-    - name: 'Closed-form KL-Divergences computed'
+    - name: 'Closed-form KL-Divergences defined'
       image: 'images/icons/normal.png'
       count: '2'
 
