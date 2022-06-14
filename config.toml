@@ -48,6 +48,11 @@ name = "Portfolio"
 URL = "#portfolio"
 weight = 3
 
+[[menu.main]]
+name = "Posts"
+URL = "posts"
+weight = 4
+button = true
 
 #################### default parameters ################################
 [params]
