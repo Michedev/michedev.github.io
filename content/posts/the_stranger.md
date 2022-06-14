@@ -43,7 +43,7 @@ After the fact, he was arrested. While the first part mostly shows how Mersault 
 
 ### Incommunicability and NGE
 
-The incommunicability between the thought of Mersault and the jury reminds me a lot of Neon Genesis Evangelion, an anime series produced during the 90s where they tried to solve the latter problem through the “_Human Instrumentality Project_”, which fuses all the humans into a unique conscious, allowing them to see the internal thoughts of everyone. Also, in the series, the incommunicability barrier between people has a physical presence in the series, with the name of AT-Field. I will surely talk about NGE in the future because I believe incommunicability causes a lot of problems between people
+The incommunicability between the thought of Mersault and the jury reminds me a lot of Neon Genesis Evangelion, an anime series produced during the 90s where they tried to solve the latter problem through the “_Human Instrumentality Project_”, which fuses all the humans into a unique conscious, allowing them to see the internal thoughts of everyone. Also, in the series, the incommunicability barrier between people has a physical presence, named AT-Field. I will surely talk about NGE in the future because I believe incommunicability causes a lot of problems between people
 
 ### The judge, God will save Mersault?
 
