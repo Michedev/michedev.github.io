@@ -50,9 +50,9 @@ weight = 3
 
 [[menu.main]]
 name = "Posts"
-URL = "posts"
+URL = "#posts"
 weight = 4
-button = true
+
 
 #################### default parameters ################################
 [params]

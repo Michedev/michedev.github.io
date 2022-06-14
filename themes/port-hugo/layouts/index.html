@@ -133,8 +133,45 @@
   </div>
 </section>
 {{ end }} {{ end }}
+
+
 <!-- =============================
        End Portfolio
     =============================== -->
+{{ if .Site.Data.content.posts.enable }}
+<section class="posts pt-2" id="posts">
+  <div class="col-12 text-center">
+    <h2>{{ .Site.Data.content.posts.title }}</h2>
+  </div>
+  <div class="posts mt-4">
+    {{ range .Site.RegularPages }}
+    <a href="{{ .RelPermalink }}">
+      <div class="post col-lg-8 col-md-10 col-12 mx-auto text-left card">
+        <img class="d-none d-sm-none d-md-block" src="{{ .Params.image }}" alt="{{ .Title }}" />
+        <div class="content">
+          <h4>{{ .Title }}</h4>
+          <span>{{ .Date.Format "01/02/2006" }}</span>
+          <p>{{ .Description }}</p>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+
+
+<!-- =============================
+      Start Posts
+  =============================== -->
+
+
+
+<!-- =============================
+      End Posts
+  =============================== -->
+
+
 
 {{- partial "footer.html" . -}} {{ end }}
