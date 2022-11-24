@@ -22,7 +22,7 @@ about:
   button:
     enable: true
     label: 'DOWNLOAD MY RESUME'
-    link: https://github.com/Michedev/michedev.github.io/raw/hugo/Mikedev_cv.pdf
+    link: https://github.com/Michedev/michedev.github.io/raw/hugo/CV_DeVita.pdf
     icon: 'fa-download'
 
 ###########################3 Experience ##############################
