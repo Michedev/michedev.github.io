@@ -1,0 +1,25 @@
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important;}
+    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+    .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .image-gallery li a img {width: 100%; display: block;}
+</style>
+
+{{ $dir := string .gallery_dir }}
+<ul class="image-gallery">
+{{ range (readDir "/assets/images/backgrounds") }}
+  {{ $image := resources.Get (printf "images/backgrounds/%s" .Name ) }}
+  {{ $imageurl := printf "%s/%s" $dir .Name }}
+  {{ $imagetitle := index (split .Name ".") 0 }}
+  {{ $imageext := ($image.Fit "1600x1066 q50").Permalink }}
+  {{ $imageshr := ($image.Fit "300x200 q50").Permalink }}
+
+    <li>
+      <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
+        <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
+      </a>
+    </li>
+  
+{{ end }}
+</ul>

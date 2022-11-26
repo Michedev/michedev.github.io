@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ partial "menu" . }}
+
+<div class="pr-2 under-menu">
+
+
+<div class="ml-4 mb-4">{{ .Content }}</div>
+
+
+{{ partial "image-gallery" (dict "context" . "gallery_dir" "/images/backgrounds") }}
+
+</div>
+
+
+{{ partial "footer" . }}
+{{ end }}

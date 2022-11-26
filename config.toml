@@ -53,6 +53,12 @@ name = "Posts"
 URL = "#posts"
 weight = 4
 
+[[menu.main]]
+name = "Art gallery"
+URL = "/art-gallery"
+weight = 5
+
+
 
 #################### default parameters ################################
 [params]
