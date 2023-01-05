@@ -7,50 +7,67 @@
 </style>
 
 {{ $dir := string .gallery_dir }}
+{{ $dirResource := strings.TrimPrefix "/assets" $dir }}
 <ul class="image-gallery">
-{{ range (readDir "/assets/images/backgrounds") }}
-  {{ $image := resources.Get (printf "images/backgrounds/%s" .Name ) }}
-  {{ $imageurl := printf "%s/%s" $dir .Name }}
-  {{ $imagetitle := index (split .Name ".") 0 }}
-  {{ $imageext := ($image.Fit "1600x1066 q50").Permalink }}
-  {{ $imageshr := ($image.Fit "300x200 q50").Permalink }}
-  {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name ) }}
-  {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
+  {{ range (readDir $dir) }}
+
+    {{if .IsDir}}
+      
+      <h2>{{ .Name }}</h2>
+      {{ partial "image-gallery" (dict "context" . "gallery_dir" (printf "%s/%s" $dir .Name ) ) }}
+    {{else}}
+
+      {{ $image := resources.Get (printf "%s/%s" $dirResource .Name ) }}
+      {{ $imageurl := printf "%s/%s" $dir .Name }}
+      {{ $imagetitle := index (split .Name ".") 0 }}
+      {{ $imageext := ($image.Fit "1600x1066 q50").Permalink }}
+      {{ $imageshr := ($image.Fit "300x200 q50").Permalink }}
+      {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name ) }}
+      {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
 
 
-  {{ with resources.Get $descriptionurl }}
-    <li>
-      <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
-        <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
-        <span>{{ .Content }}</span>
-      </a>
-    </li>
+      {{ with resources.Get $descriptionurl }}
 
+        <li>
+          <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
+            <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
+            <span>{{ .Content }}</span>
+          </a>
+        </li>
+
+      {{ end }}
+    
+    {{end }}
+    
   {{ end }}
-  
-{{ end }}
 </ul>
 <br>
 <ul class="image-gallery">
-  {{ range (readDir "/assets/images/backgrounds") }}
-    {{ $image := resources.Get (printf "images/backgrounds/%s" .Name ) }}
-    {{ $imageurl := printf "%s/%s" $dir .Name }}
-    {{ $imagetitle := index (split .Name ".") 0 }}
-    {{ $imageext := ($image.Fit "1600x1066 q50").Permalink }}
-    {{ $imageshr := ($image.Fit "300x200 q50").Permalink }}
-    {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name ) }}
-    {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
-  
-  
-    {{ with resources.Get $descriptionurl }}
-    {{ else }}
-      <li>
-        <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
-          <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
-        </a>
-      </li>
-  
-    {{ end }}
+  {{ range (readDir $dir) }}
+    {{if .IsDir}}
+
+    {{else}}
+
+      {{ $image := resources.Get (printf "%s/%s" $dirResource .Name ) }}
+      {{ $imageurl := printf "%s/%s" $dir .Name }}
+      {{ $imagetitle := index (split .Name ".") 0 }}
+      {{ $imageext := ($image.Fit "1600x1066 q50").Permalink }}
+      {{ $imageshr := ($image.Fit "300x200 q50").Permalink }}
+      {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name ) }}
+      {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
+    
+    
+      {{ with resources.Get $descriptionurl }}
+      {{ else }}
+        <li>
+          <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
+            <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
+          </a>
+        </li>
+    
+      {{ end }}
+    
+    {{end }}
     
   {{ end }}
   </ul>
