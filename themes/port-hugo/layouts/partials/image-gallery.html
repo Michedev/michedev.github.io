@@ -13,8 +13,10 @@
 
     {{if .IsDir}}
       
-      <h2>{{ .Name }}</h2>
-      {{ partial "image-gallery" (dict "context" . "gallery_dir" (printf "%s/%s" $dir .Name ) ) }}
+      <div style="border: 4px solid rgb(5, 57, 99); border-radius: 5px;" class="m-3 p-2"> 
+        <h3 style="color: rgb(5, 57, 99);">{{ .Name }}</h3>
+        {{ partial "image-gallery" (dict "context" . "gallery_dir" (printf "%s/%s" $dir .Name ) ) }}
+      </div>
     {{else}}
 
       {{ $image := resources.Get (printf "%s/%s" $dirResource .Name ) }}
