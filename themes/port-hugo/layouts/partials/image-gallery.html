@@ -1,9 +1,16 @@
 <style>
-    .image-gallery {overflow: auto; margin-left: -1%!important;}
+
+  /* todo: fix centering */
+    .image-gallery {overflow: auto; margin-left: -3%!important;}
+    /* if cell of tablet, width=100% */
+
     .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+    @media (max-width: 768px) {
+      .image-gallery li {width: 100%!important; margin: 0 0 2% 2%!important;}
+    }
     .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
-    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
-    .image-gallery li a img {width: 100%; display: block;}
+    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding-bottom: 1px;}
+    .image-gallery li a img {width: 100%; display: block; border-radius: 5px;}
 </style>
 
 {{ $dir := string .gallery_dir }}
@@ -30,7 +37,7 @@
 
       {{ with resources.Get $descriptionurl }}
 
-        <li>
+        <li class="col-sm-12 col-md-12 col-xs-12">
           <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
             <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
             <span>{{ .Content }}</span>
@@ -61,7 +68,7 @@
     
       {{ with resources.Get $descriptionurl }}
       {{ else }}
-        <li>
+        <li class="col-sm-12 col-md-12 col-xs-12">
           <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
             <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
           </a>
