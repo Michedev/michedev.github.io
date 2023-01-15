@@ -8,14 +8,15 @@ from path import Path
 ROOT = Path(__file__).parent
 descriptions_path = ROOT / 'assets' / 'description'
 
-images_path = ROOT / 'assets' / 'images'
-metamorphosis_path = images_path / 'backgrounds' / 'Metamorphosis'
+images_path = ROOT / 'assets' / 'images' / 'backgrounds'
+metamorphosis_path = images_path / 'Metamorphosis'
 
-all_images = images_path.walkfiles('*.png')
+all_images = [image.name for image in images_path.walkfiles('*.png')]
 # remove all existing description files that doesn't match the image file
 for description in descriptions_path.files('*.txt'):
     txt_fname = description.name.replace('.txt', '')
-    if not any(image.name.startswith(txt_fname) for image in all_images):
+    if not any(image.startswith(txt_fname) for image in all_images):
+        print('removing', description.relpath(ROOT))
         description.remove()
 
 # if filename starts with a, then generate a description txt file with the same name, extension .txt and the content '1'
