@@ -5,3 +5,4 @@
 <script src="{{ $script.RelPermalink }}"></script>
 {{ $script := resources.Get "js/hugrid.custom.js" | minify }}
 <script src="{{ $script.RelPermalink }}"></script>
+{{ if .Params.latex}}{{ partial "katex.html" . }}{{ end }}
