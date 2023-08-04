@@ -22,6 +22,7 @@
   {{ $styles := resources.Get "css/style.scss" | resources.ToCSS | resources.PostCSS | minify }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen" />
 
+  {{ if .Params.katex}}{{ partial "katex.html" . }}{{ end }}
 
   {{ with .Site.Params.google_analytics }}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
