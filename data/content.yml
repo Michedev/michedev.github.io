@@ -61,15 +61,12 @@ skill:
       children:
         - name: Python
         - name: Java
-        - name: C++
-        - name: C
+        - name: C and C++
         - name: Nim
-
     - name: 'Machine Learning'
       children:
         - name: 'Linear models'
-        - name: 'Decision trees and Random Forests'
-        - name: 'Gradient Boosting trees'
+        - name: 'Trees (Decision trees, Random Forests and GBTs)'
         - name: 'Dimensionality reduction (PCA, LDA, t-SNE)'
         - name: 'Clustering (K-means, DBSCAN)'
 
@@ -88,7 +85,7 @@ skill:
       children:
         - name: 'Angular'
         - name: 'HTML/CSS/JS'
-        
+
     - name: Teaching
 
 
