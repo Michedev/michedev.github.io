@@ -146,7 +146,7 @@
     <h2>{{ .Site.Data.content.posts.title }}</h2>
   </div>
   <div class="posts mt-4">
-    {{ range .Site.RegularPages }}
+    {{ range where .Site.RegularPages "Type" "posts" }}
     <a href="{{ .RelPermalink }}">
       <div class="post col-lg-8 col-md-10 col-12 mx-auto text-left card">
         <img class="d-none d-sm-none d-md-block" src="{{ .Params.image }}" alt="{{ .Title }}" />
