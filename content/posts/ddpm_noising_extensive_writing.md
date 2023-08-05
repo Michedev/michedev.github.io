@@ -1,8 +1,8 @@
 ---
-title: DDPM noising process extended formulation
+title: Mathematical Details of Noise Injection in Diffusion Models
 date: 2023-08-04
 publishdate: 2023-08-04
-description: In this post I describe in detail the DDPM noising process.
+description: Deep explaination of the mathematical details behind diffusion models noise injection.
 image: /images/ddpm_noising.png
 latex: true
 ---
