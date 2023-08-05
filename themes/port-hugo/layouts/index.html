@@ -89,7 +89,7 @@
 
 {{ if .Site.Data.content.funfacts.enable }} {{ with .Site.Data.content.funfacts
 }}
-<div class="fun-facts container pt-5">
+<div class="fun-facts container pt-2">
   {{ range .funfacts_list }}
   <div class="fun-fact-holder">
     <img class="img-fluid" src="{{ .image | relURL }}" alt="{{ .name }}" />
@@ -138,8 +138,10 @@
 <!-- =============================
        End Portfolio
     =============================== -->
+
+
 {{ if .Site.Data.content.posts.enable }}
-<section class="posts pt-2" id="posts">
+<section class="posts pt-5 mt-5" id="posts">
   <div class="col-12 text-center">
     <h2>{{ .Site.Data.content.posts.title }}</h2>
   </div>
