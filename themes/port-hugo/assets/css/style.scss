@@ -1023,6 +1023,11 @@ ul.experience-chart {
   }
   @media (max-width: 727px) {
     flex-direction: column;
+    height: auto;
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+    width: auto !important;
     img {
       max-width: 100%;
       margin: 0;
