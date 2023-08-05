@@ -8,7 +8,7 @@ latex: true
 ---
 ### Diffusion process
 
-Let $X_0$ the input image, the objective of the diffusion process is to inject noise until we reach approximately a standard normal distribution. In this way a neural network can learn how to reverse the process but in this post we'll focus onto the math behind the noising step. To begin, let's define the single noising step of the diffusion process as follows:
+Let $X_0$ the input image, the goal of the diffusion process is to gradually add noise to the image until its pixel values approximate a standard normal distribution. This enables a neural network to be trained to reverse the diffusion process and reconstruct the original image from the noised image. In this post, we will focus on the mathematical details behind the noise injection step of the diffusion process. The single step of injecting noise can be defined as follows:
 
 $$X_t \sim N( \sqrt{1 - \beta_t} X_{t-1}, \beta_t \mathbf{I}) $$ 
 
