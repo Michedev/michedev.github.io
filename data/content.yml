@@ -54,29 +54,42 @@ experience:
 ############################### Skill #################################
 skill:
   enable: true
-  title: 'SOME SKILLS'
+  title: 'MAIN SKILLS'
   showpercent: false
   skill_list:
-    - name: 'Programming'
-      percentage: '90%'
-
-    - name: 'Web'
-      percentage: '60%'
+    - name: Programming Languages
+      children:
+        - name: Python
+        - name: Java
+        - name: C++
+        - name: C
+        - name: Nim
 
     - name: 'Machine Learning'
-      percentage: '80%'
+      children:
+        - name: 'Linear models'
+        - name: 'Decision trees and Random Forests'
+        - name: 'Gradient Boosting trees'
+        - name: 'Dimensionality reduction (PCA, LDA, t-SNE)'
+        - name: 'Clustering (K-means, DBSCAN)'
 
-    - name: 'Deep Learning'
-      percentage: '90%'
-      
-    - name: 'Algorithms and Data structures'
-      percentage: '75%'
-    
-    - name: 'Statistic'
-      percentage: '68%'
-    
-    - name: 'Math'
-      percentage: '61%'
+    - name: Generative models
+      children:
+        - name: 'Variational AutoEncoder'
+        - name: 'Diffusion models'
+        - name: 'Generative Adversarial Networks'
+    - name: Deep Learning libraries
+      children:
+        - name: 'Pytorch'
+        - name: 'Tensorflow (1.x and 2.x)'
+        - name: 'Pytorch Lightning'
+    - name: 'Web Programming'
+      percentage: '60%'
+      children:
+        - name: 'Angular'
+        - name: 'HTML/CSS/JS'
+        
+    - name: Teaching
 
 
 ######################### funfacts #############################3

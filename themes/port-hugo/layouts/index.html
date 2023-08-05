@@ -66,16 +66,20 @@
       <div class="col-lg-6 col-sm-6 col-11 skill">
         <h2>{{ .title }}</h2>
         <div class="skill-progress-bar">
-          {{ range .skill_list }}
-          <div class="clearfix">
-            <span class="skillbar-title">{{ .name }}</span>
-            {{ if .Site.Data.content.skill.showpercent }}
-            <span class="skill-bar-percent">{{ .percentage }}</span>
-            {{ end }}
-            <div class="skillbar" data-percent="{{ .percentage }}">
-              <div class="skillbar-bar"></div>
+          {{ $data := .skill_list }}
+          {{ range $index, $item := $data }}
+            <div class="clearfix">
+              <span class="skillbar-title">{{ if .children }}├──{{ else }}└──{{ end }} {{ .name }}</span>
             </div>
-          </div>
+            {{ if .children }}
+              {{$num_children := len .children}}
+              {{ range $childIndex, $child := .children }}
+              {{ $line_space :=  (safeHTML "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;") }}
+              <div class="clearfix">
+                <span class="skillbar-title">{{ if eq $childIndex (sub $num_children 1) }}│ {{ $line_space }}  └──{{ else }}│ {{ $line_space }} ├──{{ end }} {{ $child.name }}</span>
+              </div>
+              {{ end }}
+            {{ end }}
           {{ end }}
         </div>
       </div>
