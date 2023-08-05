@@ -76,7 +76,7 @@
               {{ range $childIndex, $child := .children }}
               {{ $line_space :=  (safeHTML "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;") }}
               <div class="clearfix">
-                <span class="skillbar-title">{{ if eq $childIndex (sub $num_children 1) }}│ {{ $line_space }}  └──{{ else }}│ {{ $line_space }} ├──{{ end }} {{ $child.name }}</span>
+                <span class="skillbar-title">{{ if eq $childIndex (sub $num_children 1) }}│ {{ $line_space }}  └──{{ else }}│ {{ $line_space }} ├──{{ end }} <span class="skillbar-subtitle">{{ $child.name }}</span>
               </div>
               {{ end }}
             {{ end }}
@@ -152,15 +152,15 @@
   <div class="posts mt-4">
     {{ range where .Site.RegularPages "Type" "posts" }}
     <a href="{{ .RelPermalink }}">
-      <div class="post col-lg-8 col-md-10 col-12 mx-auto text-left card">
-        <img class="d-none d-sm-none d-md-block" src="{{ .Params.image }}" alt="{{ .Title }}" />
-        <div class="content">
-          <h4>{{ .Title }}</h4>
-          <span>{{ .Date.Format "01/02/2006" }}</span>
-          <p>{{ .Description }}</p>
+      <div class="post col-lg-8 col-md-10 col-12 mx-auto text-left card d-flex">
+        <img class="d-none d-sm-none d-md-block img-fluid" src="{{ .Params.image }}" alt="{{ .Title }}" />
+        <div class="content flex-grow-1">
+            <h4>{{ .Title }}</h4>
+            <span>{{ .Date.Format "01/02/2006" }}</span>
+            <p>{{ .Description }}</p>
         </div>
-      </div>
-    </a>
+    </div>
+      </a>
     {{ end }}
   </div>
 </section>

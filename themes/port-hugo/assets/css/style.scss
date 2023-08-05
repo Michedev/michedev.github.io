@@ -28,6 +28,13 @@ $background-image-hover-after: rgba(50, 50, 50, 0.6);
 $button-hover-color: $button-color;
 $circle-color: darken($base-color, 20%);
 
+$card-height: 150px;
+$card-img-max-height: $card-height;
+
+@function mix-weighted($color1, $color2, $weight1, $weight2) {
+  $color1-weight: $weight1 / ($weight1 + $weight2);
+  @return mix($color1, $color2, $color1-weight * 100%);
+}
 
 /*--------------------------------
    End Preloader & General Styling
@@ -946,6 +953,13 @@ ul.experience-chart {
   display: inline-block;
   margin-bottom: 0px;
 }
+.skillbar-subtitle {
+  font-size: 16px;
+  color: lighten($progress-bar-color, 2%);
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0px;
+}
 .skill-bar-percent {
   font-size: 16px;
   color: $progress-bar-color;
@@ -985,9 +999,11 @@ ul.experience-chart {
   }
 }
 .post.card {
+  background-color: mix-weighted(#fff, $progress-bar-color, 15, 1);
   color: #212121;
   padding: 0;
   margin-bottom: 16px;
+  height: $card-height;
   display: flex;
   flex-direction: row;
   h2 {
@@ -999,7 +1015,7 @@ ul.experience-chart {
   img {
     margin-right: 10px;
     max-width: 150px;
-    height: max-content;
+    max-height: $card-img-max-height;
     align-self: center;
   }
   &:hover {
