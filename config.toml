@@ -68,7 +68,6 @@ author = "Michele De Vita"
 favicon = ""
 google_analytics = "G-ABCDEFG123"
 
-
 # Preloader
 [params.preloader]
 enable = true
@@ -91,3 +90,4 @@ link = "mailto:mik3dev@gmail.com"
 contentDir = "content/english"
 weight = 1
 home = "Home"
+timeout = 60000 # in milliseconds
