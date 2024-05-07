@@ -13,8 +13,8 @@ My painting depicts a person standing alone on a beach at night, gazing out at t
 
 #### The Purple Night
 
-Under a purple sky, stars glimmering bright,     
-A solitary figure stands, absorbed in the night.    
+Stars glimmering bright in the dark night,     
+A solitary figure stands, absorbed from the horizon light.    
 The ocean's blue hue, a mirror of the scene,    
 Reflects the cosmic wonder, ethereal and serene.    
 
