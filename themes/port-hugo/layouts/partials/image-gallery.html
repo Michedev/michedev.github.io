@@ -15,10 +15,10 @@
 
 {{ $dir := string .gallery_dir }}
 {{ $dirResource := strings.TrimPrefix "/assets" $dir }}
-<ul class="image-gallery">
-  {{ range (readDir $dir) }}
+<!-- <ul class="image-gallery"> -->
+  <!-- {{ range (readDir $dir) }} -->
 
-    {{if .IsDir}}
+    <!-- {{if .IsDir}}
       
       <div style="border: 4px solid rgb(5, 57, 99); border-radius: 5px;" class="m-3 p-2"> 
         <h3 style="color: rgb(5, 57, 99);">{{ .Name }}</h3>
@@ -49,9 +49,9 @@
     {{end }}
     
   {{ end }}
-</ul>
-<br>
-<ul class="image-gallery">
+</ul> -->
+<!-- <br> -->
+<ul class="image-grid image-gallery">
   {{ range (readDir $dir) }}
     {{if .IsDir}}
 
@@ -60,23 +60,47 @@
       {{ $image := resources.Get (printf "%s/%s" $dirResource .Name ) }}
       {{ $imageurl := printf "%s/%s" $dir .Name }}
       {{ $imagetitle := index (split .Name ".") 0 }}
-      {{ $imageext := ($image.Fit "1600x1066 q50").Permalink }}
-      {{ $imageshr := ($image.Fit "300x200 q50").Permalink }}
       {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name ) }}
       {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
     
-    
+      {{$description := ""}}
       {{ with resources.Get $descriptionurl }}
-      {{ else }}
-        <li class="col-sm-12 col-md-12 col-xs-12">
-          <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
-            <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
-          </a>
-        </li>
-    
+        {{ $description = .Content}}
+      {{ end }}
+      {{ $imageWidth := $image.Width }}
+      {{ $imageHeight := $image.Height }}
+      {{ $imageRatio := div $imageWidth $imageHeight }}
+      {{ $imageext := "" }}
+      {{ $imageshr := "" }}
+      {{ if gt $imageRatio 1.45}}
+            <!-- Horizontal image (landscape) -->
+            {{ $imageext := ($image.Fit "1920x1080 q80").Permalink }}
+            {{ $imageshr := ($image.Fit "800x533 q70").Permalink }}
+            <li class="column">
+
+      {{else}}
+        {{ if gt $imageWidth $imageHeight }}
+            <!-- Horizontal image (landscape) -->
+            {{ $imageext = ($image.Fit "1920x1080 q80").Permalink }}
+            {{ $imageshr = ($image.Fit "800x533 q70").Permalink }}
+            <li class="column">
+        {{ else }}
+            <!-- Vertical image (portrait) -->
+            {{ $imageext = ($image.Fit "1600x1066 q70").Permalink }}
+            {{ $imageshr = ($image.Fit "533x800 q60").Permalink }}
+            <li class="column ">
+        {{ end }}
+      {{ end }}
+          <div class="image-item">
+            <a href="{{ $imageext }}" title="{{ $description }}" class="" target="_blank" rel="noopener noreferrer">
+                <img src="{{ $imageshr }}" alt="{{ $description }}" title="{{ $description }}">
+                <div class="caption"> {{ $description }} </div>
+            </a>
+        </div>
+    </li>
+        
       {{ end }}
     
     {{end }}
-    
-  {{ end }}
+
   </ul>

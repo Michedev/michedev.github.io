@@ -1,7 +1,7 @@
 ---
 layout: art-gallery
-title: AI Art Gallery
+title: Art Gallery
 ---
 
 
-# AI Art Gallery
+# Art Gallery

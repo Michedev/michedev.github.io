@@ -1453,3 +1453,161 @@ ul.experience-chart {
   border-radius: 25px;
   padding-right: 15px;
 }
+
+.modern-frame{
+  display: inline-block;
+  padding: 8px;
+  margin: 10px;
+  position: relative;
+  background: linear-gradient(
+      90deg,
+      #8B4513 0%,
+      #A0522D 15%,
+      #6B4423 25%,
+      #855E42 35%,
+      #8B4513 45%,
+      #73472E 55%,
+      #8B5A3B 65%,
+      #966841 75%,
+      #8E5B3F 85%,
+      #7D4A2E 100%
+  );
+  box-shadow: 
+      /* Grain texture */
+      inset 0 0 30px rgba(0,0,0,0.4),
+      /* Deep wood effect */
+      inset 0 0 60px rgba(89, 52, 28, 0.6),
+      /* Outer shadow */
+      0 0 20px rgba(0,0,0,0.3);
+}
+
+.wood-frame {
+  display: inline-block;
+  padding: 8px;
+  margin: 10px;
+  position: relative;
+  background: linear-gradient(
+      90deg,
+      #8B4513 0%,
+      #A0522D 15%,
+      #6B4423 25%,
+      #855E42 35%,
+      #8B4513 45%,
+      #73472E 55%,
+      #8B5A3B 65%,
+      #966841 75%,
+      #8E5B3F 85%,
+      #7D4A2E 100%
+  );
+  box-shadow: 
+      /* Grain texture */
+      inset 0 0 30px rgba(0,0,0,0.4),
+      /* Deep wood effect */
+      inset 0 0 60px rgba(89, 52, 28, 0.6),
+      /* Outer shadow */
+      0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Inner beveled edge */
+.wood-frame::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 2px solid rgba(162, 107, 71, 0.3);
+  background: linear-gradient(
+      45deg,
+      rgba(139, 69, 19, 0.1),
+      rgba(160, 82, 45, 0.2)
+  );
+}
+
+/* Outer frame edge */
+.wood-frame::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid #3D2314;
+  background: linear-gradient(
+      45deg,
+      #5C3521,
+      #744830,
+      #4A2511
+  );
+  z-index: -1;
+}
+
+$border-size: 6px;
+.modern-frame {
+  display: inline-block;
+  padding: $border-size;
+  margin: $border-size + 3px;
+  position: relative;
+  background: linear-gradient(
+      45deg,
+      #744830,
+      #4A2511
+  );
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.modern-frame:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+.image-item {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+  background-color: #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 8px 12px rgba(0,0,0,0.2);
+
+}
+
+.image-item a img {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: Add captions */
+.image-item .caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-item:hover .caption {
+  opacity: 1;
+}
+
+.dioporco{
+  grid-column: span 2;
+}
+
+.porcodio{
+  grid-row: span 2;
+}
+
