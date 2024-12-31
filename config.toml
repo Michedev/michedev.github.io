@@ -90,4 +90,6 @@ link = "mailto:mik3dev@gmail.com"
 contentDir = "content/english"
 weight = 1
 home = "Home"
-timeout = 60000 # in milliseconds
+
+[build]
+  timeout = 60000  # Timeout in milliseconds (e.g., 60000ms = 60s)
