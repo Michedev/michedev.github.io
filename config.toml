@@ -67,6 +67,7 @@ description = "Personal Portfolio"
 author = "Michele De Vita"
 favicon = ""
 google_analytics = "G-ABCDEFG123"
+timeout = 60000
 
 # Preloader
 [params.preloader]
