@@ -11,3 +11,6 @@ demosite = "https://compassionate-kepler-de5af1.netlify.app/"
 [author]
   name = "tylerjlawson"
   homepage = "https://tyler-lawson.com/"
+
+[build]
+  timeout = 60000
