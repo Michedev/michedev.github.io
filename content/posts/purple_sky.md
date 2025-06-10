@@ -3,13 +3,8 @@ title: Reality and Purple Night
 date: 2024-05-07
 publishdate: 2024-05-07
 description: 
-image: /images/purple_sky.png
+image: /images/purple_sky.jpg
 ---
-
-
-My painting depicts a person standing alone on a beach at night, gazing out at the luminous blue ocean and contemplating on the otherworldly colors above.
-
------------
 
 #### The Purple Night
 
