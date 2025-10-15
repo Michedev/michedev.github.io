@@ -1,9 +1,9 @@
 ---
-title: MuLAN: Multivariate Learned Adaptive Noise Schedules
+title: Technical notes on MuLAN
 date: 2025-10-15
 publishdate: 2025-10-15
 description: Technical notes on MuLAN algorithms and implementation details for diffusion models with learned adaptive noise schedules.
-image: /images/mulan.png
+image: /images/ddpm_noising.png
 latex: true
 ---
 ## MuLAN
