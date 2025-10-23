@@ -55,6 +55,14 @@ URL = "/art-gallery"
 weight = 4
 
 
+[[menu.main]]
+name = "My Art Shop"
+URL = "https://www.etsy.com/de-en/shop/MikedevPaint"
+weight = 5
+target = "_blank"
+
+
+
 
 #################### default parameters ################################
 [params]
