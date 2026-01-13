@@ -6,12 +6,14 @@ description:
 image: /images/duality.png
 ---
 
-Light and shadow,
-joy and sadness,
-life and death,
-love and hate,
-peace and war,
-hero and evil,
+Light and shadow,     
+joy and sadness,     
+life and death,     
+love and hate,     
+peace and war,     
+hero and evil,     
 
-One side cannot exists without the other,
-this is the hardest lesson to learn
+<br><br>
+
+One side cannot exists without the other,     
+this is the hardest lesson to learn     
