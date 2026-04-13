@@ -1,15 +1,12 @@
 ---
 title: On the Aesthetic and art, beauty and horror
-date: 2026-04-14
-publishdate: 2026-04-14
-description: 
+date: 2026-04-13
+publishdate: 2026-04-13
+description: I am getting more and more into art, and this pushed my need to know more why I like so much art. Through this, I started to read about aesthetic as a branch of philosophy. Consequently, I organized my thoughts into this article
 image: /images/moon_painting.jpg
 ---
 
-
-
 I am getting more and more into art, and this pushed my need to know more why I like so much art. Through this, I started to read about aesthetic as a branch of philosophy. Consequently, I organized my thoughts into this article
-
 
 ### Aesthetics
 
