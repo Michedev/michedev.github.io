@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    {{ partial "image-gallery" (dict "context" . "gallery_dir" "/assets/images/art") }}
+    {{ partialCached "image-gallery" (dict "context" . "gallery_dir" "/assets/images/art") }}
   </div>
 </div>
 

@@ -41,6 +41,13 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - name: Cache Hugo resources
+        uses: actions/cache@v4
+        with:
+          path: resources
+          key: ${{ runner.os }}-hugo-resources-${{ hashFiles('**/assets/images/art/**') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-resources-
 
       - run: npm ci
       
