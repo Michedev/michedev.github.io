@@ -3,6 +3,7 @@ baseURL = "https://michedev.github.io/"
 title = "Mikedev website"
 theme = "port-hugo"
 
+timeout = "300s" 
 ############################# Plugins ##############################
 
 # CSS Plugins
