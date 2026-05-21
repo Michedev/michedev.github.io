@@ -75,7 +75,7 @@ description = "Personal Portfolio"
 author = "Michele De Vita"
 favicon = ""
 google_analytics = "G-ABCDEFG123"
-timeout = 60000
+timeout = "300s" # Increases timeout to 5 minutes
 
 # Preloader
 [params.preloader]
