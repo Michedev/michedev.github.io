@@ -1,106 +1,116 @@
 <style>
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between images */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-  /* todo: fix centering */
-    .image-gallery {overflow: auto; margin-left: -3%!important;}
-    /* if cell of tablet, width=100% */
+  /* This invisible pseudo-element prevents the last row of images from stretching to fill the entire width if there are only a few images left */
+  .image-gallery::after {
+    content: "";
+    flex-grow: 999999999;
+  }
 
-    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
-    @media (max-width: 768px) {
-      .image-gallery li {width: 100%!important; margin: 0 0 2% 2%!important;}
+  .image-gallery li {
+    position: relative;
+    /* Base target height for desktop */
+    height: 250px; 
+    /* Use the Hugo-calculated aspect ratio to determine flex-grow and flex-basis */
+    flex-grow: var(--ratio);
+    flex-basis: calc(var(--ratio) * 250px);
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  .image-gallery li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-gallery li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill their flex container cleanly */
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .image-gallery li:hover img {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 15px 10px 5px 10px;
+    font-size: 0.85em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .image-gallery li:hover .caption {
+    opacity: 1;
+  }
+
+  /* Responsive adjustments for mobile screens */
+  @media (max-width: 768px) {
+    .image-gallery {
+      gap: 4px;
     }
-    .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
-    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding-bottom: 1px;}
-    .image-gallery li a img {width: 100%; display: block; border-radius: 5px;}
+    .image-gallery li {
+      /* Smaller target height for mobile */
+      height: 150px;
+      flex-basis: calc(var(--ratio) * 150px);
+    }
+  }
 </style>
 
 {{ $dir := string .gallery_dir }}
 {{ $dirResource := strings.TrimPrefix "/assets" $dir }}
-<!-- <ul class="image-gallery"> -->
-  <!-- {{ range (readDir $dir) }} -->
 
-    <!-- {{if .IsDir}}
+<ul class="image-gallery pt-2">
+  {{ range (readDir $dir) }}
+    {{ if not .IsDir }}
       
-      <div style="border: 4px solid rgb(5, 57, 99); border-radius: 5px;" class="m-3 p-2"> 
-        <h3 style="color: rgb(5, 57, 99);">{{ .Name }}</h3>
-        {{ partial "image-gallery" (dict "context" . "gallery_dir" (printf "%s/%s" $dir .Name ) ) }}
-      </div>
-    {{else}}
+      {{ $image := resources.Get (printf "%s/%s" $dirResource .Name) }}
+      
+      {{/* Ensure the resource was actually found to prevent build errors */}}
+      {{ if $image }}
+        {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name) }}
+        {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
+      
+        {{ $description := "" }}
+        {{ with resources.Get $descriptionurl }}
+          {{ $description = .Content }}
+        {{ end }}
 
-      {{ $image := resources.Get (printf "%s/%s" $dirResource .Name ) }}
-      {{ $imageurl := printf "%s/%s" $dir .Name }}
-      {{ $imagetitle := index (split .Name ".") 0 }}
-      {{ $imageext := ($image.Fit "1600x1066 q50").Permalink }}
-      {{ $imageshr := ($image.Fit "300x200 q50").Permalink }}
-      {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name ) }}
-      {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
+        {{/* 1. Calculate the exact aspect ratio of the image */}}
+        {{ $aspectRatio := div (float $image.Width) (float $image.Height) }}
+        
+        {{/* 2. Generate optimized images (using Fit ensures consistent bounding boxes) */}}
+        {{ $imageext := ($image.Fit "1920x1080 q80").Permalink }}
+        {{ $imageshr := ($image.Fit "800x800 q70").Permalink }}
 
-
-      {{ with resources.Get $descriptionurl }}
-
-        <li class="col-sm-12 col-md-12 col-xs-12">
-          <a href="{{ $imageext }}" title="{{ $imagetitle }}" class="lightbox-image">
-            <img src="{{ $imageshr }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="border-radius: 5px;" class="shadow">
-            <span>{{ .Content }}</span>
+        {{/* 3. Pass the aspect ratio to CSS via an inline custom property (--ratio) */}}
+        <li style="--ratio: {{ $aspectRatio }};">
+          <a href="{{ $imageext }}" title="{{ $description }}" target="_blank" rel="noopener noreferrer">
+            <img src="{{ $imageshr }}" alt="{{ $description }}" loading="lazy">
+            {{ if ne $description "" }}
+              <div class="caption">{{ $description }}</div>
+            {{ end }}
           </a>
         </li>
-
       {{ end }}
-    
-    {{end }}
-    
+      
+    {{ end }}
   {{ end }}
-</ul> -->
-<!-- <br> -->
-<ul class="image-grid image-gallery pt-2">
-  {{ range (readDir $dir) }}
-    {{if .IsDir}}
-
-    {{else}}
-
-      {{ $image := resources.Get (printf "%s/%s" $dirResource .Name ) }}
-      {{ $imageurl := printf "%s/%s" $dir .Name }}
-      {{ $imagetitle := index (split .Name ".") 0 }}
-      {{ $imagebasename := strings.TrimSuffix ".png" (strings.TrimSuffix ".jpg" .Name ) }}
-      {{ $descriptionurl := printf "description/%s.txt" $imagebasename }}
-    
-      {{$description := ""}}
-      {{ with resources.Get $descriptionurl }}
-        {{ $description = .Content}}
-      {{ end }}
-      {{ $imageWidth := $image.Width }}
-      {{ $imageHeight := $image.Height }}
-      {{ $imageRatio := div $imageWidth $imageHeight }}
-      {{ $imageext := "" }}
-      {{ $imageshr := "" }}
-      {{ if gt $imageRatio 1.45}}
-            <!-- Horizontal image (landscape) -->
-            {{ $imageext := ($image.Fit "1920x1080 q80").Permalink }}
-            {{ $imageshr := ($image.Fit "800x533 q70").Permalink }}
-            <li class="column">
-
-      {{else}}
-        {{ if gt $imageWidth $imageHeight }}
-            <!-- Horizontal image (landscape) -->
-            {{ $imageext = ($image.Fit "1920x1080 q80").Permalink }}
-            {{ $imageshr = ($image.Fit "800x533 q70").Permalink }}
-            <li class="column">
-        {{ else }}
-            <!-- Vertical image (portrait) -->
-            {{ $imageext = ($image.Fit "1600x1066 q70").Permalink }}
-            {{ $imageshr = ($image.Fit "533x800 q60").Permalink }}
-            <li class="column ">
-        {{ end }}
-      {{ end }}
-          <div class="image-item">
-            <a href="{{ $imageext }}" title="{{ $description }}" class="" target="_blank" rel="noopener noreferrer">
-                <img src="{{ $imageshr }}" alt="{{ $description }}" title="{{ $description }}">
-                <div class="caption"> {{ $description }} </div>
-            </a>
-        </div>
-    </li>
-        
-      {{ end }}
-    
-    {{end }}
-
-  </ul>
+</ul>
