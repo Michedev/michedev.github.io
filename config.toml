@@ -103,3 +103,10 @@ home = "Home"
 
 [build]
   timeout = 60000  # Timeout in milliseconds (e.g., 60000ms = 60s)
+
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block  = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)'], ['$', '$']]
