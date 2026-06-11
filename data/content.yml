@@ -4,9 +4,9 @@ hero:
 
   # animated text loop
   occupations:
-    - 'Data Scientist'
     - 'AI Researcher'
     - 'Developer'
+    - 'Painter'
 
   # hero background image
   bg_image: ''
@@ -51,43 +51,49 @@ experience:
       content: SIS is an annual italian statistic conference held in 2017 at Florence. The app guides the user to the talks, events and the building. Since performances weren't critical, the application was developed like a website to code-once and deploy everywhere
 
 
-############################### Skill #################################
-skill:
+############################### Publications #################################
+publications:
   enable: true
-  title: 'MAIN SKILLS'
-  showpercent: false
-  skill_list:
-    - name: Programming Languages
-      children:
-        - name: Python
-        - name: Java
-        - name: C and C++
-        - name: Nim
-    - name: 'Machine Learning'
-      children:
-        - name: 'Linear models'
-        - name: 'Trees (Decision trees, Random Forests and GBTs)'
-        - name: 'Dimensionality reduction (PCA, LDA, t-SNE)'
-        - name: 'Clustering (K-means, DBSCAN)'
-
-    - name: Generative models
-      children:
-        - name: 'Variational AutoEncoder'
-        - name: 'Diffusion models'
-        - name: 'Generative Adversarial Networks'
-    - name: Deep Learning libraries
-      children:
-        - name: 'Pytorch'
-        - name: 'Tensorflow (1.x and 2.x)'
-        - name: 'Pytorch Lightning'
-    - name: 'Web Programming'
-      percentage: '60%'
-      children:
-        - name: 'Angular'
-        - name: 'HTML/CSS/JS'
-
-    - name: Teaching
-
+  title: 'PUBLICATIONS'
+  publication_list:
+    - title: " Forecasting the Past: Gradient-Based Distribution Shift Detection in Trajectory Prediction"
+      authors: "Michele De Vita, Julian Wiederer, Vasileios Belagiannis"
+      year: "2026"
+      conference: "CVPRW"
+      buttons:
+        - label: "Conference"
+          link: "https://openaccess.thecvf.com/content/CVPR2026W/SAIAD/html/De_Vita_Forecasting_the_Past_Gradient-Based_Distribution_Shift_Detection_in_Trajectory_Prediction_CVPRW_2026_paper.html"
+        - label: "Code"
+          link: "https://github.com/Michedev/forecasting-the-past"
+    - title: "Diffusion model guided sampling with pixel-wise aleatoric uncertainty estimation"
+      authors: "Michele De Vita, Vasileios Belagiannis"
+      year: "2025"
+      conference: "WACV"
+      buttons:
+        - label: "Conference"
+          link: "https://ieeexplore.ieee.org/abstract/document/10944027/"
+        - label: "Code"
+          link: "https://github.com/Michedev/diffusion-uncertainty"
+    - title: "Parameterization learning with convolutional neural networks for gridded data fitting"
+      authors: "Michele De Vita, Carlotta Giannelli, Sofia Imperatore, Angelos Mantzaflaris"
+      year: "2024"
+      conference: "FICC"
+      buttons:
+        - label: "Conference"
+          link: "https://link.springer.com/chapter/10.1007/978-3-031-53963-3_27"
+        - label: "Outstanding Research Award (PDF)"
+          link: "https://raw.githubusercontent.com/Michedev/michedev.github.io/refs/heads/hugo/assets/pdf/ficc_outstanding_research_award.pdf"
+        - label: "Code"
+          link: "https://github.com/sofimp23/CSM-SMI22"
+    - title: "Generalization and robustness implications in object-centric learning"
+      authors: "Andrea Dittadi, Samuele Papa, Michele De Vita, Bernhard Schölkopf, Ole Winther, Francesco Locatello"
+      year: "2022"
+      conference: "ICML"
+      buttons:
+        - label: "Conference"
+          link: "https://arxiv.org/abs/2107.00637"
+        - label: "Code"
+          link: "https://github.com/addtt/object-centric-library"
 
 ######################### funfacts #############################3
 funfacts:

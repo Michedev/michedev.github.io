@@ -61,25 +61,25 @@
           {{ end }}
         </ul>
       </div>
-      {{ end }} {{ end }} {{ if .Site.Data.content.skill.enable }} {{ with
-      .Site.Data.content.skill }}
-      <div class="col-lg-6 col-sm-6 col-11 skill">
+      {{ end }} {{ end }} {{ if .Site.Data.content.publications.enable }} {{ with
+      .Site.Data.content.publications }}
+      <div class="col-lg-6 col-sm-6 col-11 publications">
         <h2>{{ .title }}</h2>
-        <div class="skill-progress-bar">
-          {{ $data := .skill_list }}
-          {{ range $index, $item := $data }}
-            <div class="clearfix">
-              <span class="skillbar-title">{{ if .children }}├──{{ else }}└──{{ end }} {{ .name }}</span>
-            </div>
-            {{ if .children }}
-              {{$num_children := len .children}}
-              {{ range $childIndex, $child := .children }}
-              {{ $line_space :=  (safeHTML "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;") }}
-              <div class="clearfix">
-                <span class="skillbar-title">{{ if eq $childIndex (sub $num_children 1) }}│ {{ $line_space }}  └──{{ else }}│ {{ $line_space }} ├──{{ end }} <span class="skillbar-subtitle">{{ $child.name }}</span>
+        <div class="publications-list">
+          {{ range .publication_list }}
+            <div class="publication-item mb-4">
+              <h4>{{ .title }}</h4>
+              <p class="text-muted mb-2">
+                {{ if .year }}<span class="btn btn-sm btn-primary text-white mr-2" style="cursor: default; pointer-events: none; padding: 0.1rem 0.4rem; font-size: 0.8rem;">{{ .year }}</span>{{ end }}
+                {{ if .conference }}<span class="btn btn-sm btn-primary text-white mr-2" style="cursor: default; pointer-events: none; padding: 0.1rem 0.4rem; font-size: 0.8rem;">{{ .conference }}</span>{{ end }}
+                {{ .authors }}
+              </p>
+              <div class="publication-buttons">
+                {{ range .buttons }}
+                <a href="{{ .link }}" class="btn btn-sm btn-outline-primary mr-2">{{ .label }}</a>
+                {{ end }}
               </div>
-              {{ end }}
-            {{ end }}
+            </div>
           {{ end }}
         </div>
       </div>
