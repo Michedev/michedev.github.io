@@ -169,6 +169,124 @@ $$
 
 Substituting these into the probability-flow ODE gives a closed-form vector field that depends only on the schedule and the network output, which is exactly the function $f(t_m, z_m, \theta)$ that the solvers below will integrate.
 
+## Likelihood Estimation for Diffusion Models using ODE
+
+Continuous-time diffusion models formulate the generative process $\boldsymbol{x}_1 \to \boldsymbol{x}_0$ over a continuous time domain $t \in [0, 1]$ as the path of a Stochastic Differential Equation (SDE). By mapping this SDE to an equivalent deterministic Probability-Flow Ordinary Differential Equation (ODE), we cast the generative model as a Continuous Normalizing Flow (CNF). This permits exact likelihood estimation $\log p_\theta(\boldsymbol{x}_0)$ via the instantaneous change-of-variables theorem.
+
+### Problem Formulation
+
+Let $\boldsymbol{x}_0 \sim p_{\text{data}}(\boldsymbol{x}_0)$ be a sample from the underlying data manifold. The forward diffusion process corrupts $\boldsymbol{x}_0$ progressively over $t \in [0, 1]$ to yield noised latents $\boldsymbol{x}_t \in \mathbb{R}^d$, governed by the Gaussian transition kernel:
+
+$$
+q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)
+= \mathcal{N}(\boldsymbol{x}_t; \alpha_t \boldsymbol{x}_0, \sigma_t^2 \boldsymbol{I}).
+$$
+
+Equivalently, this forward dynamic maps exactly to the solution of the linear It\^o SDE:
+
+$$
+d\boldsymbol{x}_t = \boldsymbol{f}(\boldsymbol{x}_t, t)\, dt + g(t)\, d\boldsymbol{w}_t,
+$$
+
+where $\boldsymbol{w}_t$ is the standard forward Wiener process. In the VDM parameter space, the drift vector field $\boldsymbol{f}(\boldsymbol{x}_t, t)$ and the scalar diffusion coefficient $g(t)$ expand analytically as:
+
+$$
+\boldsymbol{f}(\boldsymbol{x}_t, t) = \left( \frac{d}{dt} \log \alpha_t \right)\boldsymbol{x}_t,
+\qquad
+g(t) = \sqrt{\frac{d}{dt}\sigma_t^2 - 2\sigma_t^2\, \frac{d}{dt}\log \alpha_t}.
+$$
+
+Following Anderson's theorem, the reverse-time generation—flowing from $t=1$ back to $t=0$—is characterized by a corresponding reverse SDE:
+
+$$
+d\boldsymbol{x}_t = \left[\boldsymbol{f}(\boldsymbol{x}_t, t) - g(t)^2\, \nabla_{\boldsymbol{x}_t} \log p_t(\boldsymbol{x}_t)\right]dt + g(t)\, d\bar{\boldsymbol{w}}_t,
+$$
+
+where $\bar{\boldsymbol{w}}_t$ denotes a reverse-time Wiener process, and $\nabla_{\boldsymbol{x}_t} \log p_t(\boldsymbol{x}_t)$ is the Stein score of the marginal density $p_t(\boldsymbol{x}_t)$. Crucially, Song et al. (2021) demonstrated that there exists a deterministic probability-flow ODE sharing the identical marginal probability densities $\{p_t(\boldsymbol{x}_t)\}_{t \in [0, 1]}$ as the SDE:
+
+$$
+d\boldsymbol{x}_t = \underbrace{\left[ \boldsymbol{f}(\boldsymbol{x}_t, t) - \tfrac{1}{2} g(t)^2\, \nabla_{\boldsymbol{x}_t} \log p_t(\boldsymbol{x}_t) \right]}_{\widetilde{\boldsymbol{f}}(\boldsymbol{x}_t, t)} dt.
+$$
+
+In practice, the exact score $\nabla_{\boldsymbol{x}_t} \log p_t(\boldsymbol{x}_t)$ is intractable. We approximate it using our neural network via the standard score-to-noise parameterization, creating our parameterized ODE drift field $\widetilde{\boldsymbol{f}}_\theta(\boldsymbol{x}_t, t)$.
+
+Because this ODE describes a continuous normalizing flow mapping the known prior $p_1(\boldsymbol{x}_1) \approx \mathcal{N}(\boldsymbol{0}, \boldsymbol{I})$ to the complex targeted distribution $p_\theta(\boldsymbol{x}_0)$, we can invoke the instantaneous change-of-variables formula from Neural ODEs (Chen et al., 2018) to compute the exact log-likelihood:
+
+$$
+\log p_\theta(\boldsymbol{x}_0)
+= \log p_1(\boldsymbol{x}_1) - \int_0^1 \nabla_{\boldsymbol{x}_t} \cdot \widetilde{\boldsymbol{f}}_\theta(\boldsymbol{x}_t, t)\, dt,
+$$
+
+where the divergence operator $\nabla_{\boldsymbol{x}_t} \cdot \widetilde{\boldsymbol{f}}_\theta(\boldsymbol{x}_t, t) \equiv \operatorname{tr}\!\left(\nabla_{\boldsymbol{x}_t} \widetilde{\boldsymbol{f}}_\theta(\boldsymbol{x}_t, t)\right)$ acts as the infinitesimal volume expansion term, and the parameterized field defines as:
+
+$$
+\widetilde{\boldsymbol{f}}_\theta(\boldsymbol{x}_t, t)
+:= \boldsymbol{f}(\boldsymbol{x}_t, t) - \tfrac{1}{2} g(t)^2\, \boldsymbol{\epsilon}_\theta(\boldsymbol{x}_t, t).
+$$
+
+Consequently, evaluating the exact likelihood condenses down to integrating the divergence of the neural ODE drift field continuously tracked along the generated trajectory.
+
+### Hutchinson Trace Estimator
+
+Directly computing
+$\operatorname{tr}(\nabla_{\boldsymbol{x}_t} \tilde{f}_\theta)$
+requires a full Jacobian and scales as $\mathcal{O}(d^2)$. To avoid this, we use Hutchinson's estimator. For any matrix $\boldsymbol{A} \in \mathbb{R}^{d\times d}$,
+
+$$
+\operatorname{tr}(\boldsymbol{A}) = \mathbb{E}_{\boldsymbol{v}}[\boldsymbol{v}^\top \boldsymbol{A}\, \boldsymbol{v}],
+$$
+
+if $\mathbb{E}[\boldsymbol{v}] = \boldsymbol{0}$ and $\mathbb{E}[\boldsymbol{v}\boldsymbol{v}^\top] = \boldsymbol{I}$.
+
+To see unbiasedness, expand
+
+$$
+\boldsymbol{v}^\top \boldsymbol{A}\, \boldsymbol{v}
+= \sum_{i=1}^d\sum_{j=1}^d v_i A_{ij} v_j.
+$$
+
+Taking expectation,
+
+$$
+\mathbb{E}[\boldsymbol{v}^\top \boldsymbol{A}\, \boldsymbol{v}]
+= \sum_{i=1}^d\sum_{j=1}^d A_{ij}\, \mathbb{E}[v_i v_j].
+$$
+
+Because $\mathbb{E}[v_i v_j] = \delta_{ij}$, we obtain
+
+$$
+\mathbb{E}[\boldsymbol{v}^\top \boldsymbol{A}\, \boldsymbol{v}]
+= \sum_{i=1}^d A_{ii} = \operatorname{tr}(\boldsymbol{A}).
+$$
+
+In diffusion likelihood estimation this is crucial: we never materialize the full Jacobian, and instead compute Jacobian-vector products, reducing practical cost from quadratic to roughly linear in dimension per probe. In practice, averaging a small number of probes (often around $5$-$10$) is already effective.
+
+### Choice of the Projection Vector
+
+The projection vector $\boldsymbol{v} \in \mathbb{R}^d$ must satisfy
+
+$$
+\mathbb{E}[\boldsymbol{v}] = \boldsymbol{0},
+\qquad
+\mathbb{E}[\boldsymbol{v}\boldsymbol{v}^\top] = \boldsymbol{I}.
+$$
+
+Two common choices are:
+
+1. Gaussian probes: $\boldsymbol{v} \sim \mathcal{N}(\boldsymbol{0}, \boldsymbol{I})$.
+2. Rademacher probes: each component is independently sampled as
+
+$$
+v_i =
+\begin{cases}
++1, & p < 0.5,\\
+-1, & p \ge 0.5,
+\end{cases}
+\qquad p \sim \mathcal{U}(0,1).
+$$
+
+Both satisfy the required moment conditions and therefore produce unbiased trace estimates.
+
 ## ODE Solvers
 
 **Terminology.** Given a step size $h$, we want to advance from timestep $t_m$ to $t_{m+1}$ starting from our sample $z_m$, where $f(\cdot)$ denotes the ODE vector field derived above. The different solvers below trade off accuracy against the number of function evaluations (NFE).
