@@ -1,0 +1,84 @@
+---
+title: On The Solo Travel
+date: 2026-07-16
+publishdate: 2026-07-16
+description: 
+image: /images/solo_travel.png
+---
+
+
+First of all, I love traveling alone. But I acknowledge is not for everyone and I want to gather in this article a deep analysis of solo traveling, so that I might be helpful for someone.
+
+# First approach
+
+Traveling alone feels uncomfortable at first, but it’s completely normal. Like the first time you stay alone in your room you listen new voices in your head you never met, the same happens for solo traveling. 
+
+We live in a society where we have our circle of relationships, and they partially define who we are, so it is only natural that first time we go in an unknown place of the world without any connection we feel very uncomfortable, because,  our identity is threatened. On the other side you could see this as a test, because if you feel good without points of reference, then you become stronger. And this is the one of the main point of solo traveling: developing self-trust. You can meet several challenges during the travel which I will try to describe here.
+
+As a tip from  a stranger, just book a trip of few days in a place close to you. Worse case if you feel bad you will go back home after few days.
+
+# Goal and uncertainty
+
+I was in Rhodes, Greece last week and I just arrived in the airport with no idea of how to go to the city. I open Google maps and it tells me to take the bus number 50. I go to the designated place but there is no bus coming. What to do now? 
+
+This happens often during travel; things don’t go as planned and this is the normality, even if we pretend to have everything under control. We don’t. And the earlier we accept this, the easier will be to handle uncertain situations.
+
+To continue with the story, I first asked to people around me. They also didn’t know anything about the bus that should have come at 9:15. Then, at some point a bus with different number came at the bus station but there was written “Rhodes center” on top of that. So even if Google maps was telling me to go with a bus with different number, I just went to the bus driver to ask if this was going close to where I needed to go. And it was going there, so I took the bus.
+
+In doubt, just ask. This point changed my experience of solo traveling. As very tech oriented person and introvert (bachelor in CS, doing a PhD in AI) I was used to check google maps to see how to go to place X or Y. Now I just ask to people where I have to go, because “worse case scenario” I can have a nice interaction with people. Joking apart, what can happen can be summarized in the following scenarios: 
+
+- (The true worse one): the person just ignores you and move away. This is a bit annoying on the moment but after 5 seconds you forget about that. This is literally the worse thing can happen, then it goes better
+
+- The person tells you where to go or the person doesn’t know. Just normal exchange of information
+
+- The person tells you where to go + deeper interaction. These are the nicer one for me, I love talking with stranger about my life and ask them what they do. For example this morning I was sitting in a cafe and I asked to the people next to me where to find good artisans for jewelry, then naturally we started talking about where I am from, where they are from, what I do, what they do with some jokes in the middle.  
+
+The quality of interactions depends in part on people mood in the moment, on the local culture, on our charisma. Most of the times it is not our responsability for how the interaction goes. It’s like two asteroids in the space, sometimes they hit, sometimes not but doesn’t depend on them  but on bigger, external factors. In general the principle of self-trust helps a lot, things can go in ways we can’t predict and that’s the beauty of it, but our brain crave for safety for survival reasons, so we don’t feel comfortable with uncertainty in the beginning. I believe the successful traveler is not the one that is able to talk with everyone, but the one that is fine regardless of how the interactions go.
+
+# Loneliness and solitude
+
+As we can imagine, going alone can feel lonely at time. In our mind can come up at any time a though like “What if I were doing this with person X or Y?”. This point is, first of all, very personal. Some people can handle loneliness more easily, others can’t stay alone a single moment. In general a good test is to try to stay alone in a home and understand how it feels. For the immense difference of each mind, it’s hard to recommend something. The only thing I feel safe to say is that if you feel uncomfortable stay alone it means there is something you need to process some emotions, some thoughts. If you can, just let the thought flow and let it go.
+
+In English language there is another term to describe the state of being alone in a more positive way, with calm and peace: solitude. Solitude is the state of stay alone and contemporary feel peaceful while listening any thought in our mind. I believe that once we processed the voices inside our mind, we enter in a state of peace and calm, in a state of solitude.
+
+It happens to be in both states while solo traveling, the important thing is just to feel everything at 100%, don’t suppress anything.
+
+# What I learned by traveling
+
+By traveling alone I saw how nature and human creations can be terribly beautiful. I went to places without any “spoiler” (I don’t plan too much because I like to be surprised by the place) and I found always a lot of unique culture, history, traditions. It’s like every place is a different combination of colors. It’s very unique and feeling it’s not like reading a book or watching a video, we are there, experiencing the world. And the most interesting part is to see how culture, traditions shape the local people. For example people living in Sofia are very different from people living in Munich. Also within the same country people are different, for example Berliners are very different from the people in Munich. Or similarly big cities versus small cities.
+
+After traveling a while, I developed small rituals I do in every travel. They are very personal, everyone has their own. For example I like to buy a oil color tube in every travel to remember the place, and I tend to go to art museums with paintings in every place I go. Also I couldn’t travel without music, I need to have 1-2 pairs of headphones when traveling. For me music amplify the enjoyment of the travel and also helps to regulate my emotions.
+
+## Decisions and responsability
+
+When we travel alone we have to take all the decisions: what to do, where to eat, how to go there. When I travel with friends, I tend to delegate decisions to others because I just want to explore as much as possible and I am not really interested on what/how. But with every decision comes a responsability, because I can take good or bad decisions. 
+
+For example when I went to USA last year I bought a charger compatible with USA format, but when I went there I realized it was not working. I used my laptop for 1 day to charge the phone because I didn’t have anything else to charge and having a phone abroad is essential, especially during my first time in USA (Tucson) for any sort of emergency. So I start walking for hours to search for a place where I can buy a charger and then I found. Small note, I think the guy overpriced the charger because he saw I was desperate for that. This is a small example of bad decision I took, I didn’t check if the charger was working. Another example, I almost lost the flight to Sofia because I went too late at the airport. I wanted to do the online check-in but it was not available because it was too close to the departure and I didn’t know the exact time of travel gate. I didn’t know how I could have done that, but I went to the check-in service and I was able to do the check-in in person in the airport for a small fee.
+
+These are few examples of stuff that can happen during travel, but the main point, as before is self-trust. Whatever happens, you will find a way to solve the situation. 
+
+Until now I talked about decisions like a burden, but there is a beauty on it that it is hard to describe in words. The feeling of being alive because I am deciding my own future. The thrill of not knowing what I will do tomorrow and I will find out by living, but contemporaneously feel safe because I trust myself that everything will go alright. It’s hard to describe in words but this is one of the core part to the traveling experience. These feelings are hard to grasp during my daily life, but they happen every day when traveling.
+
+## Different experiences when traveling
+
+I am not you, and therefore my experience as traveler is different from yours. When talking with strangers, they judge you quickly based on several factors: gender, nationality, skin color, accent. Humans are instinctive creatures first, and for survival mechanisms we need to understand who is good or bad. By traveling and seeing different places, this effect might be mitigated but not everyone you meet has traveled a lot. For example as a guy from Italy, I see a variety of reactions based on my sex and my nationality. In my experience, the sex rarely plays a role, and only when talking with girls. For example I was asking information about a beach to a girl sitting there and I noticed that she was feeling unsafe talking with me and she mentioned after few words the boyfriend. In this case I just respect the person’s will to be safe and pass to the next one. I am not a girl, but I believe for girls traveling alone is a different experience. I believe being a girl asking information to people has a positive bias on them, but on the other side they have to be more careful the intention of the guys, especially about wanting undesired outcomes for the interaction. So they have to come up with several strategies, like lying and saying that they are traveling with the boyfriend and feeling very uncomfortable during that situation. For me, as a guy, it’s hard to imagine how it feels and how often happens but I believe this shouldn’t stop any girl to solo travel, especially for girls to develop the self trust to handle uncomfortable situations like guys forcing an approach.
+
+Regarding my nationality, I believe I got very lucky because I noticed people like Italians and a lot of people traveled there, so this gives a little plus on the interactions. Usually one sentence about the beautiful cities or the food happens from time to time. Very rarely I listen stereotypes, like mafia or lazy workers, but I don’t care too much and I answer with jokes because they are just… stereotypes. Most of the times people don’t have bad intentions and they appreciate if you are able to joke about your country stereotypes. I believe the biggest advantage of being Italian is another one. Even a person like me,  a nerd introverted,  living in Italy is so much surrounded by extroverted and talkative people… that you learn the art of socialization even if you don’t want. 
+
+Regardless of nationality and sex, the most important thing when talking with someone is… to just smile. A good smile and good energy is more powerful than any flag or gender.
+
+# Some philosophy because I need this sh*t
+
+When I think about socializing during solo traveling, I immediately think about the nihilism Nietzsche was talking about in his books, the existentialism from Sartre (“condemned to be free”) and the absurdism from Albert Camus described, for example, in The Stranger (my review link). In my head, I consider traveling alone a sort of “Social nihilism” where the socially strong wins while the weak one perish. In other words, when I am solo traveling, and I can’t expect anyone to stay always around me when I need help. That’s why we have invented society, relationships and social contracts, to help each other and to not see this ugly truth. In society  we have our set of relationships, on which they count on us and we count of them to feel less alone during our daily life, to support each other in difficult times, to have fun and because we can’t do the uncomfortable effort to socialize with strangers every day, while working or whatever we are doing. But this has a price, similarly to how social media made us afraid to socialize. The price we pay is the limit to our freedom and to the possibilities we can see,  because staying always in our social circles make us numb to new opportunities, scared of uncertainty and believe that we won’t make out alone. 
+
+To clarify the intention of this paragraph, my point is not that we should all live alone our life, but get a bit of both sides. Stay in society but also remember that you can handle things on your own. In this way when the unexpected happens, we know we will make out and we are also open to opportunities that most of the people are afraid to catch.
+
+# On returning back
+
+This is the last paragraph I wrote, because I needed some days to investigate how I feel after coming back and it is not easy to write these words. It feel strange. I was used to constant uncertainty, to decide everything every day, every moment and now at home everything seems on autopilot, so predictable. For example I know exactly how my day will go at 90% of it. And it feels terrible to be honest. To overcame this feeling I do things that introduce elements of uncertainty like try to talk with stranger, painting on the city center of the city or go to visit a city in the weekend around where I live.  
+
+# Conclusion
+
+I tried to list all the aspects of solo traveling. Every missed bus, every awkward interaction, every night spent alone with thoughts you usually keep busy enough to avoid. These aren’t obstacles to a good trip, they are the trip. The self-trust I keep coming back to isn’t built in the beautiful, curated moments you’d put on a postcard. It’s built in the small events: asking a stranger for directions, walking for hours to find a phone charger, sitting with the discomfort of your own company until you feel good.
+
+None of this means you have to travel alone, or that it’s better than traveling with others, or with people you love. It’s simply a different kind of experience, one that asks more of you, and in exchange, gives you a clearer sense of what you’re actually capable of. Whether that trade is worth it is not something I can answer for you. It’s something only a plane ticket, a wrong bus, and a few uncomfortable conversations with strangers can.
