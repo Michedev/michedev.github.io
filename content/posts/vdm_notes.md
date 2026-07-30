@@ -142,12 +142,10 @@ $$
 Substituting into the integral above, the $\mathrm{SNR}(u)$ factor introduced by the $t \to \gamma$ change of variables cancels *exactly* against the $1/\mathrm{SNR}(t(u))$ introduced by this reparameterization — the two are reciprocal by construction. What remains is
 
 $$
-\boxed{
    \begin{aligned}
    \,L_\infty = & \frac{1}{2}\, \mathbb{E}_{\boldsymbol{\varepsilon}}\int_{\gamma_{\min}}^{\gamma_{\max}} \big\lVert \boldsymbol{\varepsilon} - \hat{\boldsymbol{\varepsilon}}_\theta(x_{t(u)}; t(u))\big\rVert^2\, du \\
 = & \frac{\gamma_{\max}-\gamma_{\min}}{2}\; \mathbb{E}_{\boldsymbol{\varepsilon},\, u \sim \mathcal{U}(\gamma_{\min}, \gamma_{\max})}\Big[\big\lVert \boldsymbol{\varepsilon} - \hat{\boldsymbol{\varepsilon}}_\theta\big\rVert^2\Big].\,
    \end{aligned}
-}
 $$
 
 This is the elegant result underlying the standard diffusion loss: written in terms of noise prediction and integrated uniformly over log-SNR, the correct ELBO term is literally an *unweighted* mean-squared error. The catch is that "integrated uniformly over log-SNR" is doing real work here — it is not automatically satisfied just because we sample $t$ uniformly.
