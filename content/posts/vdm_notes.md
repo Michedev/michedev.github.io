@@ -1,6 +1,6 @@
 ---
 title: Self complete guide on Variational Diffusion Models
-date: 2026-05-31
+date: 2026-07-30
 publishdate: 2026-05-31
 description: Technical notes on Variational Diffusion Models
 image: /images/ddpm_noising.png
@@ -91,7 +91,96 @@ $$
 
 The first term is the usual denoising objective. The last two terms anchor the endpoints of the process and, in our experience, are particularly useful when the noise schedule itself is being learned.
 
-Once the network is trained, how do we turn pure noise back into data? That is the sampling problem.
+Once the network is trained, how do we turn pure noise back into data? That is the sampling problem. But before we get there, it's worth pausing on the first term above — where does it actually come from, and why is it valid to leave it unweighted?
+
+## From the ELBO to the Diffusion Loss
+
+The "standard diffusion loss" is not an arbitrary design choice. It is exactly what remains of the variational lower bound (ELBO) on $\log p_\theta(x_0)$ once the number of diffusion steps is taken to infinity — but only under a specific parameterization *and* a specific way of sampling $t$. Getting either of those wrong silently turns the training objective into something that no longer bounds the likelihood. It's worth deriving this once end-to-end.
+
+### From Discrete Steps to a Continuous Integral
+
+For a $T$-step discretization with adjacent timesteps $s = t - 1/T$, the diffusion term of the discrete-time ELBO takes the form
+
+$$
+L_T = \frac{T}{2}\, \mathbb{E}_{\boldsymbol{\varepsilon},\, i \sim \mathcal U\{1,\dots,T\}}\Big[\big(\mathrm{SNR}(s) - \mathrm{SNR}(t)\big)\, \big\lVert x_0 - \hat{x}_\theta(x_t; t)\big\rVert^2\Big],
+$$
+
+where $\mathrm{SNR}(t) \equiv \alpha_t^2/\sigma_t^2 = e^{-\gamma(t)}$. Intuitively, each step penalizes the $x_0$-reconstruction error, weighted by how much the signal-to-noise ratio drops over that step — steps where the signal degrades sharply matter more.
+
+As $T \to \infty$, the finite difference $\big(\mathrm{SNR}(s)-\mathrm{SNR}(t)\big)/(t-s)$ converges to $-\mathrm{SNR}'(t)$, and the sum over steps becomes an integral over continuous time:
+
+$$
+L_\infty = \frac{1}{2}\, \mathbb{E}_{\boldsymbol{\varepsilon},\, t \sim \mathcal U(0,1)}\Big[-\mathrm{SNR}'(t)\, \big\lVert x_0 - \hat{x}_\theta(x_t; t)\big\rVert^2\Big].
+$$
+
+Since $\mathrm{SNR}(t)$ is monotonically decreasing in $t$, we have $\mathrm{SNR}'(t) < 0$, so $-\mathrm{SNR}'(t) > 0$ is a genuine, non-negative weight — larger wherever the SNR is falling fastest.
+
+### Changing Variables from $t$ to $\gamma$
+
+Let $u = \gamma(t)$. Since $\mathrm{SNR}(t) = e^{-\gamma(t)}$, the chain rule gives $\mathrm{SNR}'(t) = -\gamma'(t)\, e^{-\gamma(t)} = -\gamma'(t)\, \mathrm{SNR}(t)$, so
+
+$$
+-\tfrac{1}{2}\mathrm{SNR}'(t)\, dt = \tfrac{1}{2}\gamma'(t)\, \mathrm{SNR}(t)\, dt = \tfrac{1}{2}\, \mathrm{SNR}(u)\, du,
+$$
+
+which turns the integral over $t$ into an integral over log-SNR:
+
+$$
+L_\infty = \frac{1}{2}\, \mathbb{E}_{\boldsymbol{\varepsilon}}\int_{\gamma_{\min}}^{\gamma_{\max}} \mathrm{SNR}(u)\, \big\lVert x_0 - \hat{x}_\theta(x_{t(u)}; t(u))\big\rVert^2\, du.
+$$
+
+### Switching to Noise Prediction
+
+The network in our formulation predicts noise, not the clean signal directly, so we relate the two through the same forward equation: $\hat{x}_\theta = (x_t - \sigma_t \hat{\boldsymbol{\varepsilon}}_\theta)/\alpha_t$. Subtracting this from the identical expression for the *true* $x_0$ and $\boldsymbol{\varepsilon}$ — noting that both are evaluated at the same realized $x_t$, so that term cancels exactly —
+
+$$
+x_0 - \hat{x}_\theta = \frac{\sigma_t}{\alpha_t}\big(\hat{\boldsymbol{\varepsilon}}_\theta - \boldsymbol{\varepsilon}\big)
+\;\;\Longrightarrow\;\;
+\big\lVert x_0 - \hat{x}_\theta\big\rVert^2 = \frac{1}{\mathrm{SNR}(t)}\big\lVert \boldsymbol{\varepsilon} - \hat{\boldsymbol{\varepsilon}}_\theta\big\rVert^2.
+$$
+
+Substituting into the integral above, the $\mathrm{SNR}(u)$ factor introduced by the $t \to \gamma$ change of variables cancels *exactly* against the $1/\mathrm{SNR}(t(u))$ introduced by this reparameterization — the two are reciprocal by construction. What remains is
+
+$$
+\boxed{
+   \begin{aligned}
+   \,L_\infty = & \frac{1}{2}\, \mathbb{E}_{\boldsymbol{\varepsilon}}\int_{\gamma_{\min}}^{\gamma_{\max}} \big\lVert \boldsymbol{\varepsilon} - \hat{\boldsymbol{\varepsilon}}_\theta(x_{t(u)}; t(u))\big\rVert^2\, du \\
+= & \frac{\gamma_{\max}-\gamma_{\min}}{2}\; \mathbb{E}_{\boldsymbol{\varepsilon},\, u \sim \mathcal{U}(\gamma_{\min}, \gamma_{\max})}\Big[\big\lVert \boldsymbol{\varepsilon} - \hat{\boldsymbol{\varepsilon}}_\theta\big\rVert^2\Big].\,
+   \end{aligned}
+}
+$$
+
+This is the elegant result underlying the standard diffusion loss: written in terms of noise prediction and integrated uniformly over log-SNR, the correct ELBO term is literally an *unweighted* mean-squared error. The catch is that "integrated uniformly over log-SNR" is doing real work here — it is not automatically satisfied just because we sample $t$ uniformly.
+
+### Sampling the Timestep Correctly
+
+The boxed identity holds only when $u = \gamma(t)$ is itself distributed uniformly on $[\gamma_{\min}, \gamma_{\max}]$. If $t \sim \mathcal{U}(0,1)$, the standard 1-D change-of-variables rule tells us the *induced* density of $u$ is
+
+$$
+p_U(u) = \frac{1}{|\gamma'(t)|}\bigg|_{t = \gamma^{-1}(u)}.
+$$
+
+For a schedule with *constant* slope — the linear schedule — this density is itself constant, so sampling $t$ uniformly happens to give $u$ uniformly, and no correction is required. For any schedule whose slope varies with $t$ (cosine, or a learned/contextual schedule that may saturate near the endpoints), $t \sim \mathcal U(0,1)$ over-samples whichever noise levels correspond to the flattest regions of $\gamma$ — wherever $\gamma'(t)$ is small, $1/\gamma'(t)$ is large, so those log-SNR values get visited disproportionately often. Averaging the unweighted MSE under this mismatched sampling distribution converges to a biased quantity, not to $L_\infty$.
+
+There are two equivalent fixes, differing only in where the correction is paid.
+
+**Option A — importance-weight by $\gamma'(t)$.** Keep $t \sim \mathcal{U}(0,1)$, but reweight each sample by the density ratio between the target (uniform-in-$u$) and the induced (mismatched) distribution:
+
+$$
+L_\infty = \frac{1}{2}\, \mathbb{E}_{t\sim \mathcal U(0,1)}\Big[\gamma'(t)\, \big\lVert \boldsymbol{\varepsilon} - \hat{\boldsymbol{\varepsilon}}_\theta(x_t, t)\big\rVert^2\Big].
+$$
+
+This requires the derivative of the schedule with respect to $t$. When $\gamma$ is vector-valued — for instance, a separate log-SNR curve per output dimension — this is naturally suited to **forward-mode automatic differentiation** (a Jacobian-vector product): since $t$ is a single scalar input mapping to many outputs, one JVP call recovers the entire per-element derivative in a single extra forward-like pass, exactly, without the truncation/round-off tuning that finite differences would require.
+
+**Option B — sample directly in log-SNR space.** Draw $u \sim \mathcal{U}(\gamma_{\min}, \gamma_{\max})$ first, then invert the schedule to recover the corresponding timestep,
+
+$$
+t = \gamma^{-1}(u).
+$$
+
+Because $\gamma$ is monotonic by construction, this inversion is well-posed and can always be solved reliably by bisection on $[0,1]$, regardless of how nonlinear $\gamma$ is. Since $u$ is now drawn *directly* from the target distribution, there is no density mismatch left to correct — only the constant prefactor $\gamma_{\max}-\gamma_{\min}$ from the interval length survives, and the loss is again plain, unweighted MSE. This is the approach adopted in the original VDM paper, and it trades a derivative for a root-find.
+
+Both estimators are unbiased for $L_\infty$; they simply relocate the computational cost. Option A is preferable when $\gamma$ is cheap to differentiate but awkward to invert (e.g. a small MLP with no closed form); Option B is preferable when $\gamma$ has a closed-form or cheaply-invertible structure (e.g. the cosine schedule), since it avoids computing a derivative altogether.
 
 ## Sampling
 
