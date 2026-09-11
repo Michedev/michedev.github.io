@@ -1044,6 +1044,26 @@ ul.experience-chart {
     display: block;
     max-width: 100%;
   }
+  table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+  th,
+  td {
+    border: 1px solid rgba(50, 50, 50, 0.25);
+    padding: 8px 12px;
+    text-align: left;
+  }
+  thead th {
+    border-bottom: 2px solid rgba(50, 50, 50, 0.5);
+    background: rgba(50, 50, 50, 0.05);
+  }
+  tbody tr:nth-child(even) {
+    background: rgba(50, 50, 50, 0.03);
+  }
 }
 .date {
   color: rgba(50, 50, 50, 0.6);
