@@ -1,0 +1,30 @@
+<section class="hero" id="header">
+  {{ with .Site.Data.content.hero }}
+  <div class="container hero__inner">
+    <div class="hero__card">
+      <p class="hero__eyebrow"><span class="hero__blip" aria-hidden="true"></span>{{ .eyebrow }}</p>
+      <h1 class="hero__title">{{ .title | markdownify | emojify }}</h1>
+      <div class="hero__roles">
+        <span class="prefix">I'm a</span>
+        <span class="roles-rotator" data-roles aria-label="{{ delimit .occupations ", " }}">
+          {{ range .occupations }}<span class="occupation">{{ . }}</span>{{ end }}
+        </span>
+      </div>
+      {{ with .actions }}
+      <div class="hero__actions">
+        {{ range . }}
+        {{/* relURL would rewrite a bare "#posts" to "/#posts", turning an in-page
+             smooth scroll into a navigation, so fragments are passed through. */}}
+        <a class="md-button md-button--{{ .style | default "outlined" }}"
+           href="{{ if hasPrefix .link "#" }}{{ .link }}{{ else }}{{ .link | relURL }}{{ end }}"><span>{{ .label }}</span></a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <a href="#about" class="hero__scroll" aria-label="Scroll to content">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4 6 9.4 7.4 8l4.6 4.6L16.6 8 18 9.4z"/></svg>
+  </a>
+</section>

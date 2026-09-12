@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{- partial "head.html" . -}}
+
+  <body>
+    {{- /* Fixed markup with no page data in it, so build it once. */ -}}
+    {{- partialCached "cosmos.html" . -}}
+    {{- block "main" . }}{{- end }}
+    {{- partial "scripts.html" . -}}
+  </body>
+</html>

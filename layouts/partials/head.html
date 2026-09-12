@@ -1,0 +1,49 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+  <meta
+    name="description"
+    content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"
+  />
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}" />{{ end }}
+
+  {{ "<!-- Theme-color: starlight white by day, deep space by night -->" | safeHTML }}
+  <meta name="theme-color" content="#f6f8fd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#070b16" media="(prefers-color-scheme: dark)" />
+
+  {{ "<!-- No-FOUC theme selection (runs before paint) -->" | safeHTML }}
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+
+  {{ "<!-- Fonts: Orbitron hero/About headings · Anton headlines · Permanent Marker labels · Kalam body · Space Mono telemetry -->" | safeHTML }}
+  {{ "<!-- Every weight here is used by a real declaration; the request is render-blocking, so keep it that way. Caveat 400/500/600 are set inline by the About handwriting jitter in script.js. -->" | safeHTML }}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400;500;600;700&family=Orbitron:wght@700;900&family=Permanent+Marker&family=Kalam:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+  />
+
+  {{ "<!-- Main Stylesheet (compiled MD3) -->" | safeHTML }}
+  {{ $styles := resources.Get "css/style.scss" | resources.ToCSS | resources.PostCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+
+  {{ with .Site.Params.google_analytics }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ . }}');
+    </script>
+  {{ end }}
+</head>

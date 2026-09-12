@@ -3,7 +3,7 @@ title: About my painting "The Universe"
 date: 2026-06-23
 publishdate: 2026-06-23
 description: I started this painting back in September 2025 of last year during a particularly stressful time...
-image: /images/the_universe.png
+image: /images/the_universe.jpg
 ---
 
 

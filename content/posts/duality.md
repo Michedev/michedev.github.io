@@ -3,7 +3,7 @@ title: On The Duality
 date: 2026-01-13
 publishdate: 2026-01-13
 description: 
-image: /images/duality.png
+image: /images/duality.jpg
 ---
 
 Light and shadow,     

@@ -1,0 +1,12 @@
+{{- /*
+  Markdown links: anything pointing off this site opens in a new tab. Applies
+  to post prose and to the markdownify'd copy in data/content.yml alike.
+  Deliberately not mailto:/tel: — those hand off to another app, and a blank
+  tab left behind is just litter.
+*/ -}}
+{{- $url := urls.Parse .Destination -}}
+{{- $offsite := and
+      (in (slice "http" "https") $url.Scheme)
+      (ne $url.Host (urls.Parse site.BaseURL).Host) -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}
+  {{- if $offsite }} target="_blank" rel="noopener"{{ end }}>{{ .Text }}</a>

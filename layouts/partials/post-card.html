@@ -1,0 +1,15 @@
+{{- /*
+  One post teaser, rendered identically by the home page (layouts/index.html)
+  and the section list (layouts/_default/list.html). Context is the post page,
+  so `$` here is the post itself rather than whatever page did the ranging.
+*/ -}}
+<a class="post-card reveal" href="{{ .RelPermalink }}">
+  {{ with .Params.image }}
+  <div class="post-card__media"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" /></div>
+  {{ end }}
+  <div class="post-card__body">
+    <h4>{{ .Title }}</h4>
+    <span class="post-card__date">{{ .Date.Format "Jan 2, 2006" }}</span>
+    <p>{{ .Description }}</p>
+  </div>
+</a>

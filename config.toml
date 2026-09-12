@@ -5,30 +5,12 @@ theme = "port-hugo"
 
 timeout = "300s" 
 ############################# Plugins ##############################
-
-# CSS Plugins
-[[params.plugins.css]]
-link = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-[[params.plugins.css]]
-link = "https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-[[params.plugins.css]]
-link = "https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css"
-[[params.plugins.css]]
-link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
-[[params.plugins.css]]
-link = "plugins/text-animation/text-animation.css"
-[[params.plugins.css]]
-link = "plugins/hugrid/hugrid.css"
-
-# JS Plugins
-[[params.plugins.js]]
-link = "https://code.jquery.com/jquery-3.5.1.min.js"
-[[params.plugins.js]]
-link = "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
-[[params.plugins.js]]
-link = "plugins/text-animation/text-animation.js"
-[[params.plugins.js]]
-link = "plugins/hugrid/hugrid.min.js"
+# The site loads one compiled stylesheet (assets/css/style.scss) and one
+# vanilla-JS bundle (assets/js/script.js), which paints the solar-system
+# backdrop and the post-it yarn. Fonts come from Google in <head>: Anton,
+# Kalam, Caveat, Permanent Marker, Space Mono. The previous render-blocking CDN
+# chain (Bootstrap, jQuery, FontAwesome Pro, hover.css, Waypoints, Rubik) was
+# removed.
 
 
 ############################## navigation ###############################
@@ -70,31 +52,38 @@ target = "_blank"
 logo_light = "images/logo.svg"
 logo_dark = "images/logo-dark.svg"
 enable_logo = false
-copyright = "Copyright Burton Guster &copy;"
+copyright = "&copy; Michele De Vita"
 # Meta data
 description = "Personal Portfolio"
 author = "Michele De Vita"
 favicon = ""
-google_analytics = "G-ABCDEFG123"
+# Set to your real GA4 measurement ID (e.g. "G-XXXXXXXXXX") to enable analytics.
+# Left empty so no broken/placeholder tracking script is injected.
+google_analytics = ""
 timeout = "300s" # Increases timeout to 5 minutes
 
-# Preloader
+# Preloader (disabled: a full-page spinner delays content and hurts perceived load)
 [params.preloader]
-enable = true
+enable = false
 preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
 
 ############################# social site ########################
 
+# icon picks the inline SVG in layouts/partials/social-icon.html;
+# label is the accessible name announced for the link.
 [[params.social]]
 icon = "fab fa-github"
+label = "GitHub"
 link = "https://github.com/Michedev/"
 
 [[params.social]]
 icon = "fab fa-linkedin"
+label = "LinkedIn"
 link = "https://www.linkedin.com/in/michele-de-vita-582336bb/"
 
 [[params.social]]
 icon = "fas fa-envelope"
+label = "Email"
 link = "mailto:mik3dev@gmail.com"
 
 contentDir = "content/english"

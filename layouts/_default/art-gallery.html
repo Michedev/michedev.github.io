@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ partialCached "menu.html" . }}
+<main class="under-menu">
+  <div class="container">
+    <h1 class="section-title">{{ .Params.heading | default .Title }}</h1>
+  </div>
+  <div class="container">
+    {{/* The partial only reads .gallery_dir. Passing the page in as well put a
+         per-page value in the cache key, so the cache could never hit. */}}
+    {{ partialCached "image-gallery" (dict "gallery_dir" "/assets/images/art") "art" }}
+  </div>
+</main>
+{{ partial "footer.html" . }}
+{{ end }}

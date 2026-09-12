@@ -1,0 +1,87 @@
+{{ define "main" }}
+{{ partialCached "menu.html" . }}
+{{ partial "header.html" . }}
+
+<main>
+  <!-- ============================ About ============================ -->
+  <section class="section" id="about">
+    <div class="container">
+      {{ with .Site.Data.content.about }}{{ if .enable }}
+      <div class="reveal md-card about-card" style="margin-bottom: clamp(2rem, 6vw, 3.5rem)">
+        {{ with .title }}<h2 class="section-title">{{ . | safeHTML }}</h2>{{ else }}<h2 class="section-title">About</h2>{{ end }}
+        <p class="about__lead">{{ .content | markdownify | emojify }}</p>
+        {{ if .button.enable }}{{ with .button }}
+        <p style="margin-top: 1.5rem">
+          <a class="md-button md-button--filled" href="{{ .link | relURL }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.6l3.3-3.3 1.4 1.4-5.7 5.7-5.7-5.7 1.4-1.4 3.3 3.3V3h2ZM5 19h14v2H5z"/></svg>
+            <span>{{ .label }}</span>
+          </a>
+        </p>
+        {{ end }}{{ end }}
+      </div>
+      {{ end }}{{ end }}
+    </div>
+
+    <!-- Papers and post-its get more room than the prose above them -->
+    <div class="container container--wide">
+      <div class="grid-2">
+        {{ with .Site.Data.content.experience }}{{ if .enable }}
+        <div class="reveal">
+          <h2 class="section-title">{{ .title }}</h2>
+          <ul class="postits">
+            {{ range .experience_list }}{{ if not (eq .enable false) }}
+            <li>
+              <h3>{{ .name | markdownify }}</h3>
+              <div class="meta">
+                {{ with .company }}<span>{{ . | markdownify }}</span>{{ end }}
+                {{ with .duration }}<span>{{ . | markdownify }}</span>{{ end }}
+              </div>
+              {{ with .content }}<p>{{ . | markdownify }}</p>{{ end }}
+            </li>
+            {{ end }}{{ end }}
+          </ul>
+        </div>
+        {{ end }}{{ end }}
+
+        {{ with .Site.Data.content.publications }}{{ if .enable }}
+        <div class="reveal">
+          <h2 class="section-title">{{ .title }}</h2>
+          <div class="publication-list">
+            {{ range .publication_list }}
+            <article class="paper">
+              {{ $conf := .conference }}{{ $yr := .year }}
+              <div class="paper__venue">{{ $conf }}{{ if and $conf $yr }} · {{ end }}{{ $yr }}</div>
+              <h4 class="paper__title">{{ .title }}</h4>
+              <p class="paper__authors">{{ .authors }}</p>
+              <div class="paper__abstract" aria-hidden="true"><span></span><span></span></div>
+              {{ with .buttons }}
+              <div class="paper__links">
+                {{ range . }}
+                <a class="paper__link" href="{{ .link }}" target="_blank" rel="noopener">{{ .label }}</a>
+                {{ end }}
+              </div>
+              {{ end }}
+            </article>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}{{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ Posts ============================ -->
+  {{ if .Site.Data.content.posts.enable }}
+  <section class="section" id="posts">
+    <div class="container">
+      <h2 class="section-title section-title--center">{{ .Site.Data.content.posts.title }}</h2>
+      <div class="post-grid">
+        {{ range where .Site.RegularPages "Type" "posts" }}{{ partial "post-card.html" . }}{{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+</main>
+
+{{ partial "footer.html" . }}
+{{ end }}

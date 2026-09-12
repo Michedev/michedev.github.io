@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ partialCached "menu.html" . }}
+<main class="under-menu">
+  <div class="container">
+    <article class="article">
+      <header class="article__header">
+        <h1 class="article__title">{{ .Title }}</h1>
+        <span class="article__date">Posted on {{ .Date.Format "Jan 2, 2006" }}</span>
+        {{ with .Params.image }}<img class="article__hero" src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" />{{ end }}
+      </header>
+      <div class="prose">{{ .Content }}</div>
+    </article>
+  </div>
+</main>
+{{ partial "footer.html" . }}
+{{ end }}

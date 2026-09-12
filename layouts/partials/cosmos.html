@@ -1,0 +1,8 @@
+{{/*
+  Solar system backdrop: the canvas is painted frame by frame in
+  assets/js/script.js and dimmed by a white veil whose opacity rises as you
+  scroll away from the hero. Both sit behind the page on negative z-indexes and
+  take no pointer events; the canvas keeps a CSS gradient as the no-JS sky.
+*/}}
+<canvas class="cosmos" id="cosmos" aria-hidden="true"></canvas>
+<div class="cosmos__veil" aria-hidden="true"></div>

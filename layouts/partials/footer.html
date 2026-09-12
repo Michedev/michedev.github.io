@@ -1,0 +1,13 @@
+<footer class="md-footer" id="contact">
+  <div class="md-footer__social">
+    {{/* label comes from config.toml. Inferring it from the icon class meant any
+         network without a branch here got the accessible name "Link". */}}
+    {{ range .Site.Params.social }}
+    <a class="social-icon" href="{{ .link | safeURL }}" target="_blank" rel="noopener"
+      aria-label="{{ .label | default "Link" }}">
+      {{ partial "social-icon.html" .icon }}
+    </a>
+    {{ end }}
+  </div>
+  <div class="credit">{{ .Site.Params.copyright | safeHTML }} {{ now.Format "2006" }}</div>
+</footer>

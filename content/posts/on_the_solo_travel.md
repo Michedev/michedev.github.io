@@ -3,7 +3,7 @@ title: On The Solo Travel
 date: 2026-07-16
 publishdate: 2026-07-16
 description: 
-image: /images/solo_travel.png
+image: /images/solo_travel.jpg
 ---
 
 

@@ -1,6 +1,8 @@
 ########################## hero area ##########################
 hero:
   title: "Michele De Vita"
+  # telemetry line above the name
+  eyebrow: 'Live from the third planet'
 
   # animated text loop
   occupations:
@@ -8,22 +10,26 @@ hero:
     - 'Developer'
     - 'Painter'
 
-  # hero background image
-  bg_image: ''
-  # optional mobile breakpoint background
-  mobile_bg_image: ''
+  # call-to-action buttons. style is the .md-button modifier: filled | outlined.
+  # a link starting with "#" stays an in-page anchor; anything else is resolved
+  # against the site's baseURL.
+  actions:
+    - label: 'Read my posts'
+      link: '#posts'
+      style: 'filled'
+    - label: 'View art gallery'
+      link: '/art-gallery'
+      style: 'outlined'
 
 ########################### About ##################################
 about:
   enable: true
-  image: ''
   title: ''
-  content: Hi, thank you for taking a look around my site. If you have any questions feel free to reach out on [LinkedIn, Github, or by email](#contact)!
+  content: "Hi, I'm Michele. I'm a PhD candidate at FAU Erlangen-Nuremberg, and I work on AI safety which we can summarize in two modalities. 1) Try to understand when a data sample (from real-world scenario or model output) is never seen and potentially leading to failure and therefore to high costs (in literature is called _distribution shift detection_) or 2) certify reliable prediction from deep learning models using _uncertainty estimation_. I am currently collaborating with Mercedes and with Nokia for those topics. Thanks for stopping by, and feel free to say hi on [LinkedIn](https://www.linkedin.com/in/michele-de-vita-582336bb/), [Github](https://github.com/Michedev/), or by [email](mailto:mik3dev@gmail.com)."
   button:
     enable: true
     label: 'DOWNLOAD MY RESUME'
     link: https://github.com/Michedev/michedev.github.io/raw/hugo/CV_DeVita.pdf
-    icon: 'fa-download'
 
 ###########################3 Experience ##############################
 experience:
@@ -94,22 +100,6 @@ publications:
           link: "https://arxiv.org/abs/2107.00637"
         - label: "Code"
           link: "https://github.com/addtt/object-centric-library"
-
-######################### funfacts #############################3
-funfacts:
-  enable: true
-  funfacts_list:
-    - name: 'Programs crashed'
-      image: 'images/icons/happy_blue.png'
-      count: '48485942'
-
-    - name: "Gradient updates"
-      image: 'images/icons/brain.png'
-      count: '78328423843'
-
-    - name: 'KL-Divergences without NaNs'
-      image: 'images/icons/normal.png'
-      count: '2'
 
 ############################# portfolio ################################
 portfolio:
