@@ -802,7 +802,23 @@ $paper-stack:
 // =============================================================================
 //  10. ARTICLE / PROSE (single post)
 // =============================================================================
-.article { max-width: 760px; margin-inline: auto; }
+//  A long read lies on its own sheet rather than on the bare sky: the card stock
+//  (§6) made near-opaque, with a heavy blur behind it, so orbits and planets
+//  drifting past never cross the lines. Kept flat, with no tilt or hover lift,
+//  because a whole article should not sit at an angle. The width allows for the
+//  padding, so the text column stays about 760px.
+.article {
+  max-width: 856px;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 5vw, 3rem);
+  background-color: color-mix(in srgb, var(--paper-card) 92%, transparent);
+  @include paper-grain;
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  border: 2px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  border-radius: 24px 14px 28px 16px / 16px 28px 14px 24px;
+  box-shadow: 5px 7px 0 color-mix(in srgb, var(--ink) 12%, transparent);
+}
 .article__header { margin-bottom: 2rem; }
 .article__title { font-size: clamp(1.9rem, 5vw, 2.75rem); }
 .article__date { color: var(--md-on-surface-variant); font-size: 0.9rem; font-weight: 500; }
