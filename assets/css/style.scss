@@ -823,7 +823,10 @@ $paper-stack:
 .article__title { font-size: clamp(1.9rem, 5vw, 2.75rem); }
 .article__date { color: var(--md-on-surface-variant); font-size: 0.9rem; font-weight: 500; }
 .article__hero { width: 100%; margin: 1.5rem 0; border: 2.5px solid var(--ink); border-radius: 18px 220px 18px 220px / 220px 18px 220px 18px; }
-.prose { font-size: 1.2rem; line-height: 1.7; color: var(--md-on-background); }
+//  Post text is set in plain Noto Sans rather than the hand-lettered Kalam,
+//  which suits a caption but tires the eye over a long read. Noto's tall
+//  x-height is why 1.125rem is enough here.
+.prose { font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 1.125rem; line-height: 1.7; color: var(--md-on-background); }
 .prose h2 { font-size: 1.6rem; margin-top: 2rem; }
 .prose h3 { font-size: 1.3rem; margin-top: 1.5rem; }
 .prose img { margin: 1.5rem auto; border: 2.5px solid var(--ink); border-radius: 14px 200px 14px 200px / 200px 14px 200px 14px; }
