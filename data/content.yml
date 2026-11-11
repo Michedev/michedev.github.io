@@ -2,7 +2,7 @@
 hero:
   title: "Michele De Vita"
   # telemetry line above the name
-  eyebrow: 'Live from the third planet'
+  eyebrow: ''
 
   # animated text loop
   occupations:
